@@ -17,12 +17,12 @@ export const ContactSection: React.FC = () => {
 
   return (
     <section id="contact" className="py-28 px-6 sm:px-10 lg:px-16 bg-[#040406] border-t border-white/10 relative overflow-hidden">
-      {/* Background Glowing Ambient Light Bulbs */}
+      {/* Background Glowing Ambient Lidsdsdght Bulbs */}
       <div className="absolute top-1/3 left-10 w-[800px] h-[500px] bg-orange-600/10 rounded-full blur-[180px] pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[800px] h-[500px] bg-amber-500/10 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-[1700px] w-full mx-auto space-y-20 relative z-10">
-        
+
         {/* Main CTA Banner */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
