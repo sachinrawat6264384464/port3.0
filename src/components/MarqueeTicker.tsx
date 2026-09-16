@@ -8,7 +8,7 @@ const MARQUEE_ITEMS = [
   'STRATEGY // DESIGN // DIRECTION',
   'DESIGN WITH DIRECTION',
   'PERCEPTION & POSITIONING',
-  'THE OUTLINE CREATIVE STUDIO',
+  'OUTLINE CREATIVE STUDIO',
   'LOGOS THAT SPEAK SILENTLY YET POWERFULLY',
   'PACKAGING DESIGNED TO STAND OUT',
   'PERFORMANCE PRESENTED WITH PURPOSE',
@@ -17,7 +17,7 @@ const MARQUEE_ITEMS = [
 
 export const MarqueeTicker: React.FC = () => {
   return (
-    <div className="relative w-full overflow-hidden bg-gradient-to-r from-orange-950/80 via-[#0a0a0d] to-orange-950/80 border-y border-orange-500/30 py-5 sm:py-6 shadow-2xl z-30">
+    <div className="relative w-full overflow-hidden bg-gradient-to-r from-orange-950/80 via-[#0a0a0d] to-orange-950/80 border-y border-orange-500/30 py-5 sm:py-6 shadow-2xl z-30 mt-36 sm:mt-48 lg:mt-56">
       {/* Side Fade Gradients */}
       <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-[#050505] to-transparent z-20 pointer-events-none" />
       <div className="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-[#050505] to-transparent z-20 pointer-events-none" />

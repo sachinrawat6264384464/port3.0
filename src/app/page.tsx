@@ -22,45 +22,47 @@ import { Footer } from '@/components/Footer';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#050505] text-[#f5f5f7] relative overflow-hidden">
+    <main className="min-h-screen bg-[#0e0e11] text-white relative overflow-hidden">
       <Preloader />
       <CustomCursor />
       <Navbar />
 
       {/* 1. HERO SECTION */}
       <Hero />
+
       <MarqueeTicker />
 
-      {/* 2. STATS & YEARS OF EXPERIENCE SECTION */}
+      {/* 3. STATS & YEARS OF EXPERIENCE SECTION */}
       <StatsMetricsCounter />
 
-      {/* 3. BRAND PHILOSOPHY SECTION */}
+      {/* 4. BRAND PHILOSOPHY SECTION */}
       <BrandIntro />
       <TypographyStatements />
 
-      {/* 4. OUR SERVICES SECTION */}
+      {/* 5. OUR SERVICES (COMPLEX PROFICIENCY) SECTION */}
       <ServicesGrid />
 
-      {/* 5. WHY OUTLINE SECTION (With SVG Dynamic Animated Ropes) */}
+      {/* 6. WHY OUTLINE SECTION */}
       <WhyChooseOutline />
 
-      {/* 6. HOW WE WORK & EXPERIENCE PILLARS SECTION */}
+      {/* 7. HOW WE WORK & EXPERIENCE PILLARS SECTION */}
       <ProcessApproach />
       <ExperiencePillars />
 
-      {/* 7. CUSTOMER SUCCESS STORIES & CASE STUDIES */}
+      {/* 8. CUSTOMER SUCCESS STORIES & CASE STUDIES */}
       <CustomerSuccessStories />
       <ReyugCaseStudy />
       <ProjectShowcase />
 
-      {/* 8. INDUSTRIES SERVED & BRAND LOGO MARKS */}
+      {/* 9. INDUSTRIES SERVED & BRAND LOGO MARKS */}
       <IndustriesServed />
       <LogoGrid />
       <TrustedFootprints />
 
-      {/* 9. CONTACT & FOOTER SECTION */}
+      {/* 10. CONTACT & FOOTER SECTION */}
       <ContactSection />
       <Footer />
     </main>
   );
 }
+
