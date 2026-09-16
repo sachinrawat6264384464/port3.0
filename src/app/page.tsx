@@ -16,6 +16,7 @@ import { ProjectShowcase } from '@/components/ProjectShowcase';
 import { ReyugCaseStudy } from '@/components/ReyugCaseStudy';
 import { IndustriesServed } from '@/components/IndustriesServed';
 import { LogoGrid } from '@/components/LogoGrid';
+import { FallingClientsSection } from '@/components/FallingClientsSection';
 import { TrustedFootprints } from '@/components/TrustedFootprints';
 import { ContactSection } from '@/components/ContactSection';
 import { Footer } from '@/components/Footer';
@@ -57,6 +58,7 @@ export default function Home() {
       {/* 9. INDUSTRIES SERVED & BRAND LOGO MARKS */}
       <IndustriesServed />
       <LogoGrid />
+      <FallingClientsSection />
       <TrustedFootprints />
 
       {/* 10. CONTACT & FOOTER SECTION */}
