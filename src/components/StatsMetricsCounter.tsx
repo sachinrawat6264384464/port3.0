@@ -165,26 +165,7 @@ export const StatsMetricsCounter: React.FC = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[450px] bg-orange-600/10 rounded-full blur-[180px] pointer-events-none animate-pulse" />
 
       <div className="max-w-[1700px] w-full mx-auto space-y-14 relative z-10">
-        {/* Section Header Tag */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.4 }}
-          transition={{ duration: 0.6 }}
-          className="flex items-center justify-between border-b border-white/10 pb-6"
-        >
-          <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 shadow-md shadow-orange-500/20">
-              <Sparkles className="w-4 h-4" />
-            </div>
-            <span className="text-xs font-mono font-bold text-orange-400 uppercase tracking-widest">
-              THE OUTLINE IN NUMBERS // PROVEN IMPACT
-            </span>
-          </div>
-          <span className="text-xs font-mono text-zinc-500 uppercase tracking-wider hidden sm:block">
-            EST. CREATIVE STUDIO
-          </span>
-        </motion.div>
+
 
         {/* 4 Animated Stats Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
