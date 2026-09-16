@@ -60,27 +60,30 @@ export const FallingClientsSection: React.FC = () => {
     const width = sceneRef.current.clientWidth || 1200;
     const height = sceneRef.current.clientHeight || 550;
 
-    // Create Matter Engine
+    // Create Matter Engine with sleeping enabled to prevent micro-jittering/vibration
     const engine = Matter.Engine.create({
       gravity: { x: 0, y: 1.2, scale: 0.001 },
+      enableSleeping: true,
+      positionIterations: 12,
+      velocityIterations: 12,
     });
     engineRef.current = engine;
 
     // Create Floor & Wall Boundaries
     const floor = Matter.Bodies.rectangle(width / 2, height - 10, width * 2, 40, {
       isStatic: true,
-      friction: 0.8,
-      restitution: 0.3,
+      friction: 0.9,
+      restitution: 0.1,
     });
 
     const leftWall = Matter.Bodies.rectangle(-20, height / 2, 40, height * 2, {
       isStatic: true,
-      friction: 0.5,
+      friction: 0.8,
     });
 
     const rightWall = Matter.Bodies.rectangle(width + 20, height / 2, 40, height * 2, {
       isStatic: true,
-      friction: 0.5,
+      friction: 0.8,
     });
 
     Matter.Composite.add(engine.world, [floor, leftWall, rightWall]);
@@ -97,15 +100,17 @@ export const FallingClientsSection: React.FC = () => {
 
       const body = Matter.Bodies.rectangle(spawnX, spawnY, pill.width, pill.height, {
         chamfer: { radius: pill.height / 2 },
-        restitution: 0.45,
-        friction: 0.4,
-        frictionAir: 0.015,
-        density: 0.002,
+        restitution: 0.25,
+        friction: 0.8,
+        frictionStatic: 1.0,
+        frictionAir: 0.012,
+        slop: 0.05,
+        density: 0.003,
         angle: initialAngle,
       });
 
       // Add slight initial rotational torque & force
-      Matter.Body.setAngularVelocity(body, (Math.random() - 0.5) * 0.08);
+      Matter.Body.setAngularVelocity(body, (Math.random() - 0.5) * 0.06);
 
       bodies.push({ id: pill.id, body, width: pill.width, height: pill.height });
       Matter.Composite.add(engine.world, body);
@@ -247,7 +252,7 @@ export const FallingClientsSection: React.FC = () => {
                   color: pill.textColor,
                   willChange: 'transform',
                 }}
-                className="rounded-full flex items-center justify-center font-bold text-sm sm:text-base tracking-wide shadow-xl border border-black/10 transition-shadow hover:scale-105 active:scale-95 pointer-events-auto cursor-pointer select-none"
+                className="rounded-full flex items-center justify-center font-bold text-sm sm:text-base tracking-wide shadow-xl border border-black/10 pointer-events-auto cursor-grab active:cursor-grabbing select-none"
               >
                 <span className="px-4 truncate font-sans font-black italic uppercase">
                   {pill.name}
