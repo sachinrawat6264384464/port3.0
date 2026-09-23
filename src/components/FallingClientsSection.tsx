@@ -8,9 +8,8 @@ import { RotateCcw, Sparkles, ArrowUp } from 'lucide-react';
 interface LogoPill {
   id: string;
   name: string;
-  bgColor: string; // 'orange' | 'white' | 'dark'
+  bgColor: string;
   textColor: string;
-  icon?: string;
   width: number;
   height: number;
 }
@@ -37,9 +36,9 @@ const PILL_CLIENTS: LogoPill[] = [
 export const FallingClientsSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<HTMLDivElement>(null);
+  const pillRefs = useRef<(HTMLDivElement | null)[]>([]);
   const isInView = useInView(containerRef, { once: true, amount: 0.2 });
-  
-  const [pillPositions, setPillPositions] = useState<{ id: string; x: number; y: number; angle: number }[]>([]);
+
   const [hasStarted, setHasStarted] = useState(false);
 
   const engineRef = useRef<Matter.Engine | null>(null);
@@ -49,7 +48,7 @@ export const FallingClientsSection: React.FC = () => {
   const startPhysics = () => {
     if (!sceneRef.current) return;
 
-    // Clean up previous engine if any
+    // Cleanup previous engine if re-running
     if (engineRef.current) {
       Matter.Engine.clear(engineRef.current);
     }
@@ -60,16 +59,16 @@ export const FallingClientsSection: React.FC = () => {
     const width = sceneRef.current.clientWidth || 1200;
     const height = sceneRef.current.clientHeight || 550;
 
-    // Create Matter Engine with sleeping enabled to prevent micro-jittering/vibration
+    // Create Matter Engine with high precision & sleeping enabled
     const engine = Matter.Engine.create({
       gravity: { x: 0, y: 1.2, scale: 0.001 },
       enableSleeping: true,
-      positionIterations: 12,
-      velocityIterations: 12,
+      positionIterations: 10,
+      velocityIterations: 10,
     });
     engineRef.current = engine;
 
-    // Create Floor & Wall Boundaries
+    // Create Floor & Side Walls
     const floor = Matter.Bodies.rectangle(width / 2, height - 10, width * 2, 40, {
       isStatic: true,
       friction: 0.9,
@@ -92,25 +91,22 @@ export const FallingClientsSection: React.FC = () => {
     const bodies: { id: string; body: Matter.Body; width: number; height: number }[] = [];
 
     PILL_CLIENTS.forEach((pill, idx) => {
-      // Spawn at random X spread across top width
       const spawnX = Math.random() * (width - 240) + 120;
-      // Stagger Y initial drop heights above screen
-      const spawnY = -100 - idx * 65 - Math.random() * 40;
-      const initialAngle = (Math.random() - 0.5) * 0.8;
+      const spawnY = -80 - idx * 60 - Math.random() * 30;
+      const initialAngle = (Math.random() - 0.5) * 0.6;
 
       const body = Matter.Bodies.rectangle(spawnX, spawnY, pill.width, pill.height, {
         chamfer: { radius: pill.height / 2 },
-        restitution: 0.25,
+        restitution: 0.2,
         friction: 0.8,
         frictionStatic: 1.0,
-        frictionAir: 0.012,
+        frictionAir: 0.015,
         slop: 0.05,
         density: 0.003,
         angle: initialAngle,
       });
 
-      // Add slight initial rotational torque & force
-      Matter.Body.setAngularVelocity(body, (Math.random() - 0.5) * 0.06);
+      Matter.Body.setAngularVelocity(body, (Math.random() - 0.5) * 0.05);
 
       bodies.push({ id: pill.id, body, width: pill.width, height: pill.height });
       Matter.Composite.add(engine.world, body);
@@ -118,8 +114,20 @@ export const FallingClientsSection: React.FC = () => {
 
     bodiesMapRef.current = bodies;
 
-    // Add Mouse Constraint for dragging pills
+    // Create Mouse & Mouse Constraint
     const mouse = Matter.Mouse.create(sceneRef.current);
+
+    // CRITICAL FIX FOR SCROLL TRAPPING:
+    // Remove wheel event listeners from Matter.Mouse so mouse wheel scrolling works 100% naturally across the section!
+    if (sceneRef.current) {
+      const mouseObj = mouse as unknown as { mousewheel?: EventListener };
+      if (mouseObj.mousewheel) {
+        sceneRef.current.removeEventListener('mousewheel', mouseObj.mousewheel);
+        sceneRef.current.removeEventListener('DOMMouseScroll', mouseObj.mousewheel);
+        sceneRef.current.removeEventListener('wheel', mouseObj.mousewheel);
+      }
+    }
+
     const mouseConstraint = Matter.MouseConstraint.create(engine, {
       mouse: mouse,
       constraint: {
@@ -130,21 +138,23 @@ export const FallingClientsSection: React.FC = () => {
 
     Matter.Composite.add(engine.world, mouseConstraint);
 
-    // Run Engine
+    // Run Physics Engine
     const runner = Matter.Runner.create();
     runnerRef.current = runner;
     Matter.Runner.run(runner, engine);
 
-    // Sync body coordinates to React State on animation frame
+    // DIRECT DOM TRANSFORM UPDATES (Bypasses React State 60FPS re-render for silky smooth 0-vibration performance)
     let animId: number;
     const updateLoop = () => {
-      const newPos = bodies.map((b) => ({
-        id: b.id,
-        x: b.body.position.x,
-        y: b.body.position.y,
-        angle: b.body.angle,
-      }));
-      setPillPositions(newPos);
+      bodies.forEach((b, idx) => {
+        const domEl = pillRefs.current[idx];
+        if (domEl) {
+          const posX = b.body.position.x - b.width / 2;
+          const posY = b.body.position.y - b.height / 2;
+          const rot = b.body.angle;
+          domEl.style.transform = `translate3d(${posX}px, ${posY}px, 0px) rotate(${rot}rad)`;
+        }
+      });
       animId = requestAnimationFrame(updateLoop);
     };
 
@@ -182,8 +192,8 @@ export const FallingClientsSection: React.FC = () => {
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#ff5528]/5 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-[1700px] w-full mx-auto space-y-12 relative z-10">
-        
-        {/* Top Header Section matching RedOx reference */}
+
+        {/* Top Header Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
           <div className="lg:col-span-8 space-y-4">
             <motion.h2
@@ -228,40 +238,38 @@ export const FallingClientsSection: React.FC = () => {
         {/* 2D Interactive Physics Stage */}
         <div
           ref={sceneRef}
-          className="relative w-full h-[550px] sm:h-[620px] rounded-3xl bg-zinc-950/60 border border-white/10 overflow-hidden cursor-grab active:cursor-grabbing select-none"
+          className="relative w-full h-[550px] sm:h-[620px] rounded-3xl bg-zinc-950/60 border border-white/10 overflow-hidden select-none"
         >
-          {/* Subtle Stage Grid pattern */}
+          {/* Stage Grid pattern */}
           <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
 
-          {/* Render Falling Logo Pills synced to Matter.js Bodies */}
-          {PILL_CLIENTS.map((pill) => {
-            const pos = pillPositions.find((p) => p.id === pill.id);
-            if (!pos) return null;
+          {/* Render Logo Pills with Direct Ref DOM sync */}
+          {PILL_CLIENTS.map((pill, idx) => (
+            <div
+              key={pill.id}
+              ref={(el) => {
+                pillRefs.current[idx] = el;
+              }}
+              style={{
+                position: 'absolute',
+                left: 0,
+                top: 0,
+                width: `${pill.width}px`,
+                height: `${pill.height}px`,
+                backgroundColor: pill.bgColor,
+                color: pill.textColor,
+                willChange: 'transform',
+                transform: 'translate3d(0px, -200px, 0px)',
+              }}
+              className="rounded-full flex items-center justify-center font-bold text-sm sm:text-base tracking-wide shadow-xl border border-black/10 cursor-grab active:cursor-grabbing pointer-events-auto transition-shadow hover:brightness-110 select-none"
+            >
+              <span className="px-4 truncate font-sans font-black italic uppercase pointer-events-none">
+                {pill.name}
+              </span>
+            </div>
+          ))}
 
-            return (
-              <div
-                key={pill.id}
-                style={{
-                  position: 'absolute',
-                  left: 0,
-                  top: 0,
-                  width: `${pill.width}px`,
-                  height: `${pill.height}px`,
-                  transform: `translate3d(${pos.x - pill.width / 2}px, ${pos.y - pill.height / 2}px, 0px) rotate(${pos.angle}rad)`,
-                  backgroundColor: pill.bgColor,
-                  color: pill.textColor,
-                  willChange: 'transform',
-                }}
-                className="rounded-full flex items-center justify-center font-bold text-sm sm:text-base tracking-wide shadow-xl border border-black/10 pointer-events-auto cursor-grab active:cursor-grabbing select-none"
-              >
-                <span className="px-4 truncate font-sans font-black italic uppercase">
-                  {pill.name}
-                </span>
-              </div>
-            );
-          })}
-
-          {/* Multi-Line Parallel Floor Marker as seen in Screenshot */}
+          {/* Multi-Line Parallel Floor Marker */}
           <div className="absolute bottom-0 left-0 right-0 h-10 pointer-events-none flex flex-col justify-end space-y-1 pb-2 px-6">
             <div className="w-full h-[1px] bg-white/20" />
             <div className="w-full h-[1px] bg-white/15" />
