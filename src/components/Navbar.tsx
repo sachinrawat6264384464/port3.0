@@ -7,12 +7,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const NAV_LINKS = [
-  { name: 'Home', href: '#hero', hasDropdown: true },
-  { name: 'About Us', href: '#about', hasDropdown: false },
-  { name: 'Service', href: '#services', hasDropdown: true },
-  { name: 'Pages', href: '#pillars', hasDropdown: true },
-  { name: 'Blog', href: '#work', hasDropdown: true },
-  { name: 'Contact', href: '#contact', hasDropdown: false },
+  { name: 'Home', href: '/' },
+  { name: 'About Us', href: '/#about' },
+  { name: 'Services', href: '/services' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Why Us', href: '/why-us' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 export const Navbar: React.FC = () => {
@@ -67,33 +67,30 @@ export const Navbar: React.FC = () => {
           {NAV_LINKS.map((link) => {
             const isActive = pathname === link.href;
             return (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 className={`flex items-center gap-1 px-4 py-1.5 rounded-full text-xs uppercase tracking-wider font-semibold transition-all duration-200 ${
                   isActive
-                    ? 'text-white bg-white/10'
-                    : 'text-zinc-300 hover:text-white hover:bg-white/5'
+                    ? 'text-white bg-[#ff5528]'
+                    : 'text-zinc-300 hover:text-white hover:bg-white/10'
                 }`}
               >
                 <span>{link.name}</span>
-                {link.hasDropdown && (
-                  <ChevronDown className="w-3 h-3 text-zinc-400 opacity-75" />
-                )}
-              </a>
+              </Link>
             );
           })}
         </nav>
 
         {/* REDOX Right Action Button Pill (Let's Talk) */}
         <div className="hidden md:flex items-center gap-4">
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="px-7 py-3 rounded-full bg-white hover:bg-[#ff5528] text-black hover:text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-xl shadow-white/10 hover:shadow-[#ff5528]/30 flex items-center gap-2 group"
           >
             <span>Let&apos;s Talk</span>
             <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Hamburger Toggle */}
@@ -117,7 +114,7 @@ export const Navbar: React.FC = () => {
           >
             <div className="px-6 py-6 flex flex-col gap-4">
               {NAV_LINKS.map((link) => (
-                <a
+                <Link
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
@@ -125,15 +122,15 @@ export const Navbar: React.FC = () => {
                 >
                   <span>{link.name}</span>
                   <ArrowUpRight className="w-4 h-4 text-[#ff5528]" />
-                </a>
+                </Link>
               ))}
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full py-3.5 text-center rounded-full bg-[#ff5528] text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-[#ff5528]/30 mt-2"
               >
                 Let&apos;s Talk
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

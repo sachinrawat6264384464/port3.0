@@ -12,7 +12,6 @@ import { WhyChooseOutline } from '@/components/WhyChooseOutline';
 import { ProcessApproach } from '@/components/ProcessApproach';
 import { ExperiencePillars } from '@/components/ExperiencePillars';
 import { CustomerSuccessStories } from '@/components/CustomerSuccessStories';
-import { ProjectShowcase } from '@/components/ProjectShowcase';
 import { ReyugCaseStudy } from '@/components/ReyugCaseStudy';
 import { IndustriesServed } from '@/components/IndustriesServed';
 import { LogoGrid } from '@/components/LogoGrid';
@@ -53,7 +52,6 @@ export default function Home() {
       {/* 8. CUSTOMER SUCCESS STORIES & CASE STUDIES */}
       <CustomerSuccessStories />
       <ReyugCaseStudy />
-      <ProjectShowcase />
 
       {/* 9. INDUSTRIES SERVED & BRAND LOGO MARKS */}
       <IndustriesServed />
