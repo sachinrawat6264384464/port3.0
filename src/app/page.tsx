@@ -26,13 +26,13 @@ export default function Home() {
       {/* STATS & METRICS COUNTER */}
       <StatsMetricsCounter />
 
-      {/* CLIENT TESTIMONIALS & SUCCESS STORIES */}
-      <CustomerSuccessStories />
-
       {/* INDUSTRIES SERVED & CLIENT LOGOS */}
       <IndustriesServed />
       <LogoGrid />
       <FallingClientsSection />
+
+      {/* CLIENT TESTIMONIALS & SUCCESS STORIES (PLACED RIGHT ABOVE FOOTER) */}
+      <CustomerSuccessStories />
 
       {/* FOOTER */}
       <Footer />
