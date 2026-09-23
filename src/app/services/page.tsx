@@ -4,13 +4,40 @@ import { Footer } from '@/components/Footer';
 import { CustomCursor } from '@/components/CustomCursor';
 import { ServicesGrid } from '@/components/ServicesGrid';
 import { BRAND } from '@/data/content';
-import { Sparkles, ArrowUpRight, Layers, ShieldCheck } from 'lucide-react';
+import { Sparkles, ArrowUpRight, Layers, ShieldCheck, Compass, Target, Zap, Rocket } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata = {
   title: 'Services & Core Capabilities | The Outline',
   description: 'Explore full capabilities: Logo Design, Packaging & FMCG, Presentations, Annual Reports, Brochures, Print & Outdoor.',
 };
+
+const WORKFLOW_STEPS = [
+  {
+    step: '01',
+    title: 'Discovery & Strategy',
+    description: 'Deconstructing brand position, market research, competitor landscape, and core target audience persona.',
+    icon: Compass,
+  },
+  {
+    step: '02',
+    title: 'Concept & Identities',
+    description: 'Engineered visual explorations, bespoke typography suites, and distinctive logo mark prototypes.',
+    icon: Target,
+  },
+  {
+    step: '03',
+    title: 'Refinement & Dielines',
+    description: 'Perfecting color palettes, packaging dielines, presentation layouts, and print production specifications.',
+    icon: Zap,
+  },
+  {
+    step: '04',
+    title: 'Production & Deployment',
+    description: 'Final asset delivery, print supervision, digital export suites, and nationwide brand deployment.',
+    icon: Rocket,
+  },
+];
 
 export default function ServicesPage() {
   return (
@@ -55,11 +82,57 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Digises Interactive 3-Tier Services Grid (showHeader={false} prevents duplicate header) */}
+      {/* Brand New 3-Column Bento Cards Grid */}
       <ServicesGrid showHeader={false} />
 
-      {/* Restructured CTA Box */}
-      <section className="py-24 px-6 sm:px-10 lg:px-16 max-w-[1700px] w-full mx-auto">
+      {/* 4-Step Execution Process Section */}
+      <section className="py-24 px-6 sm:px-10 lg:px-16 max-w-[1750px] w-full mx-auto border-t border-white/10 space-y-16">
+        <div className="text-center space-y-4 max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ff5528]/10 border border-[#ff5528]/30 text-[#ff5528] text-xs font-mono uppercase tracking-widest">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>HOW WE EXECUTE SERVICES</span>
+          </div>
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight leading-tight font-sans">
+            OUR SERVICE <span className="text-[#ff5528]">METHODOLOGY</span>
+          </h2>
+          <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
+            A battle-tested 4-phase framework ensuring strategy, precision, and flawless production for every touchpoint.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {WORKFLOW_STEPS.map((step, idx) => {
+            const Icon = step.icon;
+            return (
+              <div
+                key={step.step}
+                className="p-8 rounded-3xl bg-zinc-950/80 border border-white/10 hover:border-[#ff5528]/50 transition-all duration-300 space-y-5 group relative overflow-hidden"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="p-3 rounded-2xl bg-[#ff5528]/10 border border-[#ff5528]/30 text-[#ff5528] group-hover:bg-[#ff5528] group-hover:text-black transition-colors">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <span className="text-xs font-mono font-bold text-[#ff5528]">
+                    PHASE {step.step}
+                  </span>
+                </div>
+
+                <div className="space-y-2 pt-2">
+                  <h3 className="text-xl font-bold text-white uppercase tracking-wide group-hover:text-[#ff5528] transition-colors">
+                    {step.title}
+                  </h3>
+                  <p className="text-xs text-zinc-400 leading-relaxed font-light">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Executive CTA Box */}
+      <section className="py-24 px-6 sm:px-10 lg:px-16 max-w-[1700px] w-full mx-auto border-t border-white/10">
         <div className="p-10 sm:p-16 rounded-3xl bg-gradient-to-r from-zinc-950 via-[#0d0d12] to-black border border-white/15 hover:border-[#ff5528]/50 transition-all duration-500 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden group">
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#ff5528] via-amber-500 to-transparent" />
           
