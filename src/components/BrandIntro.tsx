@@ -5,9 +5,13 @@ import { motion } from 'framer-motion';
 import { BRAND } from '@/data/content';
 import { Quote, Sparkles, ArrowUpRight, Compass, ShieldCheck, Zap } from 'lucide-react';
 
-export const BrandIntro: React.FC = () => {
+interface BrandIntroProps {
+  showHeader?: boolean;
+}
+
+export const BrandIntro: React.FC<BrandIntroProps> = ({ showHeader = true }) => {
   return (
-    <section id="about" className="py-28 sm:py-36 px-6 sm:px-10 lg:px-16 bg-[#0e0e11] text-white border-t border-b border-white/5 relative overflow-hidden">
+    <section id="about" className="py-24 sm:py-32 px-6 sm:px-10 lg:px-16 bg-[#0e0e11] text-white border-t border-b border-white/5 relative overflow-hidden">
       
       {/* Background Subtle Ambient Glow */}
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#ff5528]/5 rounded-full blur-[180px] pointer-events-none -translate-y-1/2" />
@@ -15,22 +19,24 @@ export const BrandIntro: React.FC = () => {
       <div className="max-w-[1700px] w-full mx-auto relative z-10">
         
         {/* Top Header Tag */}
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-16 pb-8 border-b border-white/10">
-          <div className="flex items-center gap-3">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#ff5528] animate-pulse" />
-            <span className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-300">
-              (02) // BRAND PHILOSOPHY & DECLARATION
-            </span>
-          </div>
+        {showHeader && (
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-16 pb-8 border-b border-white/10">
+            <div className="flex items-center gap-3">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#ff5528] animate-pulse" />
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-300">
+                (02) // BRAND PHILOSOPHY & DECLARATION
+              </span>
+            </div>
 
-          <div className="hidden sm:flex items-center gap-6 text-xs font-mono text-zinc-500 uppercase tracking-widest">
-            <span>STRATEGY</span>
-            <span>•</span>
-            <span>AESTHETICS</span>
-            <span>•</span>
-            <span>DIRECTION</span>
+            <div className="hidden sm:flex items-center gap-6 text-xs font-mono text-zinc-500 uppercase tracking-widest">
+              <span>STRATEGY</span>
+              <span>•</span>
+              <span>AESTHETICS</span>
+              <span>•</span>
+              <span>DIRECTION</span>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Main 2-Column Asymmetric Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
