@@ -5,7 +5,6 @@ import { CustomCursor } from '@/components/CustomCursor';
 import { BrandIntro } from '@/components/BrandIntro';
 import { TypographyStatements } from '@/components/TypographyStatements';
 import { TrustedFootprints } from '@/components/TrustedFootprints';
-import { ContactSection } from '@/components/ContactSection';
 import { BRAND, CONTACTS } from '@/data/content';
 import { Sparkles, ArrowUpRight, Compass, ShieldCheck, UserCheck } from 'lucide-react';
 import Link from 'next/link';
@@ -66,9 +65,6 @@ export default function AboutPage() {
 
       {/* National Client Footprint */}
       <TrustedFootprints />
-
-      {/* Executive Board & Direct Leadership Contacts */}
-      <ContactSection />
 
       <Footer />
     </main>

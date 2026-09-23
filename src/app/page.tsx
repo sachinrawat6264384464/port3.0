@@ -15,7 +15,6 @@ import { IndustriesServed } from '@/components/IndustriesServed';
 import { LogoGrid } from '@/components/LogoGrid';
 import { FallingClientsSection } from '@/components/FallingClientsSection';
 import { TrustedFootprints } from '@/components/TrustedFootprints';
-import { ContactSection } from '@/components/ContactSection';
 import { Footer } from '@/components/Footer';
 
 export default function Home() {
@@ -53,8 +52,7 @@ export default function Home() {
       <FallingClientsSection />
       <TrustedFootprints />
 
-      {/* 10. CONTACT & FOOTER SECTION */}
-      <ContactSection />
+      {/* 10. FOOTER SECTION */}
       <Footer />
     </main>
   );

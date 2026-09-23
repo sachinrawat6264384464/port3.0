@@ -4,7 +4,6 @@ import { Footer } from '@/components/Footer';
 import { CustomCursor } from '@/components/CustomCursor';
 import { ProjectShowcase } from '@/components/ProjectShowcase';
 import { ReyugCaseStudy } from '@/components/ReyugCaseStudy';
-import { ContactSection } from '@/components/ContactSection';
 import { Sparkles, Layers, Award } from 'lucide-react';
 
 export const metadata = {
@@ -60,9 +59,6 @@ export default function ProjectsPage() {
 
       {/* Reyug Featured Case Study Highlight */}
       <ReyugCaseStudy />
-
-      {/* Contact & Executive Board */}
-      <ContactSection />
 
       <Footer />
     </main>
