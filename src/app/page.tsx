@@ -5,8 +5,6 @@ import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { MarqueeTicker } from '@/components/MarqueeTicker';
 import { StatsMetricsCounter } from '@/components/StatsMetricsCounter';
-import { BrandIntro } from '@/components/BrandIntro';
-import { TypographyStatements } from '@/components/TypographyStatements';
 import { ServicesGrid } from '@/components/ServicesGrid';
 import { WhyChooseOutline } from '@/components/WhyChooseOutline';
 import { ProcessApproach } from '@/components/ProcessApproach';
@@ -34,10 +32,6 @@ export default function Home() {
 
       {/* 3. STATS & YEARS OF EXPERIENCE SECTION */}
       <StatsMetricsCounter />
-
-      {/* 4. BRAND PHILOSOPHY SECTION */}
-      <BrandIntro />
-      <TypographyStatements />
 
       {/* 5. OUR SERVICES (COMPLEX PROFICIENCY) SECTION */}
       <ServicesGrid />
