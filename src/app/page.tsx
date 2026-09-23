@@ -6,6 +6,7 @@ import { Hero } from '@/components/Hero';
 import { MarqueeTicker } from '@/components/MarqueeTicker';
 import { StatsMetricsCounter } from '@/components/StatsMetricsCounter';
 import { CustomerSuccessStories } from '@/components/CustomerSuccessStories';
+import { IndustriesServed } from '@/components/IndustriesServed';
 import { FallingClientsSection } from '@/components/FallingClientsSection';
 import { Footer } from '@/components/Footer';
 
@@ -24,7 +25,8 @@ export default function Home() {
       {/* STATS & METRICS COUNTER */}
       <StatsMetricsCounter />
 
-      {/* CLIENT LOGOS REEL */}
+      {/* INDUSTRIES SERVED & CLIENT LOGOS */}
+      <IndustriesServed />
       <FallingClientsSection />
 
       {/* CLIENT TESTIMONIALS & SUCCESS STORIES (PLACED RIGHT ABOVE FOOTER) */}

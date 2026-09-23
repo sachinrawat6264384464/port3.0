@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Target, Layers, Compass, CheckCircle2, Share2, Users, Eye, ShieldCheck } from 'lucide-react';
+import { Target, Layers, Compass, CheckCircle2, Share2, Users, Eye, ShieldCheck } from 'lucide-react';
 
 const LEFT_REASONS = [
   {
@@ -85,7 +85,6 @@ export const WhyChooseOutline: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-mono uppercase"
           >
-            <Sparkles className="w-3.5 h-3.5" />
             <span>THE OUTLINE VALUE PROPOSITION</span>
           </motion.div>
 

@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CONTACTS, BRAND } from '@/data/content';
-import { Mail, Phone, ArrowUpRight, Sparkles, UserCheck, Copy, Check, ShieldCheck, MessageSquare } from 'lucide-react';
+import { Mail, Phone, ArrowUpRight, UserCheck, Copy, Check, ShieldCheck, MessageSquare } from 'lucide-react';
 import { MagneticButton } from './MagneticButton';
 
 export const ContactSection: React.FC = () => {
@@ -36,7 +36,6 @@ export const ContactSection: React.FC = () => {
 
           <div className="space-y-5 max-w-4xl relative z-10">
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-mono uppercase tracking-widest shadow-md">
-              <Sparkles className="w-4 h-4" />
               <span>START A BRAND COLLABORATION</span>
             </div>
             <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tight leading-tight font-heading">

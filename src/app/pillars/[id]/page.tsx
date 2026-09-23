@@ -2,7 +2,7 @@ import React from 'react';
 import { PILLARS, BRAND } from '@/data/content';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, ArrowUpRight, Sparkles, ShieldCheck, Target, Layers, Users, Compass, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, ShieldCheck, Target, Layers, Users, Compass, CheckCircle2 } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { CustomCursor } from '@/components/CustomCursor';
@@ -51,7 +51,6 @@ export default async function PillarDetailPage({ params }: PillarPageProps) {
 
         <div className="space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-mono uppercase">
-            <Sparkles className="w-3.5 h-3.5" />
             <span>Pillar {pillar.number} // Strategic Foundation</span>
           </div>
 

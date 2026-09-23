@@ -3,7 +3,7 @@ import { PROJECTS } from '@/data/projects';
 import { BRAND, CONTACTS } from '@/data/content';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, ArrowUpRight, Sparkles, Mail, Phone, Layers, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Mail, Phone, Layers, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { CustomCursor } from '@/components/CustomCursor';
@@ -44,7 +44,6 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
         <div className="space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-mono uppercase">
-            <Sparkles className="w-3.5 h-3.5" />
             <span>{project.category} Case Study</span>
           </div>
 

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, CheckCircle2, Sparkles, Layers, Palette, Package, Presentation, FileText, Megaphone } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, Layers, Palette, Package, Presentation, FileText, Megaphone } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -105,7 +105,6 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ showHeader = true })
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pb-6 border-b border-white/10">
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ff5528]/10 border border-[#ff5528]/30 text-[#ff5528] text-xs font-mono uppercase tracking-widest">
-                <Sparkles className="w-3.5 h-3.5" />
                 <span>AGENCY CAPABILITIES</span>
               </div>
               <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tight leading-none font-sans">

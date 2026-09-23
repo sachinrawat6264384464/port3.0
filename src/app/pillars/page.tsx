@@ -5,7 +5,7 @@ import { CustomCursor } from '@/components/CustomCursor';
 import { ExperiencePillars } from '@/components/ExperiencePillars';
 import { ProcessApproach } from '@/components/ProcessApproach';
 import { BRAND } from '@/data/content';
-import { Sparkles, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata = {
@@ -22,7 +22,6 @@ export default function PillarsPage() {
       {/* Page Header Banner */}
       <section className="pt-36 pb-16 px-6 sm:px-10 lg:px-16 max-w-[1700px] w-full mx-auto space-y-6">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-mono uppercase">
-          <Sparkles className="w-3.5 h-3.5" />
           <span>STRATEGIC FOUNDATIONS</span>
         </div>
 

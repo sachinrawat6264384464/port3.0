@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Matter from 'matter-js';
-import { RotateCcw, Sparkles, ArrowUp } from 'lucide-react';
+import { RotateCcw, ArrowUp } from 'lucide-react';
 
 interface LogoPill {
   id: string;
@@ -228,7 +228,6 @@ export const FallingClientsSection: React.FC = () => {
               </button>
 
               <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest flex items-center gap-2">
-                <Sparkles className="w-3.5 h-3.5 text-[#ff5528]" />
                 <span>Interactive Physics</span>
               </span>
             </div>

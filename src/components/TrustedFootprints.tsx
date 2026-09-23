@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Sparkles } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 
 const FOOTPRINT_REGIONS = [
   { region: 'Madhya Pradesh', hub: 'Indore / Bhopal Hub', count: '180+ Projects' },
@@ -23,7 +23,6 @@ export const TrustedFootprints: React.FC = () => {
         {/* Section Header */}
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-mono uppercase tracking-widest shadow-md">
-            <Sparkles className="w-3.5 h-3.5" />
             <span>NATIONAL BRAND FOOTPRINT</span>
           </div>
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tight font-heading">

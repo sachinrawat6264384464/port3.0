@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
 import { PHILOSOPHY_QUOTES } from '@/data/content';
-import { Sparkles, Quote, Compass, ArrowRight } from 'lucide-react';
+import { Quote, Compass, ArrowRight } from 'lucide-react';
 
 const DeclarationCard: React.FC<{
   item: { quote: string; emphasis: string };
@@ -88,7 +88,6 @@ export const TypographyStatements: React.FC = () => {
         {/* Section Header */}
         <div className="text-center space-y-4 max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-mono uppercase tracking-widest shadow-md shadow-orange-500/20">
-            <Sparkles className="w-3.5 h-3.5" />
             <span>STUDIO DECLARATIONS</span>
           </div>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight leading-tight font-sans">

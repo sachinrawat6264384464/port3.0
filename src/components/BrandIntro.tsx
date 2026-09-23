@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BRAND } from '@/data/content';
-import { Quote, Sparkles, ArrowUpRight, Compass, ShieldCheck, Zap } from 'lucide-react';
+import { Quote, ArrowUpRight, Compass, ShieldCheck, Zap } from 'lucide-react';
 
 interface BrandIntroProps {
   showHeader?: boolean;
@@ -141,7 +141,6 @@ export const BrandIntro: React.FC<BrandIntroProps> = ({ showHeader = true }) => 
 
               <div className="relative z-10 space-y-6">
                 <div className="flex items-center gap-2 text-xs font-mono text-[#ff5528] font-bold tracking-widest uppercase">
-                  <Sparkles className="w-4 h-4" />
                   <span>CORE BRANDING PRINCIPLE</span>
                 </div>
 

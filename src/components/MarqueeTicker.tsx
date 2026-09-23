@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Star } from 'lucide-react';
+import { Star } from 'lucide-react';
 
 const MARQUEE_ITEMS = [
   'STRATEGY // DESIGN // DIRECTION',
@@ -39,8 +39,7 @@ export const MarqueeTicker: React.FC = () => {
               {item}
             </span>
             <div className="flex items-center gap-2 text-orange-500">
-              <Sparkles className="w-4 h-4 animate-spin-slow" />
-              <Star className="w-3 h-3 fill-orange-500 text-orange-500" />
+              <Star className="w-3.5 h-3.5 fill-orange-500 text-orange-500" />
             </div>
           </div>
         ))}

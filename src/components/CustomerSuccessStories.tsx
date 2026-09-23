@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Quote, Star, ArrowLeft, ArrowRight, Building2, Award, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Quote, Star, ArrowLeft, ArrowRight, Building2, Award, CheckCircle2 } from 'lucide-react';
 
 interface Testimonial {
   id: string;

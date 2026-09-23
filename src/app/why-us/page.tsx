@@ -6,7 +6,7 @@ import { WhyChooseOutline } from '@/components/WhyChooseOutline';
 import { ProcessApproach } from '@/components/ProcessApproach';
 import { ExperiencePillars } from '@/components/ExperiencePillars';
 import { BRAND } from '@/data/content';
-import { Sparkles, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata = {

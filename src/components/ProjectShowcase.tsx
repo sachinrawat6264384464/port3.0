@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { PROJECTS } from '@/data/projects';
 import { Project } from '@/types';
 import { ProjectModal } from './ProjectModal';
-import { ArrowUpRight, Filter, Eye, Layers, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Filter, Eye, Layers } from 'lucide-react';
 import Image from 'next/image';
 
 const CATEGORIES = ['All', 'Packaging', 'Presentations', 'Annual Reports', 'Logos', 'Outdoor & Print', 'Brochures'];

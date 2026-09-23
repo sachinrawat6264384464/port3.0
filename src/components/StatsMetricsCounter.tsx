@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Award, Briefcase, Users, Layers, Sparkles } from 'lucide-react';
+import { Award, Briefcase, Users, Layers } from 'lucide-react';
 
 interface MetricItem {
   id: string;

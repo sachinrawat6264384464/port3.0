@@ -3,7 +3,7 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { CustomCursor } from '@/components/CustomCursor';
 import { ContactSection } from '@/components/ContactSection';
-import { Sparkles, MessageSquare, ShieldCheck, Mail, Phone, ArrowUpRight } from 'lucide-react';
+import { MessageSquare, ShieldCheck, Mail, Phone, ArrowUpRight } from 'lucide-react';
 
 export const metadata = {
   title: 'Contact Us | Start A Project | The Outline',

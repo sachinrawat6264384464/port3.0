@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Sparkles, Eye, PackageCheck, Layers, Tv, ArrowRight } from 'lucide-react';
+import { Eye, PackageCheck, Layers, Tv, ArrowRight } from 'lucide-react';
 
 const REYUG_CATEGORIES = [
   { id: 'all', name: 'All Touchpoints' },
@@ -91,7 +91,6 @@ export const ReyugCaseStudy: React.FC = () => {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-8 border-b border-white/10">
           <div className="space-y-4 max-w-4xl">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ff5528]/10 border border-[#ff5528]/30 text-[#ff5528] text-xs font-mono uppercase tracking-widest">
-              <Sparkles className="w-3.5 h-3.5" />
               <span>FEATURED 360° BRAND CASE STUDY</span>
             </div>
             <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tight font-sans">

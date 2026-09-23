@@ -4,7 +4,7 @@ import { Footer } from '@/components/Footer';
 import { CustomCursor } from '@/components/CustomCursor';
 import { ServicesGrid } from '@/components/ServicesGrid';
 import { BRAND } from '@/data/content';
-import { Sparkles, ArrowUpRight, Layers, ShieldCheck, Compass, Target, Zap, Rocket } from 'lucide-react';
+import { ArrowUpRight, Layers, ShieldCheck, Compass, Target, Zap, Rocket } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata = {
@@ -89,7 +89,6 @@ export default function ServicesPage() {
       <section className="py-24 px-6 sm:px-10 lg:px-16 max-w-[1750px] w-full mx-auto border-t border-white/10 space-y-16">
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ff5528]/10 border border-[#ff5528]/30 text-[#ff5528] text-xs font-mono uppercase tracking-widest">
-            <Sparkles className="w-3.5 h-3.5" />
             <span>HOW WE EXECUTE SERVICES</span>
           </div>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight leading-tight font-sans">

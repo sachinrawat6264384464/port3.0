@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, ShoppingBag, Hotel, Home, Factory, Newspaper, Flame, Landmark, Shirt, Leaf } from 'lucide-react';
+import { ShoppingBag, Hotel, Home, Factory, Newspaper, Flame, Landmark, Shirt, Leaf } from 'lucide-react';
 
 const INDUSTRIES = [
   {
@@ -87,7 +87,6 @@ export const IndustriesServed: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-mono uppercase"
           >
-            <Sparkles className="w-3.5 h-3.5" />
             <span>CROSS-INDUSTRY EXPERTISE</span>
           </motion.div>
 

@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Sparkles, ArrowRight, ShieldCheck, Award, Layers } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Award, Layers } from 'lucide-react';
 
 interface LogoDisplayItem {
   id: string;
@@ -121,7 +121,6 @@ export const LogoGrid: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-mono uppercase tracking-widest shadow-md">
-              <Sparkles className="w-3.5 h-3.5" />
               <span>VISUAL ARCHITECTURE & MARKS</span>
             </div>
             <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tight font-heading">

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ArrowUp, ArrowRight, Mail, Phone, MapPin, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowUp, ArrowRight, Mail, Phone, MapPin, CheckCircle2 } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -64,7 +64,6 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-7 bg-white/[0.02] border border-white/10 rounded-3xl p-8 sm:p-10 space-y-6">
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#ff5528]/10 border border-[#ff5528]/30 text-[#ff5528] text-xs font-mono uppercase">
-                <Sparkles className="w-3.5 h-3.5" />
                 <span>EXECUTIVE DISPATCH</span>
               </div>
               <span className="text-xs font-mono text-zinc-500 uppercase">QUARTERLY INSIGHTS</span>

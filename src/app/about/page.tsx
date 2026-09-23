@@ -5,7 +5,7 @@ import { CustomCursor } from '@/components/CustomCursor';
 import { BrandIntro } from '@/components/BrandIntro';
 import { TypographyStatements } from '@/components/TypographyStatements';
 import { TrustedFootprints } from '@/components/TrustedFootprints';
-import { Sparkles, ArrowUpRight, Compass, ShieldCheck, Award, Target, Layers, Zap, CheckCircle2, ArrowRight } from 'lucide-react';
+import { ArrowUpRight, Compass, ShieldCheck, Award, Target, Layers, Zap, CheckCircle2, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata = {
@@ -37,7 +37,6 @@ export default function AboutPage() {
             </div>
 
             <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-zinc-400 uppercase tracking-widest">
-              <Sparkles className="w-3.5 h-3.5 text-[#ff5528]" />
               <span>STRATEGY-DRIVEN BRANDING STUDIO</span>
             </div>
           </div>
@@ -230,7 +229,6 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
               <div className="lg:col-span-8 space-y-6">
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ff5528]/10 border border-[#ff5528]/30 text-[#ff5528] text-xs font-mono uppercase tracking-widest">
-                  <Sparkles className="w-3.5 h-3.5" />
                   <span>DIRECT CONSULTATION</span>
                 </div>
                 <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase text-white tracking-tight leading-tight font-sans">

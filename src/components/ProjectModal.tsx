@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ArrowUpRight, Sparkles, Image as ImageIcon } from 'lucide-react';
+import { X, ArrowUpRight, Image as ImageIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Project } from '@/types';
@@ -37,7 +37,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           {/* Modal Header */}
           <div className="space-y-4 pr-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-mono uppercase">
-              <Sparkles className="w-3.5 h-3.5" />
               <span>{project.category} Showcase</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight">
