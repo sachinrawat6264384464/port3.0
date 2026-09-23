@@ -11,7 +11,11 @@ import Image from 'next/image';
 
 const CATEGORIES = ['All', 'Packaging', 'Presentations', 'Annual Reports', 'Logos', 'Outdoor & Print', 'Brochures'];
 
-export const ProjectShowcase: React.FC = () => {
+interface ProjectShowcaseProps {
+  showHeader?: boolean;
+}
+
+export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ showHeader = true }) => {
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
@@ -20,36 +24,38 @@ export const ProjectShowcase: React.FC = () => {
     : PROJECTS.filter((p) => p.category === activeCategory);
 
   return (
-    <section id="work" className="py-24 px-6 sm:px-10 lg:px-16 bg-[#050505] relative overflow-hidden">
-      <div className="max-w-[1700px] w-full mx-auto space-y-16">
+    <section id="work" className="py-16 sm:py-24 px-6 sm:px-10 lg:px-16 bg-[#050505] relative overflow-hidden">
+      <div className="max-w-[1700px] w-full mx-auto space-y-12">
         
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 border-b border-white/10 pb-8">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="space-y-4"
-          >
-            <span className="text-orange-500 font-mono text-xs uppercase tracking-widest flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-orange-500" />
-              Selected Portfolio
-            </span>
-            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tight">
-              Project <span className="text-orange-500 italic">Showcase</span>
-            </h2>
-          </motion.div>
-          <motion.p
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-zinc-400 max-w-lg text-sm sm:text-base leading-relaxed"
-          >
-            Diverse brand collaborations across packaging, presentations, annual reports, logos, billboards, and brochure design.
-          </motion.p>
-        </div>
+        {showHeader && (
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 border-b border-white/10 pb-8">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="space-y-4"
+            >
+              <span className="text-[#ff5528] font-mono text-xs uppercase tracking-widest flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#ff5528]" />
+                Selected Portfolio
+              </span>
+              <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tight font-sans">
+                Project <span className="text-[#ff5528] italic">Showcase</span>
+              </h2>
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-zinc-400 max-w-lg text-sm sm:text-base leading-relaxed"
+            >
+              Diverse brand collaborations across packaging, presentations, annual reports, logos, billboards, and brochure design.
+            </motion.p>
+          </div>
+        )}
 
         {/* Filter Categories */}
         <div className="flex flex-wrap items-center gap-3">
