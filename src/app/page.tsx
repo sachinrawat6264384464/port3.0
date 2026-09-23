@@ -7,7 +7,6 @@ import { MarqueeTicker } from '@/components/MarqueeTicker';
 import { StatsMetricsCounter } from '@/components/StatsMetricsCounter';
 import { CustomerSuccessStories } from '@/components/CustomerSuccessStories';
 import { IndustriesServed } from '@/components/IndustriesServed';
-import { LogoGrid } from '@/components/LogoGrid';
 import { FallingClientsSection } from '@/components/FallingClientsSection';
 import { Footer } from '@/components/Footer';
 
@@ -28,7 +27,6 @@ export default function Home() {
 
       {/* INDUSTRIES SERVED & CLIENT LOGOS */}
       <IndustriesServed />
-      <LogoGrid />
       <FallingClientsSection />
 
       {/* CLIENT TESTIMONIALS & SUCCESS STORIES (PLACED RIGHT ABOVE FOOTER) */}
