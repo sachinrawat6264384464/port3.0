@@ -38,30 +38,36 @@ const PROFICIENCY_ITEMS = [
   },
 ];
 
-export const ServicesGrid: React.FC = () => {
+interface ServicesGridProps {
+  showHeader?: boolean;
+}
+
+export const ServicesGrid: React.FC<ServicesGridProps> = ({ showHeader = true }) => {
   return (
-    <section id="services" className="py-28 px-6 sm:px-10 lg:px-16 bg-[#0e0e11] text-white border-t border-white/10">
-      <div className="max-w-[1750px] w-full mx-auto space-y-16">
+    <section id="services" className="py-20 sm:py-28 px-6 sm:px-10 lg:px-16 bg-[#0e0e11] text-white border-t border-white/10">
+      <div className="max-w-[1750px] w-full mx-auto space-y-12 sm:space-y-16">
         
         {/* Section Header matching REDOX Image 4 */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pb-6">
-          <div className="space-y-2">
-            <h2 className="text-5xl sm:text-7xl font-black text-white uppercase tracking-tight leading-none">
-              Complex <br />
-              proficiency
-            </h2>
-          </div>
+        {showHeader && (
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pb-6 border-b border-white/10">
+            <div className="space-y-2">
+              <h2 className="text-5xl sm:text-7xl font-black text-white uppercase tracking-tight leading-none font-sans">
+                Complex <br />
+                <span className="text-[#ff5528]">proficiency</span>
+              </h2>
+            </div>
 
-          <div>
-            <a
-              href="#work"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-black hover:bg-[#ff5528] hover:text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-xl shadow-white/10 hover:shadow-[#ff5528]/30 group"
-            >
-              <span>View Project</span>
-              <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+            <div>
+              <a
+                href="#work"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-black hover:bg-[#ff5528] hover:text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-xl shadow-white/10 hover:shadow-[#ff5528]/30 group"
+              >
+                <span>View Project</span>
+                <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Numbered Service Proficiency Items */}
         <div className="divide-y divide-white/10 border-t border-b border-white/10">

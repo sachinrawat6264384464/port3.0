@@ -9,7 +9,6 @@ import { CustomerSuccessStories } from '@/components/CustomerSuccessStories';
 import { IndustriesServed } from '@/components/IndustriesServed';
 import { LogoGrid } from '@/components/LogoGrid';
 import { FallingClientsSection } from '@/components/FallingClientsSection';
-import { TrustedFootprints } from '@/components/TrustedFootprints';
 import { Footer } from '@/components/Footer';
 
 export default function Home() {
@@ -34,7 +33,6 @@ export default function Home() {
       <IndustriesServed />
       <LogoGrid />
       <FallingClientsSection />
-      <TrustedFootprints />
 
       {/* FOOTER */}
       <Footer />
