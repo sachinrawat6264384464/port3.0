@@ -223,13 +223,13 @@ export const FallingClientsSection: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] font-sans text-white"
           >
-            <span className="text-[#ff5528]">Client:</span> Helping brands to grow and say their success stories to the world.
+            <span className="text-white">Client:</span> Helping brands to grow and say their success stories to the world.
           </motion.h2>
 
           <div className="flex items-center justify-center pt-2">
             <button
               onClick={handleReset}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-[#ff5528] hover:text-black border border-white/20 text-xs font-mono font-bold uppercase tracking-wider transition-all duration-300 shadow-sm cursor-pointer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white hover:text-black border border-white/20 text-xs font-mono font-bold uppercase tracking-wider transition-all duration-300 shadow-sm cursor-pointer"
             >
               <RotateCcw className="w-3.5 h-3.5" />
               <span>Re-Drop Badges</span>
