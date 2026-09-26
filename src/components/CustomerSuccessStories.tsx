@@ -145,12 +145,12 @@ export const CustomerSuccessStories: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center space-y-2 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#e8be90]/15 border border-[#e8be90]/40 text-[#f5d0a6] text-xs font-mono font-bold uppercase tracking-widest">
-            <Building2 className="w-3.5 h-3.5 text-[#f5d0a6]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#e8be90]/15 border border-white text-white text-xs font-mono font-bold uppercase tracking-widest">
+            <Building2 className="w-3.5 h-3.5 text-white" />
             <span>(04) // CLIENT SUCCESS TIMELINE & CASE IMPACT</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-serif font-black text-white uppercase tracking-wider drop-shadow-md">
-            VOICES OF <span className="text-[#e8be90] italic">TRUST & GROWTH</span>
+            VOICES OF <span className="text-white italic">TRUST & GROWTH</span>
           </h2>
         </div>
 
@@ -196,7 +196,7 @@ export const CustomerSuccessStories: React.FC = () => {
           
           {/* Top Title Header Tag */}
           <div className="text-center font-serif text-white text-lg sm:text-2xl font-bold uppercase tracking-widest border-b border-white/30 pb-4 mb-8">
-            {current.company} — <span className="text-[#f5d0a6] font-normal italic">{current.industry}</span>
+            {current.company} — <span className="text-white font-normal italic">{current.industry}</span>
           </div>
 
           <AnimatePresence mode="wait">
@@ -210,7 +210,7 @@ export const CustomerSuccessStories: React.FC = () => {
             >
               {/* LEFT SIDE: Quote & Metric Box */}
               <div className="lg:col-span-7 space-y-6">
-                <Quote className="w-10 h-10 text-[#f5d0a6]/80" />
+                <Quote className="w-10 h-10 text-white/80" />
 
                 <p className="text-lg sm:text-2xl font-normal text-white leading-relaxed font-sans italic tracking-wide">
                   &ldquo;{current.quote}&rdquo;
@@ -221,22 +221,22 @@ export const CustomerSuccessStories: React.FC = () => {
                     <h4 className="text-base sm:text-lg font-bold text-white uppercase tracking-wider font-serif">
                       {current.clientName}
                     </h4>
-                    <p className="text-xs font-mono text-[#f5d0a6]">
+                    <p className="text-xs font-mono text-white/80">
                       {current.designation}
                     </p>
                   </div>
 
                   {/* Rating & Metric Badge */}
                   <div className="flex items-center gap-4 bg-[#23170e] border border-white px-5 py-3 rounded-xl shadow-sm">
-                    <div className="flex items-center gap-1 text-[#f5d0a6]">
+                    <div className="flex items-center gap-1 text-white">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-[#f5d0a6]" />
+                        <Star key={i} className="w-3.5 h-3.5 fill-white text-white" />
                       ))}
                     </div>
                     <div className="h-6 w-[1px] bg-white/30" />
                     <div>
                       <div className="text-lg font-mono font-black text-white">{current.keyMetric}</div>
-                      <div className="text-[9px] font-mono text-[#f5d0a6] uppercase font-bold">{current.metricLabel}</div>
+                      <div className="text-[9px] font-mono text-white/80 uppercase font-bold">{current.metricLabel}</div>
                     </div>
                   </div>
                 </div>
@@ -246,10 +246,10 @@ export const CustomerSuccessStories: React.FC = () => {
               <div className="lg:col-span-5 bg-[#1c130d] border-2 border-white rounded-xl p-5 sm:p-6 space-y-4 shadow-md">
                 <div className="flex items-center justify-between pb-3 border-b border-white/30">
                   <div className="flex items-center gap-2 text-xs font-mono text-white uppercase font-bold tracking-wider">
-                    <Award className="w-4 h-4 text-[#f5d0a6]" />
+                    <Award className="w-4 h-4 text-white" />
                     <span>KEY DELIVERABLES & MILESTONES</span>
                   </div>
-                  <span className="text-[10px] font-mono text-[#f5d0a6] font-bold uppercase">STATUS</span>
+                  <span className="text-[10px] font-mono text-white font-bold uppercase">STATUS</span>
                 </div>
 
                 <div className="space-y-3">
@@ -259,10 +259,10 @@ export const CustomerSuccessStories: React.FC = () => {
                       className="flex items-center justify-between py-2.5 px-3 rounded-lg bg-[#0e0906] border border-white/40 hover:border-white transition-all text-xs font-mono"
                     >
                       <div className="flex items-center gap-2.5 text-white">
-                        <CheckCircle2 className="w-4 h-4 text-[#f5d0a6] shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-white shrink-0" />
                         <span className="font-sans font-semibold text-white">{m.label}</span>
                       </div>
-                      <span className="text-[11px] font-mono text-[#f5d0a6] font-bold px-2 py-0.5 rounded bg-[#f5d0a6]/15 border border-white/40 shrink-0 ml-2">
+                      <span className="text-[11px] font-mono text-white font-bold px-2 py-0.5 rounded bg-white/15 border border-white/40 shrink-0 ml-2">
                         {m.tag}
                       </span>
                     </div>

@@ -22,7 +22,7 @@ const INDUSTRIES: IndustryItem[] = [
     categoryLabel: 'FMCG & RETAIL',
     name: 'Retail & FMCG',
     description: 'Product pouches, snack packaging, and in-store point of sale displays.',
-    icon: <ShoppingBag className="w-6 h-6 text-[#f5d0a6]" />,
+    icon: <ShoppingBag className="w-6 h-6 text-white" />,
     clientHighlight: 'LUWWA Energy Bar & Savera',
     deliverables: ['Custom Stand-up Pouches', 'Point of Sale Retail Units', 'Brand Box Architecture'],
   },
@@ -32,7 +32,7 @@ const INDUSTRIES: IndustryItem[] = [
     categoryLabel: 'SPATIAL & RESORTS',
     name: 'Hospitality & Resorts',
     description: 'Bespoke architectural logo marks, environmental signage, and luxury venue branding.',
-    icon: <Hotel className="w-6 h-6 text-[#f5d0a6]" />,
+    icon: <Hotel className="w-6 h-6 text-white" />,
     clientHighlight: 'The Raas Valley Resort & Royal Park',
     deliverables: ['Resort Spatial Signage', 'Guest Amenities Suite', 'Luxury Identity Guidelines'],
   },
@@ -42,7 +42,7 @@ const INDUSTRIES: IndustryItem[] = [
     categoryLabel: 'SPATIAL & RESORTS',
     name: 'Real Estate & Interiors',
     description: 'Township visual identities, interior hub marks, and architectural brochures.',
-    icon: <Home className="w-6 h-6 text-[#f5d0a6]" />,
+    icon: <Home className="w-6 h-6 text-white" />,
     clientHighlight: 'Saveria Hub of Interiors & Valencia',
     deliverables: ['Township Master Brand', 'Sales Kit Architecture', '3D Spatial Signage Marks'],
   },
@@ -52,7 +52,7 @@ const INDUSTRIES: IndustryItem[] = [
     categoryLabel: 'CORPORATE & INDUSTRIAL',
     name: 'Industrial & Manufacturing',
     description: '40 Years of Legacy annual reports, sustainability spreads, and fibre marks.',
-    icon: <Factory className="w-6 h-6 text-[#f5d0a6]" />,
+    icon: <Factory className="w-6 h-6 text-white" />,
     clientHighlight: 'Terex Equipment & Ariddha Fibre',
     deliverables: ['40 Years Legacy Report', 'Exhibition Expo Pavilion', 'Fleet Livery System'],
   },
@@ -62,7 +62,7 @@ const INDUSTRIES: IndustryItem[] = [
     categoryLabel: 'CORPORATE & INDUSTRIAL',
     name: 'Media & Print Publications',
     description: 'Full-page newspaper ad campaigns, editorial layouts, and marketing press.',
-    icon: <Newspaper className="w-6 h-6 text-[#f5d0a6]" />,
+    icon: <Newspaper className="w-6 h-6 text-white" />,
     clientHighlight: 'Dainik Bhaskar & Marketing Express',
     deliverables: ['National Press Ads', 'Editorial Publications', 'Brand Campaign Spread'],
   },
@@ -72,7 +72,7 @@ const INDUSTRIES: IndustryItem[] = [
     categoryLabel: 'FMCG & RETAIL',
     name: 'Incense & Consumer Goods',
     description: '360-degree brand packaging suites, agarbatti boxes, and billboard campaigns.',
-    icon: <Flame className="w-6 h-6 text-[#f5d0a6]" />,
+    icon: <Flame className="w-6 h-6 text-white" />,
     clientHighlight: 'Reyug Incense & Pooja Series',
     deliverables: ['Metallic Foil Packaging', 'Pan-India Distribution Deck', 'Retail Counter Displays'],
   },
@@ -82,7 +82,7 @@ const INDUSTRIES: IndustryItem[] = [
     categoryLabel: 'CORPORATE & INDUSTRIAL',
     name: 'Corporate & Finance',
     description: 'Investor pitch decks, corporate keynotes, and institutional presentations.',
-    icon: <Landmark className="w-6 h-6 text-[#f5d0a6]" />,
+    icon: <Landmark className="w-6 h-6 text-white" />,
     clientHighlight: 'D.P. Abushan Limited & Malpani Group',
     deliverables: ['B2B Pitch Architecture', 'Corporate Guidelines', 'Annual Board Reports'],
   },
@@ -92,7 +92,7 @@ const INDUSTRIES: IndustryItem[] = [
     categoryLabel: 'FMCG & RETAIL',
     name: 'Luxury & Fashion Boutiques',
     description: 'Bespoke fashion typography, lifestyle identity marks, and boutique collateral.',
-    icon: <Shirt className="w-6 h-6 text-[#f5d0a6]" />,
+    icon: <Shirt className="w-6 h-6 text-white" />,
     clientHighlight: 'AVA Boutiquified & Anvith Luxury',
     deliverables: ['Custom Monogram Identity', 'Luxury Apparel Tags', 'Boutique Collateral Suite'],
   },
@@ -102,7 +102,7 @@ const INDUSTRIES: IndustryItem[] = [
     categoryLabel: 'CORPORATE & INDUSTRIAL',
     name: 'Sustainability & Future Tech',
     description: 'Entrepreneurship summits, green transformation publications, and eco initiatives.',
-    icon: <Leaf className="w-6 h-6 text-[#f5d0a6]" />,
+    icon: <Leaf className="w-6 h-6 text-white" />,
     clientHighlight: 'EKI Energy & Sustainable Future MP',
     deliverables: ['Carbon Summit Branding', 'ESG Sustainability Decks', 'Green Tech Identity'],
   },
@@ -121,13 +121,13 @@ export const IndustriesServed: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center space-y-3 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#e8be90]/15 border border-[#e8be90]/40 text-[#f5d0a6] text-xs font-mono font-bold uppercase tracking-widest">
-            <Layers className="w-3.5 h-3.5 text-[#f5d0a6]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#e8be90]/15 border border-[#e8be90]/40 text-white text-xs font-mono font-bold uppercase tracking-widest">
+            <Layers className="w-3.5 h-3.5 text-white" />
             <span>CROSS-INDUSTRY BRAND ARCHITECTURE</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-black text-white uppercase tracking-wider drop-shadow-md">
-            INDUSTRIES WE <span className="text-[#e8be90] italic">SERVE</span>
+            INDUSTRIES WE <span className="text-white italic">SERVE</span>
           </h2>
 
           <p className="text-xs sm:text-sm text-zinc-300 max-w-xl mx-auto font-sans leading-relaxed">
@@ -158,7 +158,7 @@ export const IndustriesServed: React.FC = () => {
               >
                 {/* Header Tag */}
                 <div className="flex items-center justify-between">
-                  <div className="p-3.5 rounded-xl bg-[#e8be90]/15 border border-white text-[#f5d0a6]">
+                  <div className="p-3.5 rounded-xl bg-[#e8be90]/15 border border-white text-white">
                     {selectedSector.icon}
                   </div>
                   <span className="text-[10px] font-mono text-white uppercase font-bold tracking-widest px-3 py-1 rounded-full bg-white/10 border border-white">
@@ -177,13 +177,13 @@ export const IndustriesServed: React.FC = () => {
 
                 {/* Key Deliverables Scope */}
                 <div className="pt-4 border-t border-white/30 space-y-3">
-                  <span className="text-[11px] font-mono text-[#f5d0a6] uppercase font-bold tracking-wider block">
+                  <span className="text-[11px] font-mono text-white uppercase font-bold tracking-wider block">
                     DELIVERABLE SCOPE & ASSETS:
                   </span>
                   <div className="space-y-2">
                     {selectedSector.deliverables.map((d, i) => (
                       <div key={i} className="flex items-center gap-2 text-xs font-sans text-white">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#f5d0a6]" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-white" />
                         <span>{d}</span>
                       </div>
                     ))}
@@ -209,15 +209,15 @@ export const IndustriesServed: React.FC = () => {
           >
             {/* Deck Header Status & Toggle */}
             <div className="flex items-center justify-between px-1">
-              <span className="text-[11px] font-mono text-[#f5d0a6] uppercase font-bold tracking-widest flex items-center gap-2">
-                <Layers className="w-3.5 h-3.5 text-[#f5d0a6]" />
+              <span className="text-[11px] font-mono text-white uppercase font-bold tracking-widest flex items-center gap-2">
+                <Layers className="w-3.5 h-3.5 text-white" />
                 <span>SECTOR DECK (9 CATEGORIES)</span>
               </span>
               <button
                 onClick={() => setIsDealt(!isDealt)}
                 className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 hover:bg-[#e8be90] hover:text-black border border-white/30 text-[10px] font-mono font-bold text-white uppercase transition-all duration-300 cursor-pointer shadow-sm"
               >
-                <Shuffle className="w-3 h-3 text-[#f5d0a6] group-hover:text-black" />
+                <Shuffle className="w-3 h-3 text-white group-hover:text-black" />
                 <span>{isDealt ? 'CARD DECK DEALT' : 'HOVER OR CLICK TO SHUFFLE DECK'}</span>
               </button>
             </div>
@@ -263,7 +263,7 @@ export const IndustriesServed: React.FC = () => {
                   >
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
-                        <div className="p-2.5 rounded-lg bg-white/10 border border-white/40 text-[#f5d0a6] group-hover:border-white transition-colors">
+                        <div className="p-2.5 rounded-lg bg-white/10 border border-white/40 text-white group-hover:border-white transition-colors">
                           {item.icon}
                         </div>
                         <span className="text-[9px] font-mono text-white/70 uppercase">
@@ -283,7 +283,7 @@ export const IndustriesServed: React.FC = () => {
 
                     <div className="pt-3 mt-3 border-t border-white/20 flex items-center justify-between text-[10px] font-mono text-zinc-300 group-hover:text-white transition-colors">
                       <span className="truncate">{item.clientHighlight.split('&')[0]}</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-[#f5d0a6] shrink-0 group-hover:translate-x-0.5 transition-transform" />
+                      <ArrowRight className="w-3.5 h-3.5 text-white shrink-0 group-hover:translate-x-0.5 transition-transform" />
                     </div>
                   </motion.div>
                 );

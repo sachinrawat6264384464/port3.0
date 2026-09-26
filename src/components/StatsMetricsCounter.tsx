@@ -113,7 +113,7 @@ const CardNotchedFrame: React.FC<{
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-between h-full py-4 px-2">
         {/* Top Centered Icon */}
-        <div className="mt-2 text-white group-hover:scale-110 group-hover:text-[#e8be90] transition-all duration-300">
+        <div className="mt-2 text-white group-hover:scale-110 transition-all duration-300">
           <IconComponent className="w-10 h-10 stroke-[1.5]" />
         </div>
 
@@ -125,7 +125,7 @@ const CardNotchedFrame: React.FC<{
               suffix={stat.suffix}
               parentInView={isInView}
             />{' '}
-            <span className="text-[#e8be90] group-hover:text-white transition-colors">{stat.label}</span>
+            <span className="text-white transition-colors">{stat.label}</span>
           </h3>
 
           <p className="text-xs sm:text-[13px] text-zinc-300 font-light leading-relaxed max-w-[250px] mx-auto group-hover:text-white transition-colors">
