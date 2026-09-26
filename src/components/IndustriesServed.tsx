@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingBag, Hotel, Home, Factory, Newspaper, Flame, Landmark, Shirt, Leaf, ArrowRight, Layers } from 'lucide-react';
+import { ShoppingBag, Hotel, Home, Factory, Newspaper, Flame, Landmark, Shirt, Leaf, ArrowRight, Layers, Shuffle } from 'lucide-react';
 
 interface IndustryItem {
   id: string;
@@ -110,6 +110,7 @@ const INDUSTRIES: IndustryItem[] = [
 
 export const IndustriesServed: React.FC = () => {
   const [selectedSector, setSelectedSector] = useState<IndustryItem>(INDUSTRIES[0]);
+  const [isDealt, setIsDealt] = useState(false);
 
   return (
     <section id="industries" className="pt-10 pb-16 px-4 sm:px-8 lg:px-12 bg-[#090604] border-t border-b border-white/10 relative overflow-hidden select-none">
@@ -200,20 +201,60 @@ export const IndustriesServed: React.FC = () => {
             </AnimatePresence>
           </div>
 
-          {/* BENTO CARDS SHOWCASE GRID (Right 7 Cols) */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <AnimatePresence mode="popLayout">
+          {/* BENTO CARDS SHOWCASE GRID (Right 7 Cols) WITH CARD DECK SHUFFLE & DEAL EFFECT */}
+          <div
+            className="lg:col-span-7 flex flex-col space-y-3"
+            onMouseEnter={() => setIsDealt(true)}
+            onMouseLeave={() => setIsDealt(false)}
+          >
+            {/* Deck Header Status & Toggle */}
+            <div className="flex items-center justify-between px-1">
+              <span className="text-[11px] font-mono text-[#f5d0a6] uppercase font-bold tracking-widest flex items-center gap-2">
+                <Layers className="w-3.5 h-3.5 text-[#f5d0a6]" />
+                <span>SECTOR DECK (9 CATEGORIES)</span>
+              </span>
+              <button
+                onClick={() => setIsDealt(!isDealt)}
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 hover:bg-[#e8be90] hover:text-black border border-white/30 text-[10px] font-mono font-bold text-white uppercase transition-all duration-300 cursor-pointer shadow-sm"
+              >
+                <Shuffle className="w-3 h-3 text-[#f5d0a6] group-hover:text-black" />
+                <span>{isDealt ? 'CARD DECK DEALT' : 'HOVER OR CLICK TO SHUFFLE DECK'}</span>
+              </button>
+            </div>
+
+            {/* 3x3 Bento Grid Container */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 relative min-h-[550px]">
               {INDUSTRIES.map((item, idx) => {
                 const isSelected = selectedSector.id === item.id;
+                const row = Math.floor(idx / 3);
+                const col = idx % 3;
+
+                // Stack offsets towards center card (Row 1, Col 1)
+                const offX = (1 - col) * 105;
+                const offY = (1 - row) * 105;
+                const stackRot = (idx - 4) * 3.5;
+
                 return (
                   <motion.div
                     key={item.id}
                     layout
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.3, delay: idx * 0.04 }}
-                    onClick={() => setSelectedSector(item)}
+                    initial={false}
+                    animate={{
+                      x: isDealt ? '0%' : `${offX}%`,
+                      y: isDealt ? '0%' : `${offY}%`,
+                      rotate: isDealt ? 0 : stackRot,
+                      scale: isDealt ? (isSelected ? 1.03 : 1) : 0.94 + idx * 0.01,
+                      zIndex: isDealt ? (isSelected ? 30 : 10) : idx + 1,
+                    }}
+                    transition={{
+                      duration: 0.65,
+                      delay: isDealt ? idx * 0.045 : (8 - idx) * 0.03,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                    onClick={() => {
+                      setIsDealt(true);
+                      setSelectedSector(item);
+                    }}
                     className={`group cursor-pointer p-5 rounded-xl border flex flex-col justify-between text-left transition-all duration-300 min-h-[170px] ${
                       isSelected
                         ? 'bg-gradient-to-b from-[#3a281b] via-[#2a1c12] to-[#1c120b] border-2 border-white scale-[1.03] z-20 shadow-xl shadow-white/10'
@@ -247,7 +288,7 @@ export const IndustriesServed: React.FC = () => {
                   </motion.div>
                 );
               })}
-            </AnimatePresence>
+            </div>
           </div>
 
         </div>
