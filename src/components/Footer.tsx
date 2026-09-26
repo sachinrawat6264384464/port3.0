@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
     <footer className="bg-[#08080b] text-zinc-300 pt-24 pb-12 px-6 sm:px-10 lg:px-16 border-t border-white/10 relative overflow-hidden">
       
       {/* Subtle Background Glow */}
-      <div className="absolute top-0 right-1/4 w-[600px] h-[300px] bg-[#ff5528]/10 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-[600px] h-[300px] bg-white/10 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-[1750px] w-full mx-auto space-y-16 relative z-10">
         
@@ -35,7 +35,7 @@ export const Footer: React.FC = () => {
           {/* Left Column: Brand Logo & Tagline */}
           <div className="lg:col-span-5 space-y-6">
             <Link href="/" className="flex items-center gap-4 group">
-              <div className="w-14 h-14 rounded-2xl bg-[#ff5528] flex items-center justify-center font-black text-black text-2xl shadow-xl shadow-[#ff5528]/20 group-hover:scale-105 transition-transform">
+              <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center font-black text-black text-2xl shadow-xl shadow-white/10 group-hover:scale-105 transition-transform">
                 O
               </div>
               <div className="flex flex-col">
@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
 
             <div className="flex items-center gap-4 pt-2 text-xs font-mono text-zinc-400">
               <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#ff5528] animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
                 <span>Available for New Projects</span>
               </span>
             </div>
@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
           {/* Right Column: Newsletter Subscription Box */}
           <div className="lg:col-span-7 bg-white/[0.02] border border-white/10 rounded-3xl p-8 sm:p-10 space-y-6">
             <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#ff5528]/10 border border-[#ff5528]/30 text-[#ff5528] text-xs font-mono uppercase">
+              <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/30 text-white text-xs font-mono uppercase">
                 <span>EXECUTIVE DISPATCH</span>
               </div>
               <span className="text-xs font-mono text-zinc-500 uppercase">QUARTERLY INSIGHTS</span>
@@ -88,12 +88,12 @@ export const Footer: React.FC = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your corporate email address..."
-                    className="w-full pl-11 pr-4 py-3.5 rounded-2xl bg-black/60 border border-white/10 text-white placeholder:text-zinc-600 text-sm focus:outline-none focus:border-[#ff5528] transition-colors font-sans"
+                    className="w-full pl-11 pr-4 py-3.5 rounded-2xl bg-black/60 border border-white/10 text-white placeholder:text-zinc-600 text-sm focus:outline-none focus:border-white transition-colors font-sans"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-[#ff5528] text-black font-extrabold text-xs uppercase tracking-wider hover:bg-white transition-all duration-300 shrink-0 flex items-center justify-center gap-2 shadow-lg shadow-[#ff5528]/20"
+                  className="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-white text-black font-extrabold text-xs uppercase tracking-wider hover:bg-zinc-200 transition-all duration-300 shrink-0 flex items-center justify-center gap-2 shadow-lg shadow-white/10 cursor-pointer"
                 >
                   <span>Subscribe</span>
                   <ArrowRight className="w-4 h-4" />
@@ -101,14 +101,14 @@ export const Footer: React.FC = () => {
               </div>
 
               {subscribed ? (
-                <div className="flex items-center gap-2 text-xs font-mono text-[#ff5528] pt-1">
-                  <CheckCircle2 className="w-4 h-4" />
+                <div className="flex items-center gap-2 text-xs font-mono text-white pt-1">
+                  <CheckCircle2 className="w-4 h-4 text-white" />
                   <span>Thank you! You are now subscribed to executive updates.</span>
                 </div>
               ) : (
                 <p className="text-[11px] font-mono text-zinc-500">
                   By subscribing, you agree to our{' '}
-                  <a href="#privacy" className="text-zinc-400 underline hover:text-[#ff5528]">
+                  <a href="#privacy" className="text-zinc-400 underline hover:text-white">
                     Privacy Policy & Terms
                   </a>
                 </p>
@@ -123,7 +123,7 @@ export const Footer: React.FC = () => {
           
           {/* Navigation Column */}
           <div className="space-y-4">
-            <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-[#ff5528]">
+            <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-white">
               NAVIGATION
             </h4>
             <ul className="space-y-2.5 text-zinc-400 text-xs sm:text-sm font-medium">
@@ -138,7 +138,7 @@ export const Footer: React.FC = () => {
 
           {/* Expertise Column */}
           <div className="space-y-4">
-            <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-[#ff5528]">
+            <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-white">
               DISCIPLINE & CRAFT
             </h4>
             <ul className="space-y-2.5 text-zinc-400 text-xs sm:text-sm font-medium">
@@ -153,12 +153,12 @@ export const Footer: React.FC = () => {
 
           {/* Regional Hubs Column */}
           <div className="space-y-4">
-            <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-[#ff5528]">
+            <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-white">
               REGIONAL HUBS
             </h4>
             <ul className="space-y-2.5 text-zinc-400 text-xs sm:text-sm font-medium">
               <li className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#ff5528] shrink-0" />
+                <MapPin className="w-3.5 h-3.5 text-white shrink-0" />
                 <span>Delhi NCR (HQ)</span>
               </li>
               <li className="flex items-center gap-2">
@@ -182,19 +182,19 @@ export const Footer: React.FC = () => {
 
           {/* Direct Contact & Social */}
           <div className="space-y-4">
-            <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-[#ff5528]">
+            <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-white">
               DIRECT CONTACT
             </h4>
             <ul className="space-y-3 text-xs sm:text-sm text-zinc-400">
               <li>
                 <span className="text-[11px] font-mono text-zinc-500 uppercase block">EMAIL</span>
-                <a href="mailto:ravin@theoutline.in" className="text-white hover:text-[#ff5528] transition-colors font-medium">
+                <a href="mailto:ravin@theoutline.in" className="text-white hover:text-zinc-300 transition-colors font-medium">
                   ravin@theoutline.in
                 </a>
               </li>
               <li>
                 <span className="text-[11px] font-mono text-zinc-500 uppercase block">DIRECT PHONE</span>
-                <a href="tel:+919876543210" className="text-white hover:text-[#ff5528] transition-colors font-medium">
+                <a href="tel:+919876543210" className="text-white hover:text-zinc-300 transition-colors font-medium">
                   +91 98765 43210
                 </a>
               </li>
@@ -225,7 +225,7 @@ export const Footer: React.FC = () => {
             <Link href="/contact" className="hover:text-white transition-colors">Terms of Engagement</Link>
             <button
               onClick={scrollToTop}
-              className="w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white hover:bg-[#ff5528] hover:text-black hover:border-[#ff5528] transition-all duration-300 flex items-center justify-center shrink-0 shadow-lg group"
+              className="w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white hover:text-black hover:border-white transition-all duration-300 flex items-center justify-center shrink-0 shadow-lg group cursor-pointer"
               aria-label="Scroll to top"
             >
               <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
