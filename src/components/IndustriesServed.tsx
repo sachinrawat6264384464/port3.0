@@ -139,7 +139,7 @@ export const IndustriesServed: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           
           {/* FEATURED SECTOR SPOTLIGHT PANEL (Left 5 Cols) */}
-          <div className="lg:col-span-5 bg-gradient-to-b from-[#2e1f14] via-[#1f140c] to-[#120b06] border-2 border-white rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl relative overflow-hidden flex flex-col justify-between min-h-[420px]">
+          <div className="lg:col-span-5 lg:mt-[38px] bg-gradient-to-b from-[#2e1f14] via-[#1f140c] to-[#120b06] border-2 border-white rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl relative overflow-hidden flex flex-col justify-between min-h-[420px]">
             
             {/* Technical Corner Framing Indicators */}
             <div className="absolute top-4 left-4 text-white/50 font-mono text-xs pointer-events-none select-none">┌</div>
