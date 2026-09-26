@@ -203,7 +203,7 @@ export const IndustriesServed: React.FC = () => {
 
           {/* BENTO CARDS SHOWCASE GRID (Right 7 Cols) WITH CARD DECK SHUFFLE & DEAL EFFECT */}
           <div
-            className="lg:col-span-7 flex flex-col space-y-3"
+            className="lg:col-span-7 flex flex-col space-y-4 pt-4 sm:pt-8 lg:pt-10"
             onMouseEnter={() => setIsDealt(true)}
             onMouseLeave={() => setIsDealt(false)}
           >
