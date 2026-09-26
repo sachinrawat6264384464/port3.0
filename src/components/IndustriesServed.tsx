@@ -138,13 +138,13 @@ export const IndustriesServed: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           
           {/* FEATURED SECTOR SPOTLIGHT PANEL (Left 5 Cols) */}
-          <div className="lg:col-span-5 bg-gradient-to-b from-[#2e1f14] via-[#1f140c] to-[#120b06] border border-white/30 rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl relative overflow-hidden flex flex-col justify-between min-h-[420px]">
+          <div className="lg:col-span-5 bg-gradient-to-b from-[#2e1f14] via-[#1f140c] to-[#120b06] border-2 border-white rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl relative overflow-hidden flex flex-col justify-between min-h-[420px]">
             
             {/* Technical Corner Framing Indicators */}
-            <div className="absolute top-4 left-4 text-white/30 font-mono text-xs pointer-events-none select-none">┌</div>
-            <div className="absolute top-4 right-4 text-white/30 font-mono text-xs pointer-events-none select-none">┐</div>
-            <div className="absolute bottom-4 left-4 text-white/30 font-mono text-xs pointer-events-none select-none">└</div>
-            <div className="absolute bottom-4 right-4 text-white/30 font-mono text-xs pointer-events-none select-none">┘</div>
+            <div className="absolute top-4 left-4 text-white/50 font-mono text-xs pointer-events-none select-none">┌</div>
+            <div className="absolute top-4 right-4 text-white/50 font-mono text-xs pointer-events-none select-none">┐</div>
+            <div className="absolute bottom-4 left-4 text-white/50 font-mono text-xs pointer-events-none select-none">└</div>
+            <div className="absolute bottom-4 right-4 text-white/50 font-mono text-xs pointer-events-none select-none">┘</div>
 
             <AnimatePresence mode="wait">
               <motion.div
@@ -157,10 +157,10 @@ export const IndustriesServed: React.FC = () => {
               >
                 {/* Header Tag */}
                 <div className="flex items-center justify-between">
-                  <div className="p-3.5 rounded-xl bg-[#e8be90]/15 border border-[#e8be90]/30 text-[#f5d0a6]">
+                  <div className="p-3.5 rounded-xl bg-[#e8be90]/15 border border-white text-[#f5d0a6]">
                     {selectedSector.icon}
                   </div>
-                  <span className="text-[10px] font-mono text-[#f5d0a6] uppercase font-bold tracking-widest px-3 py-1 rounded-full bg-white/5 border border-white/10">
+                  <span className="text-[10px] font-mono text-white uppercase font-bold tracking-widest px-3 py-1 rounded-full bg-white/10 border border-white">
                     {selectedSector.categoryLabel}
                   </span>
                 </div>
@@ -175,7 +175,7 @@ export const IndustriesServed: React.FC = () => {
                 </div>
 
                 {/* Key Deliverables Scope */}
-                <div className="pt-4 border-t border-white/15 space-y-3">
+                <div className="pt-4 border-t border-white/30 space-y-3">
                   <span className="text-[11px] font-mono text-[#f5d0a6] uppercase font-bold tracking-wider block">
                     DELIVERABLE SCOPE & ASSETS:
                   </span>
@@ -190,9 +190,9 @@ export const IndustriesServed: React.FC = () => {
                 </div>
 
                 {/* Key Client Highlight Box */}
-                <div className="pt-4 border-t border-white/15 flex items-center justify-between">
+                <div className="pt-4 border-t border-white/30 flex items-center justify-between">
                   <span className="text-[11px] font-mono text-zinc-400 uppercase">PROMINENT CASE STUDY:</span>
-                  <span className="text-xs font-mono font-bold text-white bg-[#e8be90]/20 border border-[#e8be90]/40 px-3 py-1 rounded-lg">
+                  <span className="text-xs font-mono font-bold text-white bg-[#e8be90]/20 border border-white px-3 py-1 rounded-lg">
                     {selectedSector.clientHighlight}
                   </span>
                 </div>
@@ -216,16 +216,16 @@ export const IndustriesServed: React.FC = () => {
                     onClick={() => setSelectedSector(item)}
                     className={`group cursor-pointer p-5 rounded-xl border flex flex-col justify-between text-left transition-all duration-300 min-h-[170px] ${
                       isSelected
-                        ? 'bg-gradient-to-b from-[#3a281b] via-[#2a1c12] to-[#1c120b] border-white scale-[1.03] z-20 shadow-xl'
-                        : 'bg-[#18110b]/90 border-white/20 hover:border-white/60 hover:bg-[#22170f] opacity-85 hover:opacity-100'
+                        ? 'bg-gradient-to-b from-[#3a281b] via-[#2a1c12] to-[#1c120b] border-2 border-white scale-[1.03] z-20 shadow-xl shadow-white/10'
+                        : 'bg-[#18110b]/90 border border-white/80 hover:border-white hover:bg-[#22170f] opacity-95 hover:opacity-100 shadow-sm'
                     }`}
                   >
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
-                        <div className="p-2.5 rounded-lg bg-white/5 border border-white/10 text-[#f5d0a6]">
+                        <div className="p-2.5 rounded-lg bg-white/10 border border-white/40 text-[#f5d0a6] group-hover:border-white transition-colors">
                           {item.icon}
                         </div>
-                        <span className="text-[9px] font-mono text-zinc-400 uppercase">
+                        <span className="text-[9px] font-mono text-white/70 uppercase">
                           0{idx + 1}
                         </span>
                       </div>
@@ -240,9 +240,9 @@ export const IndustriesServed: React.FC = () => {
                       </div>
                     </div>
 
-                    <div className="pt-3 mt-3 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-zinc-400 group-hover:text-white transition-colors">
+                    <div className="pt-3 mt-3 border-t border-white/20 flex items-center justify-between text-[10px] font-mono text-zinc-300 group-hover:text-white transition-colors">
                       <span className="truncate">{item.clientHighlight.split('&')[0]}</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-[#f5d0a6] shrink-0" />
+                      <ArrowRight className="w-3.5 h-3.5 text-[#f5d0a6] shrink-0 group-hover:translate-x-0.5 transition-transform" />
                     </div>
                   </motion.div>
                 );
