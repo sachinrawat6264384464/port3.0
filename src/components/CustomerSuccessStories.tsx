@@ -164,8 +164,8 @@ export const CustomerSuccessStories: React.FC = () => {
                 onClick={() => setCurrentIndex(idx)}
                 className={`relative cursor-pointer transition-all duration-300 p-4 sm:p-5 rounded-xl border flex flex-col justify-between text-center min-h-[140px] sm:min-h-[160px] ${
                   isActive
-                    ? 'bg-gradient-to-b from-[#3a281b] via-[#2a1c12] to-[#1c120b] border-white scale-[1.03] z-20 shadow-xl'
-                    : 'bg-[#18110b]/90 border-white/20 hover:border-white/60 hover:bg-[#22170f] opacity-80 hover:opacity-100'
+                    ? 'bg-gradient-to-b from-[#3a281b] via-[#2a1c12] to-[#1c120b] border-2 border-white scale-[1.03] z-20 shadow-xl shadow-white/10'
+                    : 'bg-[#18110b]/90 border border-white/80 hover:border-white hover:bg-[#22170f] opacity-95 hover:opacity-100 shadow-sm'
                 }`}
               >
                 {/* Notched Bottom Arrow Tip (Active only) */}
@@ -183,7 +183,7 @@ export const CustomerSuccessStories: React.FC = () => {
                   </h3>
                 </div>
 
-                <div className="pt-2 border-t border-white/10 text-[10px] font-mono text-zinc-300 truncate uppercase">
+                <div className="pt-2 border-t border-white/20 text-[10px] font-mono text-zinc-300 truncate uppercase">
                   {story.industry.split('&')[0]}
                 </div>
               </div>
@@ -191,11 +191,11 @@ export const CustomerSuccessStories: React.FC = () => {
           })}
         </div>
 
-        {/* 2. EXPANDED DETAIL CONTAINER BOX (Biscuit background + White border) */}
-        <div className="max-w-[1600px] mx-auto bg-[#130d08] border border-white/30 rounded-2xl p-6 sm:p-10 relative overflow-hidden shadow-2xl">
+        {/* 2. EXPANDED DETAIL CONTAINER BOX (Biscuit background + Crisp White border) */}
+        <div className="max-w-[1600px] mx-auto bg-[#130d08] border-2 border-white rounded-2xl p-6 sm:p-10 relative overflow-hidden shadow-2xl">
           
           {/* Top Title Header Tag */}
-          <div className="text-center font-serif text-white text-lg sm:text-2xl font-bold uppercase tracking-widest border-b border-white/15 pb-4 mb-8">
+          <div className="text-center font-serif text-white text-lg sm:text-2xl font-bold uppercase tracking-widest border-b border-white/30 pb-4 mb-8">
             {current.company} — <span className="text-[#f5d0a6] font-normal italic">{current.industry}</span>
           </div>
 
@@ -210,13 +210,13 @@ export const CustomerSuccessStories: React.FC = () => {
             >
               {/* LEFT SIDE: Quote & Metric Box */}
               <div className="lg:col-span-7 space-y-6">
-                <Quote className="w-10 h-10 text-[#f5d0a6]/60" />
+                <Quote className="w-10 h-10 text-[#f5d0a6]/80" />
 
                 <p className="text-lg sm:text-2xl font-normal text-white leading-relaxed font-sans italic tracking-wide">
                   &ldquo;{current.quote}&rdquo;
                 </p>
 
-                <div className="pt-6 border-t border-white/15 flex flex-wrap items-center justify-between gap-4">
+                <div className="pt-6 border-t border-white/30 flex flex-wrap items-center justify-between gap-4">
                   <div className="space-y-1">
                     <h4 className="text-base sm:text-lg font-bold text-white uppercase tracking-wider font-serif">
                       {current.clientName}
@@ -227,13 +227,13 @@ export const CustomerSuccessStories: React.FC = () => {
                   </div>
 
                   {/* Rating & Metric Badge */}
-                  <div className="flex items-center gap-4 bg-[#23170e] border border-white/20 px-5 py-3 rounded-xl">
+                  <div className="flex items-center gap-4 bg-[#23170e] border border-white px-5 py-3 rounded-xl shadow-sm">
                     <div className="flex items-center gap-1 text-[#f5d0a6]">
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} className="w-3.5 h-3.5 fill-[#f5d0a6]" />
                       ))}
                     </div>
-                    <div className="h-6 w-[1px] bg-white/20" />
+                    <div className="h-6 w-[1px] bg-white/30" />
                     <div>
                       <div className="text-lg font-mono font-black text-white">{current.keyMetric}</div>
                       <div className="text-[9px] font-mono text-[#f5d0a6] uppercase font-bold">{current.metricLabel}</div>
@@ -243,8 +243,8 @@ export const CustomerSuccessStories: React.FC = () => {
               </div>
 
               {/* RIGHT SIDE: Milestones Table List */}
-              <div className="lg:col-span-5 bg-[#1c130d] border border-white/20 rounded-xl p-5 sm:p-6 space-y-4">
-                <div className="flex items-center justify-between pb-3 border-b border-white/15">
+              <div className="lg:col-span-5 bg-[#1c130d] border-2 border-white rounded-xl p-5 sm:p-6 space-y-4 shadow-md">
+                <div className="flex items-center justify-between pb-3 border-b border-white/30">
                   <div className="flex items-center gap-2 text-xs font-mono text-white uppercase font-bold tracking-wider">
                     <Award className="w-4 h-4 text-[#f5d0a6]" />
                     <span>KEY DELIVERABLES & MILESTONES</span>
@@ -256,13 +256,13 @@ export const CustomerSuccessStories: React.FC = () => {
                   {current.milestones.map((m, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center justify-between py-2.5 px-3 rounded-lg bg-[#0e0906] border border-white/10 hover:border-white/40 transition-all text-xs font-mono"
+                      className="flex items-center justify-between py-2.5 px-3 rounded-lg bg-[#0e0906] border border-white/40 hover:border-white transition-all text-xs font-mono"
                     >
                       <div className="flex items-center gap-2.5 text-white">
                         <CheckCircle2 className="w-4 h-4 text-[#f5d0a6] shrink-0" />
                         <span className="font-sans font-semibold text-white">{m.label}</span>
                       </div>
-                      <span className="text-[11px] font-mono text-[#f5d0a6] font-bold px-2 py-0.5 rounded bg-[#f5d0a6]/15 border border-[#f5d0a6]/30 shrink-0 ml-2">
+                      <span className="text-[11px] font-mono text-[#f5d0a6] font-bold px-2 py-0.5 rounded bg-[#f5d0a6]/15 border border-white/40 shrink-0 ml-2">
                         {m.tag}
                       </span>
                     </div>
@@ -274,7 +274,7 @@ export const CustomerSuccessStories: React.FC = () => {
           </AnimatePresence>
 
           {/* Bottom Navigation Buttons */}
-          <div className="mt-8 pt-6 border-t border-white/15 flex items-center justify-between">
+          <div className="mt-8 pt-6 border-t border-white/30 flex items-center justify-between">
             <span className="text-xs font-mono text-zinc-300 uppercase tracking-widest">
               STEP {currentIndex + 1} OF {SUCCESS_STORIES.length}
             </span>
@@ -282,14 +282,14 @@ export const CustomerSuccessStories: React.FC = () => {
             <div className="flex items-center gap-3">
               <button
                 onClick={handlePrev}
-                className="p-3 rounded-full bg-[#23170e] border border-white/30 text-white hover:bg-white hover:text-black transition-all duration-300"
+                className="p-3 rounded-full bg-[#23170e] border border-white text-white hover:bg-white hover:text-black transition-all duration-300 shadow-sm"
                 aria-label="Previous Story"
               >
                 <ArrowLeft className="w-4 h-4" />
               </button>
               <button
                 onClick={handleNext}
-                className="p-3 rounded-full bg-[#23170e] border border-white/30 text-white hover:bg-white hover:text-black transition-all duration-300"
+                className="p-3 rounded-full bg-[#23170e] border border-white text-white hover:bg-white hover:text-black transition-all duration-300 shadow-sm"
                 aria-label="Next Story"
               >
                 <ArrowRight className="w-4 h-4" />

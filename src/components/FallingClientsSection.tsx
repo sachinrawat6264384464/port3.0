@@ -214,44 +214,26 @@ export const FallingClientsSection: React.FC = () => {
 
       <div className="max-w-[1700px] w-full mx-auto space-y-8 relative z-10">
 
-        {/* Top Header Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
-          <div className="lg:col-span-8 space-y-3">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.1] font-sans text-white"
+        {/* Top Header Section (Centered Heading & Refresh Button) */}
+        <div className="text-center max-w-4xl mx-auto space-y-4">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] font-sans text-white"
+          >
+            <span className="text-[#ff5528]">Client:</span> Helping brands to grow and say their success stories to the world.
+          </motion.h2>
+
+          <div className="flex items-center justify-center pt-2">
+            <button
+              onClick={handleReset}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-[#ff5528] hover:text-black border border-white/20 text-xs font-mono font-bold uppercase tracking-wider transition-all duration-300 shadow-sm cursor-pointer"
             >
-              <span className="text-[#ff5528]">Client:</span> Helping brands to grow and say their success stories to the world.
-            </motion.h2>
-          </div>
-
-          <div className="lg:col-span-4 lg:pl-6 space-y-4">
-            <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-xs sm:text-sm text-zinc-400 font-normal leading-relaxed"
-            >
-              We&apos;re a great team of creatives with strongest capabilities to help progressive fields achieve their goals. With the best talent on every project done successfully.
-            </motion.p>
-
-            <div className="flex items-center gap-4 pt-1">
-              <button
-                onClick={handleReset}
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-[#ff5528] hover:text-black border border-white/10 text-xs font-mono font-bold uppercase tracking-wider transition-all duration-300"
-              >
-                <RotateCcw className="w-3.5 h-3.5" />
-                <span>Re-Drop Badges</span>
-              </button>
-
-              <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest flex items-center gap-2">
-                <span>Interactive Physics</span>
-              </span>
-            </div>
+              <RotateCcw className="w-3.5 h-3.5" />
+              <span>Re-Drop Badges</span>
+            </button>
           </div>
         </div>
 
