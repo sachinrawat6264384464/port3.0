@@ -1,162 +1,259 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ShoppingBag, Hotel, Home, Factory, Newspaper, Flame, Landmark, Shirt, Leaf } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ShoppingBag, Hotel, Home, Factory, Newspaper, Flame, Landmark, Shirt, Leaf, ArrowRight, Layers } from 'lucide-react';
 
-const INDUSTRIES = [
+interface IndustryItem {
+  id: string;
+  category: 'all' | 'fmcg' | 'realestate' | 'corporate';
+  categoryLabel: string;
+  name: string;
+  description: string;
+  icon: React.ReactNode;
+  clientHighlight: string;
+  deliverables: string[];
+}
+
+const INDUSTRIES: IndustryItem[] = [
   {
     id: 'retail-fmcg',
+    category: 'fmcg',
+    categoryLabel: 'FMCG & RETAIL',
     name: 'Retail & FMCG',
     description: 'Product pouches, snack packaging, and in-store point of sale displays.',
-    icon: <ShoppingBag className="w-6 h-6 text-orange-500" />,
+    icon: <ShoppingBag className="w-6 h-6 text-[#f5d0a6]" />,
     clientHighlight: 'LUWWA Energy Bar & Savera',
+    deliverables: ['Custom Stand-up Pouches', 'Point of Sale Retail Units', 'Brand Box Architecture'],
   },
   {
     id: 'hospitality',
+    category: 'realestate',
+    categoryLabel: 'SPATIAL & RESORTS',
     name: 'Hospitality & Resorts',
     description: 'Bespoke architectural logo marks, environmental signage, and luxury venue branding.',
-    icon: <Hotel className="w-6 h-6 text-orange-500" />,
+    icon: <Hotel className="w-6 h-6 text-[#f5d0a6]" />,
     clientHighlight: 'The Raas Valley Resort & Royal Park',
+    deliverables: ['Resort Spatial Signage', 'Guest Amenities Suite', 'Luxury Identity Guidelines'],
   },
   {
     id: 'real-estate',
+    category: 'realestate',
+    categoryLabel: 'SPATIAL & RESORTS',
     name: 'Real Estate & Interiors',
     description: 'Township visual identities, interior hub marks, and architectural brochures.',
-    icon: <Home className="w-6 h-6 text-orange-500" />,
+    icon: <Home className="w-6 h-6 text-[#f5d0a6]" />,
     clientHighlight: 'Saveria Hub of Interiors & Valencia',
+    deliverables: ['Township Master Brand', 'Sales Kit Architecture', '3D Spatial Signage Marks'],
   },
   {
     id: 'industrial-manufacturing',
+    category: 'corporate',
+    categoryLabel: 'CORPORATE & INDUSTRIAL',
     name: 'Industrial & Manufacturing',
     description: '40 Years of Legacy annual reports, sustainability spreads, and fibre marks.',
-    icon: <Factory className="w-6 h-6 text-orange-500" />,
+    icon: <Factory className="w-6 h-6 text-[#f5d0a6]" />,
     clientHighlight: 'Terex Equipment & Ariddha Fibre',
+    deliverables: ['40 Years Legacy Report', 'Exhibition Expo Pavilion', 'Fleet Livery System'],
   },
   {
     id: 'media-print',
+    category: 'corporate',
+    categoryLabel: 'CORPORATE & INDUSTRIAL',
     name: 'Media & Print Publications',
     description: 'Full-page newspaper ad campaigns, editorial layouts, and marketing press.',
-    icon: <Newspaper className="w-6 h-6 text-orange-500" />,
+    icon: <Newspaper className="w-6 h-6 text-[#f5d0a6]" />,
     clientHighlight: 'Dainik Bhaskar & Marketing Express',
+    deliverables: ['National Press Ads', 'Editorial Publications', 'Brand Campaign Spread'],
   },
   {
     id: 'incense-wellness',
+    category: 'fmcg',
+    categoryLabel: 'FMCG & RETAIL',
     name: 'Incense & Consumer Goods',
     description: '360-degree brand packaging suites, agarbatti boxes, and billboard campaigns.',
-    icon: <Flame className="w-6 h-6 text-orange-500" />,
+    icon: <Flame className="w-6 h-6 text-[#f5d0a6]" />,
     clientHighlight: 'Reyug Incense & Pooja Series',
+    deliverables: ['Metallic Foil Packaging', 'Pan-India Distribution Deck', 'Retail Counter Displays'],
   },
   {
     id: 'corporate-finance',
+    category: 'corporate',
+    categoryLabel: 'CORPORATE & INDUSTRIAL',
     name: 'Corporate & Finance',
     description: 'Investor pitch decks, corporate keynotes, and institutional presentations.',
-    icon: <Landmark className="w-6 h-6 text-orange-500" />,
+    icon: <Landmark className="w-6 h-6 text-[#f5d0a6]" />,
     clientHighlight: 'D.P. Abushan Limited & Malpani Group',
+    deliverables: ['B2B Pitch Architecture', 'Corporate Guidelines', 'Annual Board Reports'],
   },
   {
     id: 'luxury-fashion',
+    category: 'fmcg',
+    categoryLabel: 'FMCG & RETAIL',
     name: 'Luxury & Fashion Boutiques',
     description: 'Bespoke fashion typography, lifestyle identity marks, and boutique collateral.',
-    icon: <Shirt className="w-6 h-6 text-orange-500" />,
+    icon: <Shirt className="w-6 h-6 text-[#f5d0a6]" />,
     clientHighlight: 'AVA Boutiquified & Anvith Luxury',
+    deliverables: ['Custom Monogram Identity', 'Luxury Apparel Tags', 'Boutique Collateral Suite'],
   },
   {
     id: 'sustainability-tech',
+    category: 'corporate',
+    categoryLabel: 'CORPORATE & INDUSTRIAL',
     name: 'Sustainability & Future Tech',
     description: 'Entrepreneurship summits, green transformation publications, and eco initiatives.',
-    icon: <Leaf className="w-6 h-6 text-orange-500" />,
+    icon: <Leaf className="w-6 h-6 text-[#f5d0a6]" />,
     clientHighlight: 'EKI Energy & Sustainable Future MP',
+    deliverables: ['Carbon Summit Branding', 'ESG Sustainability Decks', 'Green Tech Identity'],
   },
 ];
 
 export const IndustriesServed: React.FC = () => {
-  return (
-    <section id="industries" className="py-28 px-6 sm:px-10 lg:px-16 bg-[#08080b] border-t border-white/5 relative overflow-hidden">
-      {/* Background Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-orange-600/10 rounded-full blur-[180px] pointer-events-none" />
+  const [selectedSector, setSelectedSector] = useState<IndustryItem>(INDUSTRIES[0]);
 
-      <div className="max-w-[1700px] w-full mx-auto space-y-16 relative z-10">
+  return (
+    <section id="industries" className="pt-10 pb-16 px-4 sm:px-8 lg:px-12 bg-[#090604] border-t border-b border-white/10 relative overflow-hidden select-none">
+      {/* Background Subtle Ambient Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-[#d8ab7e]/10 rounded-full blur-[200px] pointer-events-none" />
+
+      <div className="max-w-[1700px] w-full mx-auto space-y-10 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center space-y-4 max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-mono uppercase"
-          >
-            <span>CROSS-INDUSTRY EXPERTISE</span>
-          </motion.div>
+        <div className="text-center space-y-3 max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#e8be90]/15 border border-[#e8be90]/40 text-[#f5d0a6] text-xs font-mono font-bold uppercase tracking-widest">
+            <Layers className="w-3.5 h-3.5 text-[#f5d0a6]" />
+            <span>CROSS-INDUSTRY BRAND ARCHITECTURE</span>
+          </div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tight"
-          >
-            Industries We <span className="text-orange-500 italic">Serve</span>
-          </motion.h2>
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-black text-white uppercase tracking-wider drop-shadow-md">
+            INDUSTRIES WE <span className="text-[#e8be90] italic">SERVE</span>
+          </h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-zinc-400 text-base sm:text-lg leading-relaxed"
-          >
-            Partnered with startups, scaling businesses, and established brands across diverse sectors with tailored visual solutions.
-          </motion.p>
+          <p className="text-xs sm:text-sm text-zinc-300 max-w-xl mx-auto font-sans leading-relaxed">
+            Partnered with scaling businesses, FMCG conglomerates, and real estate leaders with bespoke visual solutions.
+          </p>
         </div>
 
-        {/* Industries 3x3 Responsive Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {INDUSTRIES.map((item, idx) => {
-            const isLeft = idx % 2 === 0;
-            return (
+        {/* DYNAMIC BENTO GRID LAYOUT WITH SPOTLIGHT SHOWCASE */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          
+          {/* FEATURED SECTOR SPOTLIGHT PANEL (Left 5 Cols) */}
+          <div className="lg:col-span-5 bg-gradient-to-b from-[#2e1f14] via-[#1f140c] to-[#120b06] border border-white/30 rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl relative overflow-hidden flex flex-col justify-between min-h-[420px]">
+            
+            {/* Technical Corner Framing Indicators */}
+            <div className="absolute top-4 left-4 text-white/30 font-mono text-xs pointer-events-none select-none">┌</div>
+            <div className="absolute top-4 right-4 text-white/30 font-mono text-xs pointer-events-none select-none">┐</div>
+            <div className="absolute bottom-4 left-4 text-white/30 font-mono text-xs pointer-events-none select-none">└</div>
+            <div className="absolute bottom-4 right-4 text-white/30 font-mono text-xs pointer-events-none select-none">┘</div>
+
+            <AnimatePresence mode="wait">
               <motion.div
-                key={item.id}
-                initial={{ opacity: 0, x: isLeft ? -50 : 50, scale: 0.95 }}
-                whileInView={{ opacity: 1, x: 0, scale: 1 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.6, delay: (idx % 3) * 0.1 }}
-                className="group p-8 rounded-3xl bg-zinc-900/60 border border-white/10 hover:border-orange-500/50 transition-all duration-500 flex flex-col justify-between overflow-hidden relative shadow-xl hover:shadow-orange-950/30 min-h-[220px]"
+                key={selectedSector.id}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.3 }}
+                className="space-y-6 relative z-10"
               >
-                {/* Glowing Top Line */}
-                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-transparent via-orange-500/0 to-transparent group-hover:via-orange-500 transition-all duration-500" />
-
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="p-3.5 rounded-2xl bg-orange-500/10 border border-orange-500/20 group-hover:bg-orange-500/20 transition-colors">
-                      {item.icon}
-                    </div>
-                    <span className="text-[10px] font-mono text-orange-400 uppercase tracking-widest bg-white/5 px-3 py-1 rounded-full border border-white/5">
-                      SECTOR 0{idx + 1}
-                    </span>
+                {/* Header Tag */}
+                <div className="flex items-center justify-between">
+                  <div className="p-3.5 rounded-xl bg-[#e8be90]/15 border border-[#e8be90]/30 text-[#f5d0a6]">
+                    {selectedSector.icon}
                   </div>
+                  <span className="text-[10px] font-mono text-[#f5d0a6] uppercase font-bold tracking-widest px-3 py-1 rounded-full bg-white/5 border border-white/10">
+                    {selectedSector.categoryLabel}
+                  </span>
+                </div>
 
+                <div className="space-y-2">
+                  <h3 className="text-2xl sm:text-3xl font-serif font-black text-white uppercase tracking-wide">
+                    {selectedSector.name}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-zinc-300 font-sans leading-relaxed">
+                    {selectedSector.description}
+                  </p>
+                </div>
+
+                {/* Key Deliverables Scope */}
+                <div className="pt-4 border-t border-white/15 space-y-3">
+                  <span className="text-[11px] font-mono text-[#f5d0a6] uppercase font-bold tracking-wider block">
+                    DELIVERABLE SCOPE & ASSETS:
+                  </span>
                   <div className="space-y-2">
-                    <h3 className="text-2xl font-extrabold text-white uppercase tracking-wide group-hover:text-orange-400 transition-colors">
-                      {item.name}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                      {item.description}
-                    </p>
+                    {selectedSector.deliverables.map((d, i) => (
+                      <div key={i} className="flex items-center gap-2 text-xs font-sans text-white">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#f5d0a6]" />
+                        <span>{d}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-white/5 flex items-center justify-between text-xs font-mono text-zinc-500">
-                  <span>KEY CLIENT / CASE STUDY:</span>
-                  <span className="text-orange-400 font-bold">{item.clientHighlight}</span>
+                {/* Key Client Highlight Box */}
+                <div className="pt-4 border-t border-white/15 flex items-center justify-between">
+                  <span className="text-[11px] font-mono text-zinc-400 uppercase">PROMINENT CASE STUDY:</span>
+                  <span className="text-xs font-mono font-bold text-white bg-[#e8be90]/20 border border-[#e8be90]/40 px-3 py-1 rounded-lg">
+                    {selectedSector.clientHighlight}
+                  </span>
                 </div>
               </motion.div>
-            );
-          })}
+            </AnimatePresence>
+          </div>
+
+          {/* BENTO CARDS SHOWCASE GRID (Right 7 Cols) */}
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <AnimatePresence mode="popLayout">
+              {INDUSTRIES.map((item, idx) => {
+                const isSelected = selectedSector.id === item.id;
+                return (
+                  <motion.div
+                    key={item.id}
+                    layout
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.3, delay: idx * 0.04 }}
+                    onClick={() => setSelectedSector(item)}
+                    className={`group cursor-pointer p-5 rounded-xl border flex flex-col justify-between text-left transition-all duration-300 min-h-[170px] ${
+                      isSelected
+                        ? 'bg-gradient-to-b from-[#3a281b] via-[#2a1c12] to-[#1c120b] border-white scale-[1.03] z-20 shadow-xl'
+                        : 'bg-[#18110b]/90 border-white/20 hover:border-white/60 hover:bg-[#22170f] opacity-85 hover:opacity-100'
+                    }`}
+                  >
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <div className="p-2.5 rounded-lg bg-white/5 border border-white/10 text-[#f5d0a6]">
+                          {item.icon}
+                        </div>
+                        <span className="text-[9px] font-mono text-zinc-400 uppercase">
+                          0{idx + 1}
+                        </span>
+                      </div>
+
+                      <div className="space-y-1">
+                        <h4 className="text-sm font-sans font-extrabold text-white uppercase tracking-wider truncate">
+                          {item.name}
+                        </h4>
+                        <p className="text-[11px] text-zinc-300 line-clamp-2 leading-snug">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="pt-3 mt-3 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-zinc-400 group-hover:text-white transition-colors">
+                      <span className="truncate">{item.clientHighlight.split('&')[0]}</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#f5d0a6] shrink-0" />
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
+          </div>
+
         </div>
 
       </div>
     </section>
   );
 };
+

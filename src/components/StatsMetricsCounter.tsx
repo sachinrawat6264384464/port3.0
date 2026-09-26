@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Award, Briefcase, Users, Layers } from 'lucide-react';
 
@@ -62,7 +62,7 @@ const CounterNumber: React.FC<{ target: number; suffix: string; parentInView: bo
     }
 
     let start = 0;
-    const duration = 1800;
+    const duration = 2400;
     const increment = Math.max(1, Math.ceil(target / (duration / 16)));
 
     const timer = setInterval(() => {
@@ -79,100 +79,122 @@ const CounterNumber: React.FC<{ target: number; suffix: string; parentInView: bo
   }, [parentInView, target]);
 
   return (
-    <span className="font-mono text-5xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight drop-shadow-[0_4px_16px_rgba(255,87,34,0.3)]">
-      {count}
-      <span className="text-orange-500 font-extrabold">{suffix}</span>
+    <span className="font-serif text-lg sm:text-2xl font-black text-white tracking-widest">
+      {count}{suffix}
     </span>
   );
 };
 
-const StatCard: React.FC<{ stat: MetricItem; idx: number }> = ({ stat, idx }) => {
-  const cardRef = React.useRef(null);
-  const isInView = useInView(cardRef, { once: false, amount: 0.3 });
+const CardNotchedFrame: React.FC<{
+  stat: MetricItem;
+  isInView: boolean;
+  isReflection?: boolean;
+}> = ({ stat, isInView, isReflection = false }) => {
   const IconComponent = stat.icon;
 
   return (
-    <motion.div
-      ref={cardRef}
-      initial={{ opacity: 0, scale: 0.85, y: 50 }}
-      whileInView={{ opacity: 1, scale: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.3 }}
-      transition={{
-        duration: 0.7,
-        delay: idx * 0.1,
-        ease: [0.16, 1, 0.3, 1],
-      }}
-      whileHover={{
-        scale: 1.05,
-        y: -10,
-        transition: { duration: 0.3, ease: 'easeOut' },
-      }}
-      className="p-8 rounded-3xl bg-zinc-950/90 border border-white/10 hover:border-orange-500/60 transition-all duration-500 space-y-5 shadow-2xl hover:shadow-[0_20px_50px_rgba(255,87,34,0.25)] group relative overflow-hidden flex flex-col justify-between"
-    >
-      {/* Glowing Top & Radial Accents */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-orange-500/0 to-transparent group-hover:via-orange-500 transition-all duration-500" />
-      <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-orange-600/0 group-hover:bg-orange-600/20 rounded-full blur-3xl transition-all duration-700 pointer-events-none" />
-
-      {/* Inner Content expanding smoothly from center of card */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.6, filter: 'blur(8px)' }}
-        animate={
-          isInView
-            ? { opacity: 1, scale: 1, filter: 'blur(0px)' }
-            : { opacity: 0, scale: 0.6, filter: 'blur(8px)' }
-        }
-        transition={{
-          duration: 0.6,
-          delay: idx * 0.12 + 0.1,
-          type: 'spring',
-          stiffness: 200,
-          damping: 20,
-        }}
-        className="space-y-4 origin-center w-full"
+    <div className="relative w-full h-[360px] p-8 flex flex-col items-center justify-center text-center group">
+      {/* SVG Notched Corner Border Frame with Crisp Pure White Border */}
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none transition-all duration-300 group-hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.25)]"
+        preserveAspectRatio="none"
+        viewBox="0 0 300 380"
       >
-        <div className="flex items-center justify-between">
-          <div className="p-3.5 rounded-2xl bg-orange-500/10 border border-orange-500/30 group-hover:bg-orange-500 group-hover:text-black transition-all duration-300 shadow-md">
-            <IconComponent className="w-7 h-7 text-orange-400 group-hover:text-black transition-colors" />
-          </div>
-          <span className="text-xs font-mono text-zinc-500 font-bold group-hover:text-orange-400 transition-colors">
-            0{idx + 1}
-          </span>
+        <path
+          d="M 18,2 L 282,2 A 16 16 0 0 0 298,18 L 298,362 A 16 16 0 0 0 282,378 L 18,378 A 16 16 0 0 0 2,362 L 2,18 A 16 16 0 0 0 18,2 Z"
+          fill="#140d09"
+          stroke="#ffffff"
+          strokeWidth="1.5"
+          strokeOpacity={isReflection ? "0.2" : "0.85"}
+          className="group-hover:stroke-white group-hover:stroke-[2] transition-all duration-300"
+        />
+      </svg>
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center justify-between h-full py-4 px-2">
+        {/* Top Centered Icon */}
+        <div className="mt-2 text-white group-hover:scale-110 group-hover:text-[#e8be90] transition-all duration-300">
+          <IconComponent className="w-10 h-10 stroke-[1.5]" />
         </div>
 
-        <div className="pt-2">
-          <CounterNumber
-            target={stat.targetNumber}
-            suffix={stat.suffix}
-            parentInView={isInView}
-          />
-          <h3 className="text-lg font-bold text-white uppercase tracking-wider pt-2 group-hover:text-orange-400 transition-colors">
-            {stat.label}
+        {/* Title & Counter */}
+        <div className="my-auto space-y-3 px-2">
+          <h3 className="text-base sm:text-lg font-serif font-extrabold uppercase tracking-widest text-white leading-snug">
+            <CounterNumber
+              target={stat.targetNumber}
+              suffix={stat.suffix}
+              parentInView={isInView}
+            />{' '}
+            <span className="text-[#e8be90] group-hover:text-white transition-colors">{stat.label}</span>
           </h3>
-        </div>
 
-        <p className="text-xs text-zinc-400 leading-relaxed font-light group-hover:text-zinc-200 transition-colors">
-          {stat.description}
-        </p>
-      </motion.div>
-    </motion.div>
+          <p className="text-xs sm:text-[13px] text-zinc-300 font-light leading-relaxed max-w-[250px] mx-auto group-hover:text-white transition-colors">
+            {stat.description}
+          </p>
+        </div>
+      </div>
+    </div>
   );
 };
 
 export const StatsMetricsCounter: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: false, amount: 0.2 });
+
   return (
-    <section className="py-24 px-6 sm:px-10 lg:px-16 bg-[#08080b] border-y border-white/10 relative overflow-hidden">
-      {/* Background Ambient Pulsing Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[450px] bg-orange-600/10 rounded-full blur-[180px] pointer-events-none animate-pulse" />
+    <section className="pt-16 pb-4 px-6 sm:px-10 lg:px-16 bg-[#070504] relative overflow-hidden">
+      {/* Dark Wooden Floor Planks Texture Background */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-20"
+        style={{
+          backgroundImage: `repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 60px,
+            rgba(255, 255, 255, 0.04) 60px,
+            rgba(255, 255, 255, 0.04) 61px
+          )`,
+        }}
+      />
 
-      <div className="max-w-[1700px] w-full mx-auto space-y-14 relative z-10">
+      <div ref={containerRef} className="max-w-[1700px] w-full mx-auto relative z-10">
+        
+        {/* CARDS GRID WITH SMOOTH SLIDE-IN FOR ALL 4 CARDS */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-start">
+          {STATS_DATA.map((stat, index) => (
+            <div key={stat.id} className="relative flex flex-col items-center w-full">
+              
+              {/* MAIN CARD & REFLECTION - SMOOTH LEFT SLIDE-IN */}
+              <motion.div
+                initial={{ opacity: 0, x: -70, scale: 0.95 }}
+                whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{
+                  duration: 1.0,
+                  delay: index * 0.18,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                whileHover={{ y: -8 }}
+                className="w-full cursor-pointer flex flex-col items-center"
+              >
+                <CardNotchedFrame stat={stat} isInView={isInView} />
 
+                {/* CLEAN FLOOR REFLECTION */}
+                <div className="w-full relative mt-0.5 pointer-events-none select-none overflow-hidden h-[60px]">
+                  {/* Floor seam line */}
+                  <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
 
-        {/* 4 Animated Stats Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {STATS_DATA.map((stat, idx) => (
-            <StatCard key={stat.id} stat={stat} idx={idx} />
+                  {/* Mirrored upside-down clone */}
+                  <div className="w-full transform scale-y-[-1] origin-top opacity-20 blur-[0.8px] mirror-floor-mask">
+                    <CardNotchedFrame stat={stat} isInView={isInView} isReflection={true} />
+                  </div>
+                </div>
+              </motion.div>
+
+            </div>
           ))}
         </div>
+
       </div>
     </section>
   );

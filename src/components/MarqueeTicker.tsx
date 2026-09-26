@@ -28,7 +28,7 @@ export const MarqueeTicker: React.FC = () => {
         transition={{
           repeat: Infinity,
           ease: 'linear',
-          duration: 25,
+          duration: 55,
         }}
         className="flex items-center gap-8 sm:gap-12 whitespace-nowrap w-max"
       >

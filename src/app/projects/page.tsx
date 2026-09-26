@@ -3,6 +3,7 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { CustomCursor } from '@/components/CustomCursor';
 import { ProjectShowcase } from '@/components/ProjectShowcase';
+import { CurvedProjectGallery } from '@/components/CurvedProjectGallery';
 import { ReyugCaseStudy } from '@/components/ReyugCaseStudy';
 import { LogoGrid } from '@/components/LogoGrid';
 import { Layers, Award, ArrowUpRight, ArrowRight } from 'lucide-react';
@@ -102,6 +103,9 @@ export default function ProjectsPage() {
 
       {/* Filterable Portfolio Grid */}
       <ProjectShowcase showHeader={false} />
+
+      {/* 3D Curved Multi-Axis Infinite Portfolio Gallery */}
+      <CurvedProjectGallery />
 
       {/* Reyug Featured 360° Case Study Highlight */}
       <ReyugCaseStudy />

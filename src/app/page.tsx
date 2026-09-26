@@ -6,6 +6,7 @@ import { Hero } from '@/components/Hero';
 import { MarqueeTicker } from '@/components/MarqueeTicker';
 import { StatsMetricsCounter } from '@/components/StatsMetricsCounter';
 import { CustomerSuccessStories } from '@/components/CustomerSuccessStories';
+import { CurvedProjectGallery } from '@/components/CurvedProjectGallery';
 import { IndustriesServed } from '@/components/IndustriesServed';
 import { FallingClientsSection } from '@/components/FallingClientsSection';
 import { Footer } from '@/components/Footer';
@@ -25,12 +26,17 @@ export default function Home() {
       {/* STATS & METRICS COUNTER */}
       <StatsMetricsCounter />
 
-      {/* INDUSTRIES SERVED & CLIENT LOGOS */}
+      {/* INDUSTRIES SERVED */}
       <IndustriesServed />
-      <FallingClientsSection />
 
-      {/* CLIENT TESTIMONIALS & SUCCESS STORIES (PLACED RIGHT ABOVE FOOTER) */}
+      {/* 3D CURVED MULTI-AXIS GALLERY STREAM */}
+      <CurvedProjectGallery />
+
+      {/* CLIENT TESTIMONIALS & SUCCESS STORIES */}
       <CustomerSuccessStories />
+
+      {/* INTERACTIVE FALLING CLIENTS BADGES */}
+      <FallingClientsSection />
 
       {/* FOOTER */}
       <Footer />

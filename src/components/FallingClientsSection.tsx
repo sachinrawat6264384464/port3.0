@@ -15,22 +15,43 @@ interface LogoPill {
 }
 
 const PILL_CLIENTS: LogoPill[] = [
+  // Color 1: Signature Orange (#ff5528)
   { id: 'jotform', name: 'Jotform', bgColor: '#ff5528', textColor: '#ffffff', width: 140, height: 56 },
   { id: 'bubble', name: '.bubble', bgColor: '#ff5528', textColor: '#ffffff', width: 130, height: 56 },
-  { id: 'voiceflow1', name: 'Voiceflow', bgColor: '#ffffff', textColor: '#0e0e11', width: 150, height: 56 },
-  { id: 'clickup', name: 'ClickUp', bgColor: '#ffffff', textColor: '#0e0e11', width: 140, height: 56 },
   { id: 'hubspot', name: 'HubSpot', bgColor: '#ff5528', textColor: '#ffffff', width: 145, height: 56 },
   { id: 'zendesk1', name: 'zendesk', bgColor: '#ff5528', textColor: '#ffffff', width: 145, height: 56 },
+  { id: 'canva2', name: 'Canva', bgColor: '#ff5528', textColor: '#ffffff', width: 130, height: 56 },
+  { id: 'iloveimg', name: 'i❤IMG', bgColor: '#ff5528', textColor: '#ffffff', width: 135, height: 56 },
+  { id: 'voiceflow2', name: 'Voiceflow', bgColor: '#ff5528', textColor: '#ffffff', width: 150, height: 56 },
+  { id: 'trinaas', name: 'TRINAAS', bgColor: '#ff5528', textColor: '#ffffff', width: 140, height: 56 },
+  { id: 'figma', name: 'Figma', bgColor: '#ff5528', textColor: '#ffffff', width: 130, height: 56 },
+  { id: 'stripe', name: 'Stripe', bgColor: '#ff5528', textColor: '#ffffff', width: 135, height: 56 },
+
+  // Color 2: Crisp White (#ffffff)
+  { id: 'voiceflow1', name: 'Voiceflow', bgColor: '#ffffff', textColor: '#0e0e11', width: 150, height: 56 },
+  { id: 'clickup', name: 'ClickUp', bgColor: '#ffffff', textColor: '#0e0e11', width: 140, height: 56 },
   { id: 'zendesk2', name: 'zendesk', bgColor: '#ffffff', textColor: '#0e0e11', width: 145, height: 56 },
   { id: 'canva1', name: 'Canva', bgColor: '#ffffff', textColor: '#0e0e11', width: 130, height: 56 },
-  { id: 'canva2', name: 'Canva', bgColor: '#ff5528', textColor: '#ffffff', width: 130, height: 56 },
   { id: 'zoom', name: 'zoom', bgColor: '#ffffff', textColor: '#0e0e11', width: 140, height: 56 },
   { id: 'trello', name: 'Trello', bgColor: '#ffffff', textColor: '#0e0e11', width: 140, height: 56 },
   { id: 'pendo', name: 'pendo', bgColor: '#ffffff', textColor: '#0e0e11', width: 135, height: 56 },
-  { id: 'iloveimg', name: 'i❤IMG', bgColor: '#ff5528', textColor: '#ffffff', width: 135, height: 56 },
-  { id: 'voiceflow2', name: 'Voiceflow', bgColor: '#ff5528', textColor: '#ffffff', width: 150, height: 56 },
   { id: 'saveria', name: 'SAVERIA', bgColor: '#ffffff', textColor: '#0e0e11', width: 145, height: 56 },
-  { id: 'trinaas', name: 'TRINAAS', bgColor: '#ff5528', textColor: '#ffffff', width: 140, height: 56 },
+  { id: 'notion', name: 'Notion', bgColor: '#ffffff', textColor: '#0e0e11', width: 135, height: 56 },
+  { id: 'slack', name: 'Slack', bgColor: '#ffffff', textColor: '#0e0e11', width: 130, height: 56 },
+  { id: 'miro', name: 'Miro', bgColor: '#ffffff', textColor: '#0e0e11', width: 125, height: 56 },
+
+  // Color 3: Warm Biscuit Gold (#e8be90)
+  { id: 'ameerji', name: 'AMEERJI', bgColor: '#e8be90', textColor: '#0e0e11', width: 145, height: 56 },
+  { id: 'reyug', name: 'REYUG', bgColor: '#e8be90', textColor: '#0e0e11', width: 135, height: 56 },
+  { id: 'malpani', name: 'MALPANI', bgColor: '#e8be90', textColor: '#0e0e11', width: 145, height: 56 },
+  { id: 'terex', name: 'TEREX', bgColor: '#e8be90', textColor: '#0e0e11', width: 135, height: 56 },
+  { id: 'lemount', name: 'LEMOUNT', bgColor: '#e8be90', textColor: '#0e0e11', width: 145, height: 56 },
+  { id: 'raasvalley', name: 'RAAS VALLEY', bgColor: '#e8be90', textColor: '#0e0e11', width: 160, height: 56 },
+  { id: 'bhaskar', name: 'BHASKAR', bgColor: '#e8be90', textColor: '#0e0e11', width: 145, height: 56 },
+  { id: 'abushan', name: 'ABUSHAN', bgColor: '#e8be90', textColor: '#0e0e11', width: 145, height: 56 },
+  { id: 'valencia', name: 'VALENCIA', bgColor: '#e8be90', textColor: '#0e0e11', width: 145, height: 56 },
+  { id: 'anvith', name: 'ANVITH', bgColor: '#e8be90', textColor: '#0e0e11', width: 135, height: 56 },
+  { id: 'ekienergy', name: 'EKI ENERGY', bgColor: '#e8be90', textColor: '#0e0e11', width: 155, height: 56 },
 ];
 
 export const FallingClientsSection: React.FC = () => {
@@ -57,7 +78,7 @@ export const FallingClientsSection: React.FC = () => {
     }
 
     const width = sceneRef.current.clientWidth || 1200;
-    const height = sceneRef.current.clientHeight || 550;
+    const height = sceneRef.current.clientHeight || 400;
 
     // Create Matter Engine with high precision & sleeping enabled
     const engine = Matter.Engine.create({
@@ -186,42 +207,42 @@ export const FallingClientsSection: React.FC = () => {
     <section
       id="clients"
       ref={containerRef}
-      className="py-24 sm:py-32 px-6 sm:px-10 lg:px-16 bg-[#0e0e11] text-white relative overflow-hidden border-t border-b border-white/10"
+      className="py-8 sm:py-12 px-6 sm:px-10 lg:px-16 bg-[#0e0e11] text-white relative overflow-hidden border-t border-b border-white/10"
     >
       {/* Background Subtle Accent Glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#ff5528]/5 rounded-full blur-[180px] pointer-events-none" />
 
-      <div className="max-w-[1700px] w-full mx-auto space-y-12 relative z-10">
+      <div className="max-w-[1700px] w-full mx-auto space-y-8 relative z-10">
 
         {/* Top Header Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-          <div className="lg:col-span-8 space-y-4">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
+          <div className="lg:col-span-8 space-y-3">
             <motion.h2
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] font-sans text-white"
+              transition={{ duration: 0.6 }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.1] font-sans text-white"
             >
               <span className="text-[#ff5528]">Client:</span> Helping brands to grow and say their success stories to the world.
             </motion.h2>
           </div>
 
-          <div className="lg:col-span-4 lg:pl-6 space-y-6">
+          <div className="lg:col-span-4 lg:pl-6 space-y-4">
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-sm sm:text-base text-zinc-400 font-normal leading-relaxed"
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-xs sm:text-sm text-zinc-400 font-normal leading-relaxed"
             >
               We&apos;re a great team of creatives with strongest capabilities to help progressive fields achieve their goals. With the best talent on every project done successfully.
             </motion.p>
 
-            <div className="flex items-center gap-4 pt-2">
+            <div className="flex items-center gap-4 pt-1">
               <button
                 onClick={handleReset}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-[#ff5528] hover:text-black border border-white/10 text-xs font-mono font-bold uppercase tracking-wider transition-all duration-300"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-[#ff5528] hover:text-black border border-white/10 text-xs font-mono font-bold uppercase tracking-wider transition-all duration-300"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 <span>Re-Drop Badges</span>
@@ -234,10 +255,10 @@ export const FallingClientsSection: React.FC = () => {
           </div>
         </div>
 
-        {/* 2D Interactive Physics Stage */}
+        {/* 2D Interactive Physics Stage (Slightly smaller height) */}
         <div
           ref={sceneRef}
-          className="relative w-full h-[550px] sm:h-[620px] rounded-3xl bg-zinc-950/60 border border-white/10 overflow-hidden select-none"
+          className="relative w-full h-[380px] sm:h-[440px] rounded-3xl bg-zinc-950/60 border border-white/10 overflow-hidden select-none"
         >
           {/* Stage Grid pattern */}
           <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />

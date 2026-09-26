@@ -208,8 +208,8 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Large Brand Watermark */}
-        <div className="py-4 text-center select-none pointer-events-none overflow-hidden">
-          <span className="text-5xl sm:text-8xl lg:text-9xl font-black uppercase text-white/[0.03] tracking-tight font-sans whitespace-nowrap">
+        <div className="py-6 text-center select-none pointer-events-none overflow-hidden">
+          <span className="text-5xl sm:text-8xl lg:text-9xl font-black uppercase text-transparent bg-clip-text bg-gradient-to-r from-white/30 via-[#e8be90]/50 to-white/30 tracking-wider font-sans whitespace-nowrap drop-shadow-[0_0_30px_rgba(232,190,144,0.15)] [text-stroke:1px_rgba(255,255,255,0.2)] [-webkit-text-stroke:1px_rgba(255,255,255,0.2)]">
             THE OUTLINE AGENCY
           </span>
         </div>
