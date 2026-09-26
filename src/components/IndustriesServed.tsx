@@ -247,8 +247,8 @@ export const IndustriesServed: React.FC = () => {
                       zIndex: isDealt ? (isSelected ? 30 : 10) : idx + 1,
                     }}
                     transition={{
-                      duration: 0.65,
-                      delay: isDealt ? idx * 0.045 : (8 - idx) * 0.03,
+                      duration: 0.75,
+                      delay: isDealt ? idx * 0.14 : (8 - idx) * 0.07,
                       ease: [0.16, 1, 0.3, 1],
                     }}
                     onClick={() => {
