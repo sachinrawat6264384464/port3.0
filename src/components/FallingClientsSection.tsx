@@ -28,18 +28,18 @@ const PILL_CLIENTS: LogoPill[] = [
   { id: 'slack', name: 'Slack', bgColor: '#ffffff', textColor: '#000000', width: 130, height: 56 },
   { id: 'miro', name: 'Miro', bgColor: '#ffffff', textColor: '#000000', width: 125, height: 56 },
 
-  // Color 2: Warm Biscuit Gold (#e8be90)
-  { id: 'ameerji', name: 'AMEERJI', bgColor: '#e8be90', textColor: '#000000', width: 145, height: 56 },
-  { id: 'reyug', name: 'REYUG', bgColor: '#e8be90', textColor: '#000000', width: 135, height: 56 },
-  { id: 'malpani', name: 'MALPANI', bgColor: '#e8be90', textColor: '#000000', width: 145, height: 56 },
-  { id: 'terex', name: 'TEREX', bgColor: '#e8be90', textColor: '#000000', width: 135, height: 56 },
-  { id: 'lemount', name: 'LEMOUNT', bgColor: '#e8be90', textColor: '#000000', width: 145, height: 56 },
-  { id: 'raasvalley', name: 'RAAS VALLEY', bgColor: '#e8be90', textColor: '#000000', width: 160, height: 56 },
-  { id: 'bhaskar', name: 'BHASKAR', bgColor: '#e8be90', textColor: '#000000', width: 145, height: 56 },
-  { id: 'abushan', name: 'ABUSHAN', bgColor: '#e8be90', textColor: '#000000', width: 145, height: 56 },
-  { id: 'valencia', name: 'VALENCIA', bgColor: '#e8be90', textColor: '#000000', width: 145, height: 56 },
-  { id: 'anvith', name: 'ANVITH', bgColor: '#e8be90', textColor: '#000000', width: 135, height: 56 },
-  { id: 'ekienergy', name: 'EKI ENERGY', bgColor: '#e8be90', textColor: '#000000', width: 155, height: 56 },
+  // Color 2: Crisp White & Studio Dark Slate
+  { id: 'ameerji', name: 'AMEERJI', bgColor: '#ffffff', textColor: '#000000', width: 145, height: 56 },
+  { id: 'reyug', name: 'REYUG', bgColor: '#ffffff', textColor: '#000000', width: 135, height: 56 },
+  { id: 'malpani', name: 'MALPANI', bgColor: '#ffffff', textColor: '#000000', width: 145, height: 56 },
+  { id: 'terex', name: 'TEREX', bgColor: '#252532', textColor: '#ffffff', width: 135, height: 56 },
+  { id: 'lemount', name: 'LEMOUNT', bgColor: '#ffffff', textColor: '#000000', width: 145, height: 56 },
+  { id: 'raasvalley', name: 'RAAS VALLEY', bgColor: '#ffffff', textColor: '#000000', width: 160, height: 56 },
+  { id: 'bhaskar', name: 'BHASKAR', bgColor: '#ffffff', textColor: '#000000', width: 145, height: 56 },
+  { id: 'abushan', name: 'ABUSHAN', bgColor: '#252532', textColor: '#ffffff', width: 145, height: 56 },
+  { id: 'valencia', name: 'VALENCIA', bgColor: '#ffffff', textColor: '#000000', width: 145, height: 56 },
+  { id: 'anvith', name: 'ANVITH', bgColor: '#ffffff', textColor: '#000000', width: 135, height: 56 },
+  { id: 'ekienergy', name: 'EKI ENERGY', bgColor: '#252532', textColor: '#ffffff', width: 155, height: 56 },
 
   // Color 3: Sleek Pure Black (#000000)
   { id: 'hubspot', name: 'HubSpot', bgColor: '#000000', textColor: '#ffffff', width: 145, height: 56 },
