@@ -144,20 +144,30 @@ export const CustomerSuccessStories: React.FC = () => {
       <div className="max-w-[1700px] w-full mx-auto space-y-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center space-y-3 max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 50, filter: 'blur(16px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          viewport={{ amount: 0.2 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="text-center space-y-3 max-w-4xl mx-auto"
+        >
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-sans font-black text-white uppercase tracking-tight leading-tight flex items-center justify-center flex-wrap gap-x-3">
             <span>VOICES OF</span>
             <span className="font-editorial italic font-normal text-zinc-400 uppercase">TRUST &amp; GROWTH</span>
           </h2>
-        </div>
+        </motion.div>
 
         {/* 1. NOTCHED CARDS ROW (Biscuit fill + Crisp White border + Pure White text) */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 max-w-[1600px] mx-auto">
           {SUCCESS_STORIES.map((story, idx) => {
             const isActive = idx === currentIndex;
             return (
-              <div
+              <motion.div
                 key={story.id}
+                initial={{ opacity: 0, y: 50, filter: 'blur(16px)' }}
+                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                viewport={{ amount: 0.15 }}
+                transition={{ duration: 1.2, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 onClick={() => setCurrentIndex(idx)}
                 className={`relative cursor-pointer transition-all duration-300 p-4 sm:p-5 rounded-xl border flex flex-col justify-between text-center min-h-[140px] sm:min-h-[160px] ${
                   isActive
@@ -183,13 +193,19 @@ export const CustomerSuccessStories: React.FC = () => {
                 <div className="pt-2 border-t border-white/20 text-[10px] font-mono text-zinc-300 truncate uppercase">
                   {story.industry.split('&')[0]}
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
 
         {/* 2. EXPANDED DETAIL CONTAINER BOX (Biscuit background + Crisp White border) */}
-        <div className="max-w-[1600px] mx-auto bg-[#141418] border border-white/20 rounded-2xl p-6 sm:p-10 relative overflow-hidden shadow-2xl">
+        <motion.div
+          initial={{ opacity: 0, y: 60, filter: 'blur(16px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          viewport={{ amount: 0.15 }}
+          transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-[1600px] mx-auto bg-[#141418] border border-white/20 rounded-2xl p-6 sm:p-10 relative overflow-hidden shadow-2xl"
+        >
           
           {/* Top Title Header Tag */}
           <div className="text-center font-serif text-white text-lg sm:text-2xl font-bold uppercase tracking-widest border-b border-white/20 pb-4 mb-8">
@@ -262,7 +278,7 @@ export const CustomerSuccessStories: React.FC = () => {
             </div>
           </div>
 
-        </div>
+        </motion.div>
 
       </div>
     </section>
