@@ -15,7 +15,7 @@ const MARQUEE_ITEMS = [
 
 export const MarqueeTicker: React.FC = () => {
   return (
-    <div className="relative w-full overflow-hidden bg-[#0a0a0d] border-y border-white/10 py-5 sm:py-7 lg:py-8 shadow-2xl z-30 mt-20 sm:mt-28 lg:mt-36 mb-6 sm:mb-8 lg:mb-10">
+    <div className="relative w-full overflow-hidden bg-[#0a0a0d] py-5 sm:py-7 lg:py-8 shadow-2xl z-30 mt-20 sm:mt-28 lg:mt-36 mb-6 sm:mb-8 lg:mb-10">
       {/* Side Fade Gradients */}
       <div className="absolute top-0 bottom-0 left-0 w-32 sm:w-48 bg-gradient-to-r from-[#0e0e11] to-transparent z-20 pointer-events-none" />
       <div className="absolute top-0 bottom-0 right-0 w-32 sm:w-48 bg-gradient-to-l from-[#0e0e11] to-transparent z-20 pointer-events-none" />

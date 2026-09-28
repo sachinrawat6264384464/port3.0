@@ -145,7 +145,7 @@ export const StatsMetricsCounter: React.FC = () => {
   const isInView = useInView(containerRef, { once: false, amount: 0.2 });
 
   return (
-    <section className="pt-8 sm:pt-10 pb-12 px-6 sm:px-10 lg:px-16 bg-[#0e0e11] border-y border-white/10 relative overflow-hidden">
+    <section className="pt-8 sm:pt-10 pb-12 px-6 sm:px-10 lg:px-16 bg-[#0e0e11] relative overflow-hidden">
       {/* Dark Wooden Floor Planks Texture Background */}
       <div
         className="absolute inset-0 pointer-events-none opacity-20"

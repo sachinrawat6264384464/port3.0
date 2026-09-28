@@ -27,22 +27,22 @@ export default function Home() {
       {/* STATS & METRICS COUNTER */}
       <StatsMetricsCounter />
 
-      <SnakeMarqueeLine text="INDUSTRIES & BRAND ARCHITECTURE ✦ OUTLINE CREATIVE ✦ SECTOR IMPACT" />
+      <SnakeMarqueeLine />
 
       {/* INDUSTRIES SERVED */}
       <IndustriesServed />
 
-      <SnakeMarqueeLine reverse speed={22} text="VOICES OF TRUST & GROWTH ✦ CLIENT SUCCESS STORIES ✦ ENTERPRISE IMPACT" />
+      <SnakeMarqueeLine reverse speed={22} />
 
       {/* CLIENT TESTIMONIALS & SUCCESS STORIES */}
       <CustomerSuccessStories />
 
-      <SnakeMarqueeLine speed={28} text="CURVED PROJECT GALLERY ✦ ULTRA HD SHOWCASE ✦ CREATIVE DIRECTION" />
+      <SnakeMarqueeLine speed={28} />
 
       {/* 3D CURVED MULTI-AXIS GALLERY STREAM */}
       <CurvedProjectGallery />
 
-      <SnakeMarqueeLine reverse speed={20} text="INTERACTIVE CLIENT PORTFOLIO ✦ INDUSTRY RECOGNITION ✦ BRAND EXPERIENCE" />
+      <SnakeMarqueeLine reverse speed={20} />
 
       {/* INTERACTIVE FALLING CLIENTS BADGES */}
       <FallingClientsSection />
