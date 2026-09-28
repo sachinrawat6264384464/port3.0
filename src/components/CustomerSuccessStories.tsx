@@ -203,90 +203,58 @@ export const CustomerSuccessStories: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.3 }}
-              className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
+              className="max-w-4xl mx-auto text-center space-y-6"
             >
-              {/* LEFT SIDE: Quote & Metric Box */}
-              <div className="lg:col-span-7 space-y-6">
-                <Quote className="w-10 h-10 text-white/80" />
+              <Quote className="w-10 h-10 text-white/80 mx-auto" />
 
-                <p className="text-lg sm:text-2xl font-normal text-white leading-relaxed font-sans italic tracking-wide">
-                  &ldquo;{current.quote}&rdquo;
-                </p>
+              <p className="text-xl sm:text-3xl font-normal text-white leading-relaxed font-sans italic tracking-wide">
+                &ldquo;{current.quote}&rdquo;
+              </p>
 
-                <div className="pt-6 border-t border-white/20 flex flex-wrap items-center justify-between gap-4">
-                  <div className="space-y-1">
-                    <h4 className="text-base sm:text-lg font-serif font-black text-white uppercase tracking-wider">
-                      {current.clientName}
-                    </h4>
-                    <p className="text-xs font-mono text-white/80">
-                      {current.designation}
-                    </p>
+              <div className="pt-6 border-t border-white/20 flex flex-wrap items-center justify-between gap-6 max-w-3xl mx-auto text-left sm:text-left">
+                <div className="space-y-1">
+                  <h4 className="text-lg sm:text-xl font-sans font-black text-white uppercase tracking-wider">
+                    {current.clientName}
+                  </h4>
+                  <p className="text-xs font-mono text-zinc-400">
+                    {current.designation}
+                  </p>
+                </div>
+
+                {/* Rating & Metric Badge */}
+                <div className="flex items-center gap-4 bg-white/10 border border-white/20 px-5 py-3 rounded-xl shadow-sm">
+                  <div className="flex items-center gap-1 text-white">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-3.5 h-3.5 fill-white text-white" />
+                    ))}
                   </div>
-
-                  {/* Rating & Metric Badge */}
-                  <div className="flex items-center gap-4 bg-white/10 border border-white/20 px-5 py-3 rounded-xl shadow-sm">
-                    <div className="flex items-center gap-1 text-white">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-white text-white" />
-                      ))}
-                    </div>
-                    <div className="h-6 w-[1px] bg-white/20" />
-                    <div>
-                      <div className="text-lg font-serif font-black text-white">{current.keyMetric}</div>
-                      <div className="text-[9px] font-mono text-white/80 uppercase font-bold">{current.metricLabel}</div>
-                    </div>
+                  <div className="h-6 w-[1px] bg-white/20" />
+                  <div>
+                    <div className="text-xl font-sans font-black text-white">{current.keyMetric}</div>
+                    <div className="text-[9px] font-mono text-zinc-400 uppercase font-bold">{current.metricLabel}</div>
                   </div>
                 </div>
               </div>
-
-              {/* RIGHT SIDE: Milestones Table List */}
-              <div className="lg:col-span-5 bg-[#0e0e11] border border-white/20 rounded-xl p-5 sm:p-6 space-y-4 shadow-md">
-                <div className="flex items-center justify-between pb-3 border-b border-white/30">
-                  <div className="flex items-center gap-2 text-xs font-mono text-white uppercase font-bold tracking-wider">
-                    <Award className="w-4 h-4 text-white" />
-                    <span>KEY DELIVERABLES & MILESTONES</span>
-                  </div>
-                  <span className="text-[10px] font-mono text-white font-bold uppercase">STATUS</span>
-                </div>
-
-                <div className="space-y-3">
-                  {current.milestones.map((m, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-center justify-between py-2.5 px-3 rounded-lg bg-[#0e0906] border border-white/40 hover:border-white transition-all text-xs font-mono"
-                    >
-                      <div className="flex items-center gap-2.5 text-white">
-                        <CheckCircle2 className="w-4 h-4 text-white shrink-0" />
-                        <span className="font-sans font-semibold text-white">{m.label}</span>
-                      </div>
-                      <span className="text-[11px] font-mono text-white font-bold px-2 py-0.5 rounded bg-white/15 border border-white/40 shrink-0 ml-2">
-                        {m.tag}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
             </motion.div>
           </AnimatePresence>
 
           {/* Bottom Navigation Buttons */}
-          <div className="mt-8 pt-6 border-t border-white/30 flex items-center justify-between">
-            <span className="text-xs font-mono text-zinc-300 uppercase tracking-widest">
-              STEP {currentIndex + 1} OF {SUCCESS_STORIES.length}
+          <div className="mt-8 pt-6 border-t border-white/20 flex items-center justify-between max-w-4xl mx-auto">
+            <span className="text-xs font-mono text-zinc-400 uppercase tracking-widest">
+              STORY {currentIndex + 1} OF {SUCCESS_STORIES.length}
             </span>
 
             <div className="flex items-center gap-3">
               <button
                 onClick={handlePrev}
-                className="p-3 rounded-full bg-[#23170e] border border-white text-white hover:bg-white hover:text-black transition-all duration-300 shadow-sm"
+                className="p-3 rounded-full bg-[#141418] border border-white/30 text-white hover:bg-white hover:text-black transition-all duration-300 shadow-sm cursor-pointer"
                 aria-label="Previous Story"
               >
                 <ArrowLeft className="w-4 h-4" />
               </button>
               <button
                 onClick={handleNext}
-                className="p-3 rounded-full bg-[#23170e] border border-white text-white hover:bg-white hover:text-black transition-all duration-300 shadow-sm"
+                className="p-3 rounded-full bg-[#141418] border border-white/30 text-white hover:bg-white hover:text-black transition-all duration-300 shadow-sm cursor-pointer"
                 aria-label="Next Story"
               >
                 <ArrowRight className="w-4 h-4" />
