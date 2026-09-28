@@ -90,7 +90,7 @@ export const CurvedProjectGallery: React.FC = () => {
           }}
           className={`px-7 py-2.5 rounded-full text-xs font-mono uppercase font-bold tracking-widest transition-all duration-300 ${
             activeTab === 'exterior'
-              ? 'bg-white text-black shadow-lg shadow-white/10 scale-105'
+              ? 'bg-white/20 border border-white/40 text-white shadow-lg shadow-white/5 scale-105 backdrop-blur-md'
               : 'bg-white/5 backdrop-blur-md text-zinc-400 border border-white/10 hover:bg-white/10 hover:text-white'
           }`}
         >
@@ -103,7 +103,7 @@ export const CurvedProjectGallery: React.FC = () => {
           }}
           className={`px-7 py-2.5 rounded-full text-xs font-mono uppercase font-bold tracking-widest transition-all duration-300 ${
             activeTab === 'interior'
-              ? 'bg-white text-black shadow-lg shadow-white/10 scale-105'
+              ? 'bg-white/20 border border-white/40 text-white shadow-lg shadow-white/5 scale-105 backdrop-blur-md'
               : 'bg-white/5 backdrop-blur-md text-zinc-400 border border-white/10 hover:bg-white/10 hover:text-white'
           }`}
         >
