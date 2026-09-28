@@ -63,7 +63,7 @@ export const CurvedProjectGallery: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="py-10 sm:py-12 bg-[#080604] border-y border-[#3a2618]/30 relative overflow-hidden select-none"
+      className="py-10 sm:py-12 bg-[#0e0e11] border-y border-white/10 relative overflow-hidden select-none"
     >
       {/* SVG ClipPath Definitions for 3D Panoramic Viewport Top & Bottom Concave Arc */}
       <svg className="absolute w-0 h-0 pointer-events-none" aria-hidden="true">
@@ -74,10 +74,10 @@ export const CurvedProjectGallery: React.FC = () => {
         </defs>
       </svg>
 
-      {/* PURE WHITE HEADING */}
-      <div className="max-w-[1700px] w-full mx-auto px-6 sm:px-10 lg:px-16 mb-8 text-center space-y-4 relative z-20">
-        <h2 className="text-3xl sm:text-5xl lg:text-7xl font-serif font-bold uppercase tracking-widest text-white drop-shadow-lg">
-          AN IMMERSIVE WORLD OF CREATIVE CRAFT
+      {/* SECTION HEADING WITH STUDIO RS TYPOGRAPHY */}
+      <div className="max-w-[1700px] w-full mx-auto px-6 sm:px-10 lg:px-16 mb-8 text-center relative z-20">
+        <h2 className="text-4xl sm:text-6xl lg:text-7xl font-sans font-black text-white uppercase tracking-tight leading-none">
+          AN IMMERSIVE WORLD OF <span className="font-editorial italic font-normal text-zinc-400 uppercase">CREATIVE CRAFT</span>
         </h2>
       </div>
 
@@ -88,10 +88,10 @@ export const CurvedProjectGallery: React.FC = () => {
             setActiveTab('exterior');
             setCurrentIndex(1);
           }}
-          className={`px-7 py-2.5 rounded-lg text-xs font-mono uppercase font-extrabold tracking-widest transition-all duration-300 ${
+          className={`px-7 py-2.5 rounded-full text-xs font-mono uppercase font-bold tracking-widest transition-all duration-300 ${
             activeTab === 'exterior'
-              ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-black shadow-lg shadow-amber-500/25 scale-105'
-              : 'bg-black/60 backdrop-blur-md text-zinc-300 border border-white/15 hover:bg-white/10 hover:text-white'
+              ? 'bg-white text-black shadow-lg shadow-white/10 scale-105'
+              : 'bg-white/5 backdrop-blur-md text-zinc-400 border border-white/10 hover:bg-white/10 hover:text-white'
           }`}
         >
           Exterior
@@ -101,10 +101,10 @@ export const CurvedProjectGallery: React.FC = () => {
             setActiveTab('interior');
             setCurrentIndex(1);
           }}
-          className={`px-7 py-2.5 rounded-lg text-xs font-mono uppercase font-extrabold tracking-widest transition-all duration-300 ${
+          className={`px-7 py-2.5 rounded-full text-xs font-mono uppercase font-bold tracking-widest transition-all duration-300 ${
             activeTab === 'interior'
-              ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-black shadow-lg shadow-amber-500/25 scale-105'
-              : 'bg-black/60 backdrop-blur-md text-zinc-300 border border-white/15 hover:bg-white/10 hover:text-white'
+              ? 'bg-white text-black shadow-lg shadow-white/10 scale-105'
+              : 'bg-white/5 backdrop-blur-md text-zinc-400 border border-white/10 hover:bg-white/10 hover:text-white'
           }`}
         >
           Interior
@@ -113,7 +113,7 @@ export const CurvedProjectGallery: React.FC = () => {
 
       {/* 1. CONTINUOUS 3D CURVED PANORAMIC SCREEN VIEWPORT */}
       <div
-        className="relative max-w-[1850px] w-full mx-auto overflow-hidden py-8 min-h-[500px] flex items-center justify-center bg-[#060403] [perspective:1600px]"
+        className="relative max-w-[1850px] w-full mx-auto overflow-hidden py-8 min-h-[500px] flex items-center justify-center bg-[#0e0e11] [perspective:1600px]"
         style={{ clipPath: 'url(#panoramic-viewport-arc)' }}
       >
         {/* ROW CONTAINER - 3D SURFACE */}
@@ -127,7 +127,7 @@ export const CurvedProjectGallery: React.FC = () => {
               transform: 'perspective(1600px) rotateY(14deg) translateZ(-25px) scale(0.96)',
               transition: 'transform 0.4s ease-out',
             }}
-            className="relative hidden md:block w-[360px] sm:w-[480px] lg:w-[540px] h-[320px] sm:h-[380px] lg:h-[440px] bg-[#100b07] transition-all duration-300 group shadow-2xl shrink-0 overflow-hidden rounded-2xl border border-white/10 brightness-100 opacity-100 select-none pointer-events-none"
+            className="relative hidden md:block w-[360px] sm:w-[480px] lg:w-[540px] h-[320px] sm:h-[380px] lg:h-[440px] bg-[#141418] transition-all duration-300 group shadow-2xl shrink-0 overflow-hidden rounded-2xl border border-white/15 brightness-100 opacity-100 select-none pointer-events-none"
           >
             <AnimatePresence mode="wait">
               <motion.div
@@ -154,7 +154,7 @@ export const CurvedProjectGallery: React.FC = () => {
               transform: 'perspective(1600px) rotateY(0deg) translateZ(35px) scale(1.02)',
               transition: 'transform 0.4s ease-out',
             }}
-            className="relative w-[360px] sm:w-[500px] lg:w-[580px] h-[320px] sm:h-[380px] lg:h-[440px] bg-[#140c08] transition-all duration-300 group shadow-[0_25px_60px_rgba(0,0,0,0.95)] shrink-0 z-30 overflow-hidden rounded-2xl border border-amber-500/40 opacity-100 select-none pointer-events-none"
+            className="relative w-[360px] sm:w-[500px] lg:w-[580px] h-[320px] sm:h-[380px] lg:h-[440px] bg-[#141418] transition-all duration-300 group shadow-[0_25px_60px_rgba(0,0,0,0.8)] shrink-0 z-30 overflow-hidden rounded-2xl border border-white/25 opacity-100 select-none pointer-events-none"
           >
             <AnimatePresence mode="wait">
               <motion.div
@@ -170,7 +170,7 @@ export const CurvedProjectGallery: React.FC = () => {
                   alt={centerProject.title}
                   fill
                   priority
-                  className="object-contain object-center p-2 transition-transform duration-500"
+                  className="object-cover object-center transition-transform duration-500"
                 />
               </motion.div>
             </AnimatePresence>
@@ -182,7 +182,7 @@ export const CurvedProjectGallery: React.FC = () => {
               transform: 'perspective(1600px) rotateY(-14deg) translateZ(-25px) scale(0.96)',
               transition: 'transform 0.4s ease-out',
             }}
-            className="relative hidden md:block w-[360px] sm:w-[480px] lg:w-[540px] h-[320px] sm:h-[380px] lg:h-[440px] bg-[#100b07] transition-all duration-300 group shadow-2xl shrink-0 overflow-hidden rounded-2xl border border-white/10 brightness-100 opacity-100 select-none pointer-events-none"
+            className="relative hidden md:block w-[360px] sm:w-[480px] lg:w-[540px] h-[320px] sm:h-[380px] lg:h-[440px] bg-[#141418] transition-all duration-300 group shadow-2xl shrink-0 overflow-hidden rounded-2xl border border-white/15 brightness-100 opacity-100 select-none pointer-events-none"
           >
             <AnimatePresence mode="wait">
               <motion.div
@@ -205,12 +205,10 @@ export const CurvedProjectGallery: React.FC = () => {
         </motion.div>
       </div>
 
-
-
       {/* 7. FLOATING ARROW BUTTON (Scroll to Top) */}
       <button
         onClick={scrollToTop}
-        className="fixed bottom-6 right-6 z-40 w-10 h-10 rounded-lg bg-black/80 backdrop-blur-md border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-black shadow-xl flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95"
+        className="fixed bottom-6 right-6 z-40 w-10 h-10 rounded-full bg-[#141418]/90 backdrop-blur-md border border-white/20 text-white hover:bg-white hover:text-black shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95"
         aria-label="Scroll to top of section"
       >
         <ArrowUp className="w-5 h-5" />

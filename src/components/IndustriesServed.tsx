@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingBag, Hotel, Home, Factory, Newspaper, Flame, Landmark, Shirt, Leaf, ArrowRight, Layers, Shuffle } from 'lucide-react';
+import React, { useRef, useEffect, useState } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { ShoppingBag, Hotel, Home, Factory, Newspaper, Flame, Landmark, Shirt, Leaf } from 'lucide-react';
 
 interface IndustryItem {
   id: string;
@@ -22,7 +22,7 @@ const INDUSTRIES: IndustryItem[] = [
     categoryLabel: 'FMCG & RETAIL',
     name: 'Retail & FMCG',
     description: 'Product pouches, snack packaging, and in-store point of sale displays.',
-    icon: <ShoppingBag className="w-6 h-6 text-white" />,
+    icon: <ShoppingBag className="w-5 h-5 text-white" />,
     clientHighlight: 'LUWWA Energy Bar & Savera',
     deliverables: ['Custom Stand-up Pouches', 'Point of Sale Retail Units', 'Brand Box Architecture'],
   },
@@ -32,7 +32,7 @@ const INDUSTRIES: IndustryItem[] = [
     categoryLabel: 'SPATIAL & RESORTS',
     name: 'Hospitality & Resorts',
     description: 'Bespoke architectural logo marks, environmental signage, and luxury venue branding.',
-    icon: <Hotel className="w-6 h-6 text-white" />,
+    icon: <Hotel className="w-5 h-5 text-white" />,
     clientHighlight: 'The Raas Valley Resort & Royal Park',
     deliverables: ['Resort Spatial Signage', 'Guest Amenities Suite', 'Luxury Identity Guidelines'],
   },
@@ -42,7 +42,7 @@ const INDUSTRIES: IndustryItem[] = [
     categoryLabel: 'SPATIAL & RESORTS',
     name: 'Real Estate & Interiors',
     description: 'Township visual identities, interior hub marks, and architectural brochures.',
-    icon: <Home className="w-6 h-6 text-white" />,
+    icon: <Home className="w-5 h-5 text-white" />,
     clientHighlight: 'Saveria Hub of Interiors & Valencia',
     deliverables: ['Township Master Brand', 'Sales Kit Architecture', '3D Spatial Signage Marks'],
   },
@@ -52,7 +52,7 @@ const INDUSTRIES: IndustryItem[] = [
     categoryLabel: 'CORPORATE & INDUSTRIAL',
     name: 'Industrial & Manufacturing',
     description: '40 Years of Legacy annual reports, sustainability spreads, and fibre marks.',
-    icon: <Factory className="w-6 h-6 text-white" />,
+    icon: <Factory className="w-5 h-5 text-white" />,
     clientHighlight: 'Terex Equipment & Ariddha Fibre',
     deliverables: ['40 Years Legacy Report', 'Exhibition Expo Pavilion', 'Fleet Livery System'],
   },
@@ -62,7 +62,7 @@ const INDUSTRIES: IndustryItem[] = [
     categoryLabel: 'CORPORATE & INDUSTRIAL',
     name: 'Media & Print Publications',
     description: 'Full-page newspaper ad campaigns, editorial layouts, and marketing press.',
-    icon: <Newspaper className="w-6 h-6 text-white" />,
+    icon: <Newspaper className="w-5 h-5 text-white" />,
     clientHighlight: 'Dainik Bhaskar & Marketing Express',
     deliverables: ['National Press Ads', 'Editorial Publications', 'Brand Campaign Spread'],
   },
@@ -72,7 +72,7 @@ const INDUSTRIES: IndustryItem[] = [
     categoryLabel: 'FMCG & RETAIL',
     name: 'Incense & Consumer Goods',
     description: '360-degree brand packaging suites, agarbatti boxes, and billboard campaigns.',
-    icon: <Flame className="w-6 h-6 text-white" />,
+    icon: <Flame className="w-5 h-5 text-white" />,
     clientHighlight: 'Reyug Incense & Pooja Series',
     deliverables: ['Metallic Foil Packaging', 'Pan-India Distribution Deck', 'Retail Counter Displays'],
   },
@@ -82,7 +82,7 @@ const INDUSTRIES: IndustryItem[] = [
     categoryLabel: 'CORPORATE & INDUSTRIAL',
     name: 'Corporate & Finance',
     description: 'Investor pitch decks, corporate keynotes, and institutional presentations.',
-    icon: <Landmark className="w-6 h-6 text-white" />,
+    icon: <Landmark className="w-5 h-5 text-white" />,
     clientHighlight: 'D.P. Abushan Limited & Malpani Group',
     deliverables: ['B2B Pitch Architecture', 'Corporate Guidelines', 'Annual Board Reports'],
   },
@@ -92,7 +92,7 @@ const INDUSTRIES: IndustryItem[] = [
     categoryLabel: 'FMCG & RETAIL',
     name: 'Luxury & Fashion Boutiques',
     description: 'Bespoke fashion typography, lifestyle identity marks, and boutique collateral.',
-    icon: <Shirt className="w-6 h-6 text-white" />,
+    icon: <Shirt className="w-5 h-5 text-white" />,
     clientHighlight: 'AVA Boutiquified & Anvith Luxury',
     deliverables: ['Custom Monogram Identity', 'Luxury Apparel Tags', 'Boutique Collateral Suite'],
   },
@@ -102,199 +102,116 @@ const INDUSTRIES: IndustryItem[] = [
     categoryLabel: 'CORPORATE & INDUSTRIAL',
     name: 'Sustainability & Future Tech',
     description: 'Entrepreneurship summits, green transformation publications, and eco initiatives.',
-    icon: <Leaf className="w-6 h-6 text-white" />,
+    icon: <Leaf className="w-5 h-5 text-white" />,
     clientHighlight: 'EKI Energy & Sustainable Future MP',
     deliverables: ['Carbon Summit Branding', 'ESG Sustainability Decks', 'Green Tech Identity'],
   },
 ];
 
-export const IndustriesServed: React.FC = () => {
-  const [selectedSector, setSelectedSector] = useState<IndustryItem>(INDUSTRIES[0]);
-  const [isDealt, setIsDealt] = useState(false);
+const TypewriterHeading: React.FC = () => {
+  const ref = useRef<HTMLHeadingElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const [part1Text, setPart1Text] = useState('');
+  const [part2Text, setPart2Text] = useState('');
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
+
+  const fullPart1 = 'INDUSTRIES WE ';
+  const fullPart2 = 'SERVE';
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    let charIndex = 0;
+    const interval = setInterval(() => {
+      if (charIndex < fullPart1.length) {
+        setPart1Text(fullPart1.slice(0, charIndex + 1));
+        charIndex++;
+      } else if (charIndex - fullPart1.length < fullPart2.length) {
+        const p2Idx = charIndex - fullPart1.length;
+        setPart2Text(fullPart2.slice(0, p2Idx + 1));
+        charIndex++;
+      } else {
+        setIsTypingComplete(true);
+        clearInterval(interval);
+      }
+    }, 45);
+
+    return () => clearInterval(interval);
+  }, [isInView]);
 
   return (
-    <section id="industries" className="pt-10 pb-16 px-4 sm:px-8 lg:px-12 bg-[#090604] border-t border-b border-white/10 relative overflow-hidden select-none">
+    <div className="text-center space-y-3 max-w-4xl mx-auto min-h-[90px] flex items-center justify-center">
+      <h2
+        ref={ref}
+        className="text-4xl sm:text-6xl lg:text-7xl font-sans font-black text-white uppercase tracking-tight leading-none inline-flex items-center flex-wrap justify-center"
+      >
+        <span>{part1Text}</span>
+        {part2Text && (
+          <span className="font-editorial italic font-normal text-zinc-400 uppercase ml-2 sm:ml-3">
+            {part2Text}
+          </span>
+        )}
+        {!isTypingComplete && (
+          <motion.span
+            animate={{ opacity: [1, 0] }}
+            transition={{ repeat: Infinity, duration: 0.6 }}
+            className="inline-block w-[3px] sm:w-[5px] h-[0.7em] bg-white ml-2 rounded-full align-middle"
+          />
+        )}
+      </h2>
+    </div>
+  );
+};
+
+export const IndustriesServed: React.FC = () => {
+  return (
+    <section id="industries" className="pt-12 pb-20 px-4 sm:px-8 lg:px-12 bg-[#0e0e11] border-t border-b border-white/10 relative overflow-hidden select-none">
       {/* Background Subtle Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-[#d8ab7e]/10 rounded-full blur-[200px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-white/5 rounded-full blur-[200px] pointer-events-none" />
 
-      <div className="max-w-[1700px] w-full mx-auto space-y-10 relative z-10">
+      <div className="max-w-[1700px] w-full mx-auto space-y-12 relative z-10">
         
-        {/* Section Header */}
-        <div className="text-center space-y-3 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#e8be90]/15 border border-[#e8be90]/40 text-white text-xs font-mono font-bold uppercase tracking-widest">
-            <Layers className="w-3.5 h-3.5 text-white" />
-            <span>CROSS-INDUSTRY BRAND ARCHITECTURE</span>
-          </div>
+        {/* Section Header with Typewriter Effect */}
+        <TypewriterHeading />
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-black text-white uppercase tracking-wider drop-shadow-md">
-            INDUSTRIES WE <span className="text-white italic">SERVE</span>
-          </h2>
-
-          <p className="text-xs sm:text-sm text-zinc-300 max-w-xl mx-auto font-sans leading-relaxed">
-            Partnered with scaling businesses, FMCG conglomerates, and real estate leaders with bespoke visual solutions.
-          </p>
-        </div>
-
-        {/* DYNAMIC BENTO GRID LAYOUT WITH SPOTLIGHT SHOWCASE */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          
-          {/* FEATURED SECTOR SPOTLIGHT PANEL (Left 5 Cols) */}
-          <div className="lg:col-span-5 lg:mt-[38px] bg-gradient-to-b from-[#2e1f14] via-[#1f140c] to-[#120b06] border-2 border-white rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl relative overflow-hidden flex flex-col justify-between min-h-[420px]">
-            
-            {/* Technical Corner Framing Indicators */}
-            <div className="absolute top-4 left-4 text-white/50 font-mono text-xs pointer-events-none select-none">┌</div>
-            <div className="absolute top-4 right-4 text-white/50 font-mono text-xs pointer-events-none select-none">┐</div>
-            <div className="absolute bottom-4 left-4 text-white/50 font-mono text-xs pointer-events-none select-none">└</div>
-            <div className="absolute bottom-4 right-4 text-white/50 font-mono text-xs pointer-events-none select-none">┘</div>
-
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={selectedSector.id}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.3 }}
-                className="space-y-6 relative z-10"
-              >
-                {/* Header Tag */}
+        {/* 3-COLUMN STATIC BENTO BOXES GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+          {INDUSTRIES.map((item, idx) => (
+            <div
+              key={item.id}
+              className="bg-transparent rounded-2xl p-6 sm:p-7 flex flex-col justify-between space-y-5"
+            >
+              <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="p-3.5 rounded-xl bg-[#e8be90]/15 border border-white text-white">
-                    {selectedSector.icon}
+                  <div className="p-3 rounded-xl bg-white/10 text-white">
+                    {item.icon}
                   </div>
-                  <span className="text-[10px] font-mono text-white uppercase font-bold tracking-widest px-3 py-1 rounded-full bg-white/10 border border-white">
-                    {selectedSector.categoryLabel}
+                  <span className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-widest">
+                    0{idx + 1}
                   </span>
                 </div>
 
-                <div className="space-y-2">
-                  <h3 className="text-2xl sm:text-3xl font-serif font-black text-white uppercase tracking-wide">
-                    {selectedSector.name}
+                <div className="space-y-1.5 pt-1">
+                  <h3 className="text-xl sm:text-2xl font-sans font-black text-white uppercase tracking-tight">
+                    {item.name.includes('&') ? (
+                      <>
+                        {item.name.split('&')[0]} <span className="font-editorial italic font-normal text-zinc-400 lowercase">&amp; {item.name.split('&')[1]}</span>
+                      </>
+                    ) : (
+                      item.name
+                    )}
                   </h3>
-                  <p className="text-xs sm:text-sm text-zinc-300 font-sans leading-relaxed">
-                    {selectedSector.description}
-                  </p>
                 </div>
+              </div>
 
-                {/* Key Deliverables Scope */}
-                <div className="pt-4 border-t border-white/30 space-y-3">
-                  <span className="text-[11px] font-mono text-white uppercase font-bold tracking-wider block">
-                    DELIVERABLE SCOPE & ASSETS:
-                  </span>
-                  <div className="space-y-2">
-                    {selectedSector.deliverables.map((d, i) => (
-                      <div key={i} className="flex items-center gap-2 text-xs font-sans text-white">
-                        <span className="w-1.5 h-1.5 rounded-full bg-white" />
-                        <span>{d}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Key Client Highlight Box */}
-                <div className="pt-4 border-t border-white/30 flex items-center justify-between">
-                  <span className="text-[11px] font-mono text-zinc-400 uppercase">PROMINENT CASE STUDY:</span>
-                  <span className="text-xs font-mono font-bold text-white bg-[#e8be90]/20 border border-white px-3 py-1 rounded-lg">
-                    {selectedSector.clientHighlight}
-                  </span>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* BENTO CARDS SHOWCASE GRID (Right 7 Cols) WITH CARD DECK SHUFFLE & DEAL EFFECT */}
-          <div
-            className="lg:col-span-7 flex flex-col space-y-4 pt-4 sm:pt-8 lg:pt-10"
-            onMouseEnter={() => setIsDealt(true)}
-            onMouseLeave={() => setIsDealt(false)}
-          >
-            {/* Deck Header Status & Toggle */}
-            <div className="flex items-center justify-between px-1">
-              <span className="text-[11px] font-mono text-white uppercase font-bold tracking-widest flex items-center gap-2">
-                <Layers className="w-3.5 h-3.5 text-white" />
-                <span>SECTOR DECK (9 CATEGORIES)</span>
-              </span>
-              <button
-                onClick={() => setIsDealt(!isDealt)}
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 hover:bg-[#e8be90] hover:text-black border border-white/30 text-[10px] font-mono font-bold text-white uppercase transition-all duration-300 cursor-pointer shadow-sm"
-              >
-                <Shuffle className="w-3 h-3 text-white group-hover:text-black" />
-                <span>{isDealt ? 'CARD DECK DEALT' : 'HOVER OR CLICK TO SHUFFLE DECK'}</span>
-              </button>
+              <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-zinc-300">
+                <span className="truncate text-zinc-400">{item.clientHighlight}</span>
+              </div>
             </div>
-
-            {/* 3x3 Bento Grid Container */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 relative min-h-[550px]">
-              {INDUSTRIES.map((item, idx) => {
-                const isSelected = selectedSector.id === item.id;
-                const row = Math.floor(idx / 3);
-                const col = idx % 3;
-
-                // Stack offsets towards center card (Row 1, Col 1)
-                const offX = (1 - col) * 105;
-                const offY = (1 - row) * 105;
-                const stackRot = (idx - 4) * 3.5;
-
-                return (
-                  <motion.div
-                    key={item.id}
-                    layout
-                    initial={false}
-                    animate={{
-                      x: isDealt ? '0%' : `${offX}%`,
-                      y: isDealt ? '0%' : `${offY}%`,
-                      rotate: isDealt ? 0 : stackRot,
-                      scale: isDealt ? (isSelected ? 1.03 : 1) : 0.94 + idx * 0.01,
-                      zIndex: isDealt ? (isSelected ? 30 : 10) : idx + 1,
-                    }}
-                    transition={{
-                      duration: 0.75,
-                      delay: isDealt ? idx * 0.14 : (8 - idx) * 0.07,
-                      ease: [0.16, 1, 0.3, 1],
-                    }}
-                    onClick={() => {
-                      setIsDealt(true);
-                      setSelectedSector(item);
-                    }}
-                    className={`group cursor-pointer p-5 rounded-xl border flex flex-col justify-between text-left transition-all duration-300 min-h-[170px] ${
-                      isSelected
-                        ? 'bg-gradient-to-b from-[#3a281b] via-[#2a1c12] to-[#1c120b] border-2 border-white scale-[1.03] z-20 shadow-xl shadow-white/10'
-                        : 'bg-[#18110b]/90 border border-white/80 hover:border-white hover:bg-[#22170f] opacity-95 hover:opacity-100 shadow-sm'
-                    }`}
-                  >
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between">
-                        <div className="p-2.5 rounded-lg bg-white/10 border border-white/40 text-white group-hover:border-white transition-colors">
-                          {item.icon}
-                        </div>
-                        <span className="text-[9px] font-mono text-white/70 uppercase">
-                          0{idx + 1}
-                        </span>
-                      </div>
-
-                      <div className="space-y-1">
-                        <h4 className="text-sm font-sans font-extrabold text-white uppercase tracking-wider truncate">
-                          {item.name}
-                        </h4>
-                        <p className="text-[11px] text-zinc-300 line-clamp-2 leading-snug">
-                          {item.description}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="pt-3 mt-3 border-t border-white/20 flex items-center justify-between text-[10px] font-mono text-zinc-300 group-hover:text-white transition-colors">
-                      <span className="truncate">{item.clientHighlight.split('&')[0]}</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-white shrink-0 group-hover:translate-x-0.5 transition-transform" />
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-
+          ))}
         </div>
 
       </div>
     </section>
   );
 };
-

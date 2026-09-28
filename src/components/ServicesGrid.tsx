@@ -104,11 +104,8 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ showHeader = true })
         {showHeader && (
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pb-6 border-b border-white/10">
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ff5528]/10 border border-[#ff5528]/30 text-[#ff5528] text-xs font-mono uppercase tracking-widest">
-                <span>AGENCY CAPABILITIES</span>
-              </div>
-              <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tight leading-none font-sans">
-                SPECIALIZED <span className="text-[#ff5528]">DISCIPLINES</span>
+              <h2 className="text-4xl sm:text-6xl lg:text-7xl font-sans font-black text-white uppercase tracking-tight leading-none">
+                SPECIALIZED <span className="font-editorial italic font-normal text-zinc-400 uppercase">DISCIPLINES</span>
               </h2>
             </div>
 

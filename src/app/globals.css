@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: var(--font-serif), 'Playfair Display', Georgia, Cambria, serif;
+}
+
+.font-serif {
+  font-family: var(--font-serif), 'Playfair Display', Georgia, Cambria, serif !important;
+}
+
 @layer base {
   :root {
     --background: #0e0e11;
@@ -134,5 +142,31 @@
 .animate-mirror-sheen {
   animation: mirrorSheen 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
+
+/* Blueprint Off-White Grid Lining & Luxury Emerald Style (Image 2 aesthetic) */
+.bg-blueprint-grid {
+  background-color: #f4f4ee;
+  background-image: 
+    linear-gradient(to right, rgba(0, 117, 94, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 117, 94, 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.text-emerald-luxury {
+  color: #00755e;
+}
+
+.bg-emerald-luxury {
+  background-color: #00755e;
+}
+
+.border-emerald-luxury {
+  border-color: rgba(0, 117, 94, 0.25);
+}
+
+.font-editorial {
+  font-family: var(--font-serif), 'Playfair Display', Georgia, Cambria, serif !important;
+}
+
 
 

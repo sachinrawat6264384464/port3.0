@@ -137,20 +137,16 @@ export const CustomerSuccessStories: React.FC = () => {
   };
 
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-8 lg:px-12 bg-[#0a0705] border-t border-b border-white/10 relative overflow-hidden select-none">
+    <section className="py-12 sm:py-16 px-4 sm:px-8 lg:px-12 bg-[#0e0e11] border-t border-b border-white/10 relative overflow-hidden select-none">
       {/* Background Subtle Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-[#d8ab7e]/10 rounded-full blur-[200px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-white/5 rounded-full blur-[200px] pointer-events-none" />
 
       <div className="max-w-[1700px] w-full mx-auto space-y-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center space-y-2 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#e8be90]/15 border border-white text-white text-xs font-mono font-bold uppercase tracking-widest">
-            <Building2 className="w-3.5 h-3.5 text-white" />
-            <span>(04) // CLIENT SUCCESS TIMELINE & CASE IMPACT</span>
-          </div>
-          <h2 className="text-3xl sm:text-5xl font-serif font-black text-white uppercase tracking-wider drop-shadow-md">
-            VOICES OF <span className="text-white italic">TRUST & GROWTH</span>
+        <div className="text-center space-y-3 max-w-4xl mx-auto">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-sans font-black text-white uppercase tracking-tight leading-none">
+            VOICES OF <span className="font-editorial italic font-normal text-zinc-400 uppercase">TRUST & GROWTH</span>
           </h2>
         </div>
 
@@ -164,13 +160,13 @@ export const CustomerSuccessStories: React.FC = () => {
                 onClick={() => setCurrentIndex(idx)}
                 className={`relative cursor-pointer transition-all duration-300 p-4 sm:p-5 rounded-xl border flex flex-col justify-between text-center min-h-[140px] sm:min-h-[160px] ${
                   isActive
-                    ? 'bg-gradient-to-b from-[#3a281b] via-[#2a1c12] to-[#1c120b] border-2 border-white scale-[1.03] z-20 shadow-xl shadow-white/10'
-                    : 'bg-[#18110b]/90 border border-white/80 hover:border-white hover:bg-[#22170f] opacity-95 hover:opacity-100 shadow-sm'
+                    ? 'bg-[#141418] border-2 border-white/40 scale-[1.03] z-20 shadow-xl shadow-white/10'
+                    : 'bg-[#141418]/90 border border-white/15 hover:border-white/40 hover:bg-[#1a1a20] opacity-95 hover:opacity-100 shadow-sm'
                 }`}
               >
                 {/* Notched Bottom Arrow Tip (Active only) */}
                 {isActive && (
-                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 rotate-45 bg-[#1c120b] border-r border-b border-white z-10" />
+                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 rotate-45 bg-[#141418] border-r border-b border-white/40 z-10" />
                 )}
 
                 <div className="space-y-1">
@@ -178,7 +174,7 @@ export const CustomerSuccessStories: React.FC = () => {
                     {story.keyMetric}
                   </div>
 
-                  <h3 className="text-xs sm:text-sm font-sans font-extrabold uppercase tracking-wider text-white truncate">
+                  <h3 className="text-xs sm:text-sm font-serif font-black uppercase tracking-wider text-white truncate">
                     {story.company}
                   </h3>
                 </div>
@@ -192,10 +188,10 @@ export const CustomerSuccessStories: React.FC = () => {
         </div>
 
         {/* 2. EXPANDED DETAIL CONTAINER BOX (Biscuit background + Crisp White border) */}
-        <div className="max-w-[1600px] mx-auto bg-[#130d08] border-2 border-white rounded-2xl p-6 sm:p-10 relative overflow-hidden shadow-2xl">
+        <div className="max-w-[1600px] mx-auto bg-[#141418] border border-white/20 rounded-2xl p-6 sm:p-10 relative overflow-hidden shadow-2xl">
           
           {/* Top Title Header Tag */}
-          <div className="text-center font-serif text-white text-lg sm:text-2xl font-bold uppercase tracking-widest border-b border-white/30 pb-4 mb-8">
+          <div className="text-center font-serif text-white text-lg sm:text-2xl font-bold uppercase tracking-widest border-b border-white/20 pb-4 mb-8">
             {current.company} — <span className="text-white font-normal italic">{current.industry}</span>
           </div>
 
@@ -216,9 +212,9 @@ export const CustomerSuccessStories: React.FC = () => {
                   &ldquo;{current.quote}&rdquo;
                 </p>
 
-                <div className="pt-6 border-t border-white/30 flex flex-wrap items-center justify-between gap-4">
+                <div className="pt-6 border-t border-white/20 flex flex-wrap items-center justify-between gap-4">
                   <div className="space-y-1">
-                    <h4 className="text-base sm:text-lg font-bold text-white uppercase tracking-wider font-serif">
+                    <h4 className="text-base sm:text-lg font-serif font-black text-white uppercase tracking-wider">
                       {current.clientName}
                     </h4>
                     <p className="text-xs font-mono text-white/80">
@@ -227,15 +223,15 @@ export const CustomerSuccessStories: React.FC = () => {
                   </div>
 
                   {/* Rating & Metric Badge */}
-                  <div className="flex items-center gap-4 bg-[#23170e] border border-white px-5 py-3 rounded-xl shadow-sm">
+                  <div className="flex items-center gap-4 bg-white/10 border border-white/20 px-5 py-3 rounded-xl shadow-sm">
                     <div className="flex items-center gap-1 text-white">
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} className="w-3.5 h-3.5 fill-white text-white" />
                       ))}
                     </div>
-                    <div className="h-6 w-[1px] bg-white/30" />
+                    <div className="h-6 w-[1px] bg-white/20" />
                     <div>
-                      <div className="text-lg font-mono font-black text-white">{current.keyMetric}</div>
+                      <div className="text-lg font-serif font-black text-white">{current.keyMetric}</div>
                       <div className="text-[9px] font-mono text-white/80 uppercase font-bold">{current.metricLabel}</div>
                     </div>
                   </div>
@@ -243,7 +239,7 @@ export const CustomerSuccessStories: React.FC = () => {
               </div>
 
               {/* RIGHT SIDE: Milestones Table List */}
-              <div className="lg:col-span-5 bg-[#1c130d] border-2 border-white rounded-xl p-5 sm:p-6 space-y-4 shadow-md">
+              <div className="lg:col-span-5 bg-[#0e0e11] border border-white/20 rounded-xl p-5 sm:p-6 space-y-4 shadow-md">
                 <div className="flex items-center justify-between pb-3 border-b border-white/30">
                   <div className="flex items-center gap-2 text-xs font-mono text-white uppercase font-bold tracking-wider">
                     <Award className="w-4 h-4 text-white" />

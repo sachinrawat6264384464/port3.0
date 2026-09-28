@@ -7,28 +7,80 @@ import { Quote, ArrowUpRight, Compass, ShieldCheck, Zap } from 'lucide-react';
 
 interface BrandIntroProps {
   showHeader?: boolean;
+  theme?: 'dark' | 'light';
 }
 
-export const BrandIntro: React.FC<BrandIntroProps> = ({ showHeader = true }) => {
+export const BrandIntro: React.FC<BrandIntroProps> = ({ showHeader = true, theme = 'dark' }) => {
+  const isLight = theme === 'light';
+
   return (
-    <section id="about" className="py-24 sm:py-32 px-6 sm:px-10 lg:px-16 bg-[#0e0e11] text-white border-t border-b border-white/5 relative overflow-hidden">
-      
+    <section 
+      id="about" 
+      className={`py-24 sm:py-32 px-6 sm:px-10 lg:px-16 border-t border-b relative overflow-hidden transition-colors ${
+        isLight 
+          ? 'bg-blueprint-grid text-zinc-900 border-[#00755e]/15' 
+          : 'bg-[#0e0e11] text-white border-white/5'
+      }`}
+    >
       {/* Background Subtle Ambient Glow */}
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#ff5528]/5 rounded-full blur-[180px] pointer-events-none -translate-y-1/2" />
+      <div className={`absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full blur-[180px] pointer-events-none -translate-y-1/2 ${
+        isLight ? 'bg-[#00755e]/10' : 'bg-[#ff5528]/5'
+      }`} />
+
+      {/* Giant Repeating Dark Studio Watermark (Matching Screenshot 1) */}
+      {!isLight && (
+        <div className="absolute top-6 left-0 right-0 overflow-hidden pointer-events-none select-none opacity-20 z-0">
+          <motion.div
+            animate={{ x: ['0%', '-50%'] }}
+            transition={{ repeat: Infinity, ease: 'linear', duration: 35 }}
+            className="flex items-center gap-12 whitespace-nowrap w-max"
+          >
+            {[...Array(8)].map((_, i) => (
+              <span key={i} className="text-7xl sm:text-9xl font-black tracking-tight text-zinc-600 font-sans">
+                studio<span className="font-editorial italic font-normal text-zinc-400">rs</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                studio<span className="font-editorial italic font-normal text-zinc-400">rs</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                studio<span className="font-editorial italic font-normal text-zinc-400">rs</span>
+              </span>
+            ))}
+          </motion.div>
+        </div>
+      )}
+
+      {/* Blueprint Coordinate Marks for Light Theme */}
+      {isLight && (
+        <div className="absolute inset-0 pointer-events-none select-none font-mono text-[10px] text-[#00755e]/30 px-6 py-6 flex flex-col justify-between">
+          <div className="flex justify-between">
+            <span>Nf3 // (02)</span>
+            <span>Bc4 // GRID_ANNOTATION</span>
+          </div>
+          <div className="flex justify-between">
+            <span>O-O // PHILOSOPHY</span>
+            <span>Nf6 // OUTLINE</span>
+          </div>
+        </div>
+      )}
 
       <div className="max-w-[1700px] w-full mx-auto relative z-10">
         
         {/* Top Header Tag */}
         {showHeader && (
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-16 pb-8 border-b border-white/10">
+          <div className={`flex flex-wrap items-center justify-between gap-4 mb-16 pb-8 border-b ${
+            isLight ? 'border-[#00755e]/15' : 'border-white/10'
+          }`}>
             <div className="flex items-center gap-3">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#ff5528] animate-pulse" />
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-300">
+              <span className={`w-2.5 h-2.5 rounded-full animate-pulse ${
+                isLight ? 'bg-[#00755e]' : 'bg-[#ff5528]'
+              }`} />
+              <span className={`text-xs font-mono font-bold uppercase tracking-widest ${
+                isLight ? 'text-[#00755e]' : 'text-zinc-300'
+              }`}>
                 (02) // BRAND PHILOSOPHY & DECLARATION
               </span>
             </div>
 
-            <div className="hidden sm:flex items-center gap-6 text-xs font-mono text-zinc-500 uppercase tracking-widest">
+            <div className={`hidden sm:flex items-center gap-6 text-xs font-mono uppercase tracking-widest ${
+              isLight ? 'text-zinc-600' : 'text-zinc-500'
+            }`}>
               <span>STRATEGY</span>
               <span>•</span>
               <span>AESTHETICS</span>
@@ -50,11 +102,17 @@ export const BrandIntro: React.FC<BrandIntroProps> = ({ showHeader = true }) => 
             className="lg:col-span-5 space-y-8"
           >
             <div className="space-y-4">
-              <h3 className="text-4xl sm:text-5xl font-black uppercase tracking-tight text-white font-sans leading-none">
+              <h3 className={`text-4xl sm:text-5xl font-black uppercase tracking-tight font-sans leading-none ${
+                isLight ? 'text-zinc-900' : 'text-white'
+              }`}>
                 THE OUTLINE <br />
-                <span className="text-[#ff5528]">MANIFESTO</span>
+                <span className={isLight ? 'font-editorial italic text-[#00755e]' : 'text-[#ff5528]'}>
+                  MANIFESTO
+                </span>
               </h3>
-              <p className="text-sm sm:text-base text-zinc-400 font-normal leading-relaxed max-w-md">
+              <p className={`text-sm sm:text-base font-normal leading-relaxed max-w-md ${
+                isLight ? 'text-zinc-700' : 'text-zinc-400'
+              }`}>
                 We believe every brand possesses a unique narrative waiting to be articulated with razor-sharp precision and visual excellence.
               </p>
             </div>
@@ -62,43 +120,73 @@ export const BrandIntro: React.FC<BrandIntroProps> = ({ showHeader = true }) => 
             {/* 3 Pillar Micro Cards */}
             <div className="space-y-4 pt-2">
               
-              <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#ff5528]/50 transition-all duration-300 group flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-[#ff5528]/10 border border-[#ff5528]/20 flex items-center justify-center text-[#ff5528] group-hover:bg-[#ff5528] group-hover:text-black transition-all shrink-0">
+              <div className={`p-5 rounded-2xl transition-all duration-300 group flex items-start gap-4 ${
+                isLight 
+                  ? 'bg-white border border-[#00755e]/20 hover:border-[#00755e] shadow-sm' 
+                  : 'bg-white/[0.03] border border-white/10 hover:border-[#ff5528]/50'
+              }`}>
+                <div className={`w-10 h-10 rounded-xl border flex items-center justify-center transition-all shrink-0 ${
+                  isLight 
+                    ? 'bg-[#00755e]/10 border-[#00755e]/20 text-[#00755e] group-hover:bg-[#00755e] group-hover:text-white'
+                    : 'bg-[#ff5528]/10 border-[#ff5528]/20 text-[#ff5528] group-hover:bg-[#ff5528] group-hover:text-black'
+                }`}>
                   <Compass className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white uppercase tracking-wide group-hover:text-[#ff5528] transition-colors">
+                  <h4 className={`text-sm font-bold uppercase tracking-wide transition-colors ${
+                    isLight ? 'text-zinc-900 group-hover:text-[#00755e]' : 'text-white group-hover:text-[#ff5528]'
+                  }`}>
                     Strategic Intent
                   </h4>
-                  <p className="text-xs text-zinc-400 mt-1 leading-relaxed">
+                  <p className={`text-xs mt-1 leading-relaxed ${isLight ? 'text-zinc-600' : 'text-zinc-400'}`}>
                     Rooted in research, engineered to position your enterprise at the forefront of your industry.
                   </p>
                 </div>
               </div>
 
-              <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#ff5528]/50 transition-all duration-300 group flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-[#ff5528]/10 border border-[#ff5528]/20 flex items-center justify-center text-[#ff5528] group-hover:bg-[#ff5528] group-hover:text-black transition-all shrink-0">
+              <div className={`p-5 rounded-2xl transition-all duration-300 group flex items-start gap-4 ${
+                isLight 
+                  ? 'bg-white border border-[#00755e]/20 hover:border-[#00755e] shadow-sm' 
+                  : 'bg-white/[0.03] border border-white/10 hover:border-[#ff5528]/50'
+              }`}>
+                <div className={`w-10 h-10 rounded-xl border flex items-center justify-center transition-all shrink-0 ${
+                  isLight 
+                    ? 'bg-[#00755e]/10 border-[#00755e]/20 text-[#00755e] group-hover:bg-[#00755e] group-hover:text-white'
+                    : 'bg-[#ff5528]/10 border-[#ff5528]/20 text-[#ff5528] group-hover:bg-[#ff5528] group-hover:text-black'
+                }`}>
                   <Zap className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white uppercase tracking-wide group-hover:text-[#ff5528] transition-colors">
+                  <h4 className={`text-sm font-bold uppercase tracking-wide transition-colors ${
+                    isLight ? 'text-zinc-900 group-hover:text-[#00755e]' : 'text-white group-hover:text-[#ff5528]'
+                  }`}>
                     Aesthetic Precision
                   </h4>
-                  <p className="text-xs text-zinc-400 mt-1 leading-relaxed">
+                  <p className={`text-xs mt-1 leading-relaxed ${isLight ? 'text-zinc-600' : 'text-zinc-400'}`}>
                     Crafting digital identities with obsessive attention to typography, motion, and visual clarity.
                   </p>
                 </div>
               </div>
 
-              <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#ff5528]/50 transition-all duration-300 group flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-[#ff5528]/10 border border-[#ff5528]/20 flex items-center justify-center text-[#ff5528] group-hover:bg-[#ff5528] group-hover:text-black transition-all shrink-0">
+              <div className={`p-5 rounded-2xl transition-all duration-300 group flex items-start gap-4 ${
+                isLight 
+                  ? 'bg-white border border-[#00755e]/20 hover:border-[#00755e] shadow-sm' 
+                  : 'bg-white/[0.03] border border-white/10 hover:border-[#ff5528]/50'
+              }`}>
+                <div className={`w-10 h-10 rounded-xl border flex items-center justify-center transition-all shrink-0 ${
+                  isLight 
+                    ? 'bg-[#00755e]/10 border-[#00755e]/20 text-[#00755e] group-hover:bg-[#00755e] group-hover:text-white'
+                    : 'bg-[#ff5528]/10 border-[#ff5528]/20 text-[#ff5528] group-hover:bg-[#ff5528] group-hover:text-black'
+                }`}>
                   <ShieldCheck className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white uppercase tracking-wide group-hover:text-[#ff5528] transition-colors">
+                  <h4 className={`text-sm font-bold uppercase tracking-wide transition-colors ${
+                    isLight ? 'text-zinc-900 group-hover:text-[#00755e]' : 'text-white group-hover:text-[#ff5528]'
+                  }`}>
                     Unforgettable Impact
                   </h4>
-                  <p className="text-xs text-zinc-400 mt-1 leading-relaxed">
+                  <p className={`text-xs mt-1 leading-relaxed ${isLight ? 'text-zinc-600' : 'text-zinc-400'}`}>
                     Turning raw ideas into structured visual experiences that leave an indelible mark on audiences.
                   </p>
                 </div>
@@ -117,44 +205,64 @@ export const BrandIntro: React.FC<BrandIntroProps> = ({ showHeader = true }) => 
           >
             {/* Main Big Quote Statement */}
             <div className="relative">
-              <Quote className="w-16 h-16 text-[#ff5528]/20 absolute -top-6 -left-6 pointer-events-none" />
-              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.12] tracking-tight relative z-10 font-sans">
+              <Quote className={`w-16 h-16 absolute -top-6 -left-6 pointer-events-none ${
+                isLight ? 'text-[#00755e]/15' : 'text-[#ff5528]/20'
+              }`} />
+              <h2 className={`text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.12] tracking-tight relative z-10 font-sans ${
+                isLight ? 'text-zinc-900' : 'text-white'
+              }`}>
                 &ldquo;{BRAND.aboutTitle}&rdquo;
               </h2>
             </div>
 
             {/* Narrative Copy */}
-            <p className="text-lg sm:text-2xl text-zinc-300 font-normal leading-relaxed tracking-wide">
+            <p className={`text-lg sm:text-2xl font-normal leading-relaxed tracking-wide ${
+              isLight ? 'text-zinc-700' : 'text-zinc-300'
+            }`}>
               {BRAND.aboutDescription}
             </p>
 
-            {/* Glassmorphism Quote Callout Card */}
-            <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-white/10 backdrop-blur-2xl relative overflow-hidden group hover:border-[#ff5528]/40 transition-all duration-500 shadow-2xl">
+            {/* Quote Callout Card */}
+            <div className={`p-8 sm:p-12 rounded-3xl relative overflow-hidden group transition-all duration-500 shadow-xl ${
+              isLight 
+                ? 'bg-white border border-[#00755e]/25 hover:border-[#00755e]'
+                : 'bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-white/10 backdrop-blur-2xl hover:border-[#ff5528]/40'
+            }`}>
               {/* Corner framing indicators */}
-              <div className="absolute top-4 left-4 text-zinc-700 font-mono text-xs pointer-events-none select-none">┌</div>
-              <div className="absolute top-4 right-4 text-zinc-700 font-mono text-xs pointer-events-none select-none">┐</div>
-              <div className="absolute bottom-4 left-4 text-zinc-700 font-mono text-xs pointer-events-none select-none">└</div>
-              <div className="absolute bottom-4 right-4 text-zinc-700 font-mono text-xs pointer-events-none select-none">┘</div>
+              <div className={`absolute top-4 left-4 font-mono text-xs pointer-events-none select-none ${isLight ? 'text-[#00755e]/40' : 'text-zinc-700'}`}>┌</div>
+              <div className={`absolute top-4 right-4 font-mono text-xs pointer-events-none select-none ${isLight ? 'text-[#00755e]/40' : 'text-zinc-700'}`}>┐</div>
+              <div className={`absolute bottom-4 left-4 font-mono text-xs pointer-events-none select-none ${isLight ? 'text-[#00755e]/40' : 'text-zinc-700'}`}>└</div>
+              <div className={`absolute bottom-4 right-4 font-mono text-xs pointer-events-none select-none ${isLight ? 'text-[#00755e]/40' : 'text-zinc-700'}`}>┘</div>
 
               {/* Accent Glow Circle */}
-              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#ff5528]/15 rounded-full blur-3xl pointer-events-none group-hover:bg-[#ff5528]/30 transition-all duration-500" />
+              <div className={`absolute -bottom-10 -right-10 w-40 h-40 rounded-full blur-3xl pointer-events-none transition-all duration-500 ${
+                isLight ? 'bg-[#00755e]/10 group-hover:bg-[#00755e]/20' : 'bg-[#ff5528]/15 group-hover:bg-[#ff5528]/30'
+              }`} />
 
               <div className="relative z-10 space-y-6">
-                <div className="flex items-center gap-2 text-xs font-mono text-[#ff5528] font-bold tracking-widest uppercase">
+                <div className={`flex items-center gap-2 text-xs font-mono font-bold tracking-widest uppercase ${
+                  isLight ? 'text-[#00755e]' : 'text-[#ff5528]'
+                }`}>
                   <span>CORE BRANDING PRINCIPLE</span>
                 </div>
 
-                <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-wide italic leading-snug">
+                <p className={`text-2xl sm:text-4xl font-extrabold tracking-wide leading-snug ${
+                  isLight ? 'text-[#00755e] font-editorial italic' : 'text-white italic'
+                }`}>
                   &ldquo;{BRAND.coreQuote}&rdquo;
                 </p>
 
-                <div className="pt-2 flex items-center justify-between border-t border-white/10">
-                  <span className="text-xs text-zinc-400 font-mono">
+                <div className={`pt-2 flex items-center justify-between border-t ${
+                  isLight ? 'border-[#00755e]/15' : 'border-white/10'
+                }`}>
+                  <span className={`text-xs font-mono ${isLight ? 'text-zinc-600' : 'text-zinc-400'}`}>
                     DESIGN WITH DIRECTION // THE OUTLINE
                   </span>
                   <a
                     href="#services"
-                    className="inline-flex items-center gap-2 text-xs font-bold text-white hover:text-[#ff5528] uppercase tracking-wider transition-colors"
+                    className={`inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider transition-colors ${
+                      isLight ? 'text-zinc-900 hover:text-[#00755e]' : 'text-white hover:text-[#ff5528]'
+                    }`}
                   >
                     <span>Our Approach</span>
                     <ArrowUpRight className="w-4 h-4" />

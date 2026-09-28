@@ -7,10 +7,10 @@ export const Hero: React.FC = () => {
   return (
     <section id="hero" className="relative h-screen min-h-[750px] pt-28 sm:pt-36 pb-0 px-6 sm:px-10 lg:px-16 bg-[#0e0e11] text-white flex flex-col justify-between z-10">
       <div className="max-w-[1750px] w-full mx-auto relative z-10 flex flex-col justify-between h-full flex-1">
-        
+
         {/* Top Grid Layout matching REDOX */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start pt-2">
-          
+
           {/* Left Column: Rotating Circular Text Badge + Vertical Line */}
           <div className="lg:col-span-2 hidden lg:flex flex-col items-center justify-start gap-8 pt-2">
             <div className="relative w-28 h-28 flex items-center justify-center">
@@ -38,29 +38,21 @@ export const Hero: React.FC = () => {
 
           {/* Middle Column: Main Big Headline */}
           <div className="lg:col-span-6 space-y-4">
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-5xl sm:text-6xl lg:text-7xl xl:text-[84px] font-black tracking-tight leading-[1.02] text-white font-sans"
+              className="text-5xl sm:text-6xl lg:text-7xl xl:text-[80px] font-black tracking-tight leading-[1.02] text-white font-sans uppercase"
             >
               Let’s sharpen <br />
-              your brand <br />
-              with{' '}
-              <span className="inline-flex items-center justify-center px-4 sm:px-5 py-1 rounded-full bg-[#ff5528] text-black align-middle mx-1 shadow-lg">
-                <span className="w-6 h-3 rounded-full border-2 border-black flex items-center justify-between px-0.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-black" />
-                  <span className="w-1.5 h-1.5 rounded-full bg-black" />
-                </span>
-              </span>{' '}
-              quality <br />
-              work
+              your brand with <br />
+              <span className="font-editorial italic font-normal text-zinc-400 lowercase">quality work</span>
             </motion.h1>
           </div>
 
           {/* Right Column: Stats & Narrative Paragraph */}
           <div className="lg:col-span-4 space-y-8 pt-2">
-            
+
             <div className="grid grid-cols-2 gap-8 border-b border-white/10 pb-6">
               <div>
                 <div className="text-5xl sm:text-6xl font-extrabold text-white tracking-tight">
@@ -81,22 +73,20 @@ export const Hero: React.FC = () => {
               </div>
             </div>
 
-            <p className="text-base sm:text-lg text-zinc-300 font-normal leading-relaxed max-w-md">
-              We’re a digital products design & development agency that works passionately with the digital experiences.
-            </p>
+
           </div>
 
         </div>
 
-        {/* MASSIVE GIANT ORANGE OUTLINE BANNER (Font size increased to 27vw, scale-y-140) */}
-        <div className="w-full relative z-20 pointer-events-none select-none translate-y-[26%] sm:translate-y-[28%] mt-auto flex items-center justify-center">
+        {/* MASSIVE GIANT SILVERY GREY OUTLINE BANNER */}
+        <div className="w-full relative z-20 pointer-events-none select-none translate-y-[16%] sm:translate-y-[18%] mt-auto flex items-center justify-center py-4 sm:py-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.2 }}
             className="w-full flex items-center justify-center"
           >
-            <h2 className="text-[27vw] sm:text-[24.5vw] lg:text-[22vw] leading-[0.65] font-black tracking-tighter text-[#ff5528] uppercase text-center font-sans scale-y-[1.4] whitespace-nowrap drop-shadow-2xl">
+            <h2 className="text-[27.5vw] sm:text-[25.5vw] lg:text-[23.5vw] leading-[0.8] font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-zinc-200 via-zinc-400 to-zinc-600 uppercase text-center font-sans scale-y-[1.3] whitespace-nowrap drop-shadow-2xl [text-stroke:1px_rgba(255,255,255,0.15)] [-webkit-text-stroke:1px_rgba(255,255,255,0.15)] py-4">
               OUTLINE
             </h2>
           </motion.div>

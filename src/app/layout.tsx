@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
-import { Inter, Syne } from 'next/font/google';
+import { Inter, Syne, Playfair_Display } from 'next/font/google';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 const syne = Syne({ subsets: ['latin'], variable: '--font-display' });
+const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-serif' });
 
 export const metadata: Metadata = {
   title: 'The Outline — Strategy | Design | Direction',
@@ -26,7 +27,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${syne.variable} dark scroll-smooth`}
+      className={`${inter.variable} ${syne.variable} ${playfair.variable} dark scroll-smooth`}
     >
       <body className="bg-[#050505] text-[#f5f5f7] min-h-screen font-sans antialiased selection:bg-orange-600 selection:text-white">
         {children}

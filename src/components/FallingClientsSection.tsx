@@ -15,43 +15,45 @@ interface LogoPill {
 }
 
 const PILL_CLIENTS: LogoPill[] = [
-  // Color 1: Signature Orange (#ff5528)
-  { id: 'jotform', name: 'Jotform', bgColor: '#ff5528', textColor: '#ffffff', width: 140, height: 56 },
-  { id: 'bubble', name: '.bubble', bgColor: '#ff5528', textColor: '#ffffff', width: 130, height: 56 },
-  { id: 'hubspot', name: 'HubSpot', bgColor: '#ff5528', textColor: '#ffffff', width: 145, height: 56 },
-  { id: 'zendesk1', name: 'zendesk', bgColor: '#ff5528', textColor: '#ffffff', width: 145, height: 56 },
-  { id: 'canva2', name: 'Canva', bgColor: '#ff5528', textColor: '#ffffff', width: 130, height: 56 },
-  { id: 'iloveimg', name: 'i❤IMG', bgColor: '#ff5528', textColor: '#ffffff', width: 135, height: 56 },
-  { id: 'voiceflow2', name: 'Voiceflow', bgColor: '#ff5528', textColor: '#ffffff', width: 150, height: 56 },
-  { id: 'trinaas', name: 'TRINAAS', bgColor: '#ff5528', textColor: '#ffffff', width: 140, height: 56 },
-  { id: 'figma', name: 'Figma', bgColor: '#ff5528', textColor: '#ffffff', width: 130, height: 56 },
-  { id: 'stripe', name: 'Stripe', bgColor: '#ff5528', textColor: '#ffffff', width: 135, height: 56 },
+  // Color 1: Crisp White (#ffffff)
+  { id: 'voiceflow1', name: 'Voiceflow', bgColor: '#ffffff', textColor: '#000000', width: 150, height: 56 },
+  { id: 'clickup', name: 'ClickUp', bgColor: '#ffffff', textColor: '#000000', width: 140, height: 56 },
+  { id: 'zendesk2', name: 'zendesk', bgColor: '#ffffff', textColor: '#000000', width: 145, height: 56 },
+  { id: 'canva1', name: 'Canva', bgColor: '#ffffff', textColor: '#000000', width: 130, height: 56 },
+  { id: 'zoom', name: 'zoom', bgColor: '#ffffff', textColor: '#000000', width: 140, height: 56 },
+  { id: 'trello', name: 'Trello', bgColor: '#ffffff', textColor: '#000000', width: 140, height: 56 },
+  { id: 'pendo', name: 'pendo', bgColor: '#ffffff', textColor: '#000000', width: 135, height: 56 },
+  { id: 'saveria', name: 'SAVERIA', bgColor: '#ffffff', textColor: '#000000', width: 145, height: 56 },
+  { id: 'notion', name: 'Notion', bgColor: '#ffffff', textColor: '#000000', width: 135, height: 56 },
+  { id: 'slack', name: 'Slack', bgColor: '#ffffff', textColor: '#000000', width: 130, height: 56 },
+  { id: 'miro', name: 'Miro', bgColor: '#ffffff', textColor: '#000000', width: 125, height: 56 },
 
-  // Color 2: Crisp White (#ffffff)
-  { id: 'voiceflow1', name: 'Voiceflow', bgColor: '#ffffff', textColor: '#0e0e11', width: 150, height: 56 },
-  { id: 'clickup', name: 'ClickUp', bgColor: '#ffffff', textColor: '#0e0e11', width: 140, height: 56 },
-  { id: 'zendesk2', name: 'zendesk', bgColor: '#ffffff', textColor: '#0e0e11', width: 145, height: 56 },
-  { id: 'canva1', name: 'Canva', bgColor: '#ffffff', textColor: '#0e0e11', width: 130, height: 56 },
-  { id: 'zoom', name: 'zoom', bgColor: '#ffffff', textColor: '#0e0e11', width: 140, height: 56 },
-  { id: 'trello', name: 'Trello', bgColor: '#ffffff', textColor: '#0e0e11', width: 140, height: 56 },
-  { id: 'pendo', name: 'pendo', bgColor: '#ffffff', textColor: '#0e0e11', width: 135, height: 56 },
-  { id: 'saveria', name: 'SAVERIA', bgColor: '#ffffff', textColor: '#0e0e11', width: 145, height: 56 },
-  { id: 'notion', name: 'Notion', bgColor: '#ffffff', textColor: '#0e0e11', width: 135, height: 56 },
-  { id: 'slack', name: 'Slack', bgColor: '#ffffff', textColor: '#0e0e11', width: 130, height: 56 },
-  { id: 'miro', name: 'Miro', bgColor: '#ffffff', textColor: '#0e0e11', width: 125, height: 56 },
+  // Color 2: Warm Biscuit Gold (#e8be90)
+  { id: 'ameerji', name: 'AMEERJI', bgColor: '#e8be90', textColor: '#000000', width: 145, height: 56 },
+  { id: 'reyug', name: 'REYUG', bgColor: '#e8be90', textColor: '#000000', width: 135, height: 56 },
+  { id: 'malpani', name: 'MALPANI', bgColor: '#e8be90', textColor: '#000000', width: 145, height: 56 },
+  { id: 'terex', name: 'TEREX', bgColor: '#e8be90', textColor: '#000000', width: 135, height: 56 },
+  { id: 'lemount', name: 'LEMOUNT', bgColor: '#e8be90', textColor: '#000000', width: 145, height: 56 },
+  { id: 'raasvalley', name: 'RAAS VALLEY', bgColor: '#e8be90', textColor: '#000000', width: 160, height: 56 },
+  { id: 'bhaskar', name: 'BHASKAR', bgColor: '#e8be90', textColor: '#000000', width: 145, height: 56 },
+  { id: 'abushan', name: 'ABUSHAN', bgColor: '#e8be90', textColor: '#000000', width: 145, height: 56 },
+  { id: 'valencia', name: 'VALENCIA', bgColor: '#e8be90', textColor: '#000000', width: 145, height: 56 },
+  { id: 'anvith', name: 'ANVITH', bgColor: '#e8be90', textColor: '#000000', width: 135, height: 56 },
+  { id: 'ekienergy', name: 'EKI ENERGY', bgColor: '#e8be90', textColor: '#000000', width: 155, height: 56 },
 
-  // Color 3: Warm Biscuit Gold (#e8be90)
-  { id: 'ameerji', name: 'AMEERJI', bgColor: '#e8be90', textColor: '#0e0e11', width: 145, height: 56 },
-  { id: 'reyug', name: 'REYUG', bgColor: '#e8be90', textColor: '#0e0e11', width: 135, height: 56 },
-  { id: 'malpani', name: 'MALPANI', bgColor: '#e8be90', textColor: '#0e0e11', width: 145, height: 56 },
-  { id: 'terex', name: 'TEREX', bgColor: '#e8be90', textColor: '#0e0e11', width: 135, height: 56 },
-  { id: 'lemount', name: 'LEMOUNT', bgColor: '#e8be90', textColor: '#0e0e11', width: 145, height: 56 },
-  { id: 'raasvalley', name: 'RAAS VALLEY', bgColor: '#e8be90', textColor: '#0e0e11', width: 160, height: 56 },
-  { id: 'bhaskar', name: 'BHASKAR', bgColor: '#e8be90', textColor: '#0e0e11', width: 145, height: 56 },
-  { id: 'abushan', name: 'ABUSHAN', bgColor: '#e8be90', textColor: '#0e0e11', width: 145, height: 56 },
-  { id: 'valencia', name: 'VALENCIA', bgColor: '#e8be90', textColor: '#0e0e11', width: 145, height: 56 },
-  { id: 'anvith', name: 'ANVITH', bgColor: '#e8be90', textColor: '#0e0e11', width: 135, height: 56 },
-  { id: 'ekienergy', name: 'EKI ENERGY', bgColor: '#e8be90', textColor: '#0e0e11', width: 155, height: 56 },
+  // Color 3: Sleek Pure Black (#000000)
+  { id: 'hubspot', name: 'HubSpot', bgColor: '#000000', textColor: '#ffffff', width: 145, height: 56 },
+  { id: 'figma', name: 'Figma', bgColor: '#000000', textColor: '#ffffff', width: 130, height: 56 },
+  { id: 'stripe', name: 'Stripe', bgColor: '#000000', textColor: '#ffffff', width: 135, height: 56 },
+  { id: 'bubble', name: '.bubble', bgColor: '#000000', textColor: '#ffffff', width: 130, height: 56 },
+  { id: 'zendesk1', name: 'zendesk', bgColor: '#000000', textColor: '#ffffff', width: 145, height: 56 },
+
+  // Color 4: Metallic Dark Zinc (#353545)
+  { id: 'jotform', name: 'Jotform', bgColor: '#353545', textColor: '#ffffff', width: 140, height: 56 },
+  { id: 'canva2', name: 'Canva', bgColor: '#353545', textColor: '#ffffff', width: 130, height: 56 },
+  { id: 'iloveimg', name: 'i❤IMG', bgColor: '#353545', textColor: '#ffffff', width: 135, height: 56 },
+  { id: 'voiceflow2', name: 'Voiceflow', bgColor: '#353545', textColor: '#ffffff', width: 150, height: 56 },
+  { id: 'trinaas', name: 'TRINAAS', bgColor: '#353545', textColor: '#ffffff', width: 140, height: 56 },
 ];
 
 export const FallingClientsSection: React.FC = () => {
@@ -210,7 +212,7 @@ export const FallingClientsSection: React.FC = () => {
       className="py-8 sm:py-12 px-6 sm:px-10 lg:px-16 bg-[#0e0e11] text-white relative overflow-hidden border-t border-b border-white/10"
     >
       {/* Background Subtle Accent Glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#ff5528]/5 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-white/5 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-[1700px] w-full mx-auto space-y-8 relative z-10">
 
@@ -221,9 +223,9 @@ export const FallingClientsSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] font-sans text-white"
+            className="text-3xl sm:text-5xl lg:text-6xl font-sans font-black tracking-tight leading-[1.15] text-white uppercase"
           >
-            <span className="text-white">Client:</span> Helping brands to grow and say their success stories to the world.
+            CLIENTS: HELPING BRANDS TO GROW AND SAY THEIR <span className="font-editorial italic font-normal text-zinc-400 uppercase">SUCCESS STORIES</span> TO THE WORLD.
           </motion.h2>
 
           <div className="flex items-center justify-center pt-2">
@@ -237,13 +239,13 @@ export const FallingClientsSection: React.FC = () => {
           </div>
         </div>
 
-        {/* 2D Interactive Physics Stage (Slightly smaller height) */}
+        {/* 2D Interactive Physics Stage (Slate Dark background for 100% badge contrast) */}
         <div
           ref={sceneRef}
-          className="relative w-full h-[380px] sm:h-[440px] rounded-3xl bg-zinc-950/60 border border-white/10 overflow-hidden select-none"
+          className="relative w-full h-[380px] sm:h-[440px] rounded-3xl bg-[#1c1c24] border border-white/20 overflow-hidden select-none shadow-2xl"
         >
-          {/* Stage Grid pattern */}
-          <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
+          {/* Stage Grid pattern with enhanced dot visibility */}
+          <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.18)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
           {/* Render Logo Pills with Direct Ref DOM sync */}
           {PILL_CLIENTS.map((pill, idx) => (
@@ -263,7 +265,7 @@ export const FallingClientsSection: React.FC = () => {
                 willChange: 'transform',
                 transform: 'translate3d(0px, -200px, 0px)',
               }}
-              className="rounded-full flex items-center justify-center font-bold text-sm sm:text-base tracking-wide shadow-xl border border-black/10 cursor-grab active:cursor-grabbing pointer-events-auto transition-shadow hover:brightness-110 select-none"
+              className="rounded-full flex items-center justify-center font-bold text-sm sm:text-base tracking-wide shadow-2xl border border-white/30 cursor-grab active:cursor-grabbing pointer-events-auto transition-shadow hover:brightness-110 select-none"
             >
               <span className="px-4 truncate font-sans font-black italic uppercase pointer-events-none">
                 {pill.name}
@@ -283,7 +285,7 @@ export const FallingClientsSection: React.FC = () => {
           <button
             onClick={scrollToTop}
             aria-label="Back to Top"
-            className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-white text-black hover:bg-[#ff5528] hover:text-white flex items-center justify-center transition-all duration-300 shadow-xl z-20"
+            className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-white text-black hover:bg-zinc-200 flex items-center justify-center transition-all duration-300 shadow-xl z-20"
           >
             <ArrowUp className="w-5 h-5" />
           </button>

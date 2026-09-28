@@ -44,51 +44,55 @@ export const Navbar: React.FC = () => {
     >
       <div className="max-w-[1750px] w-full mx-auto px-6 sm:px-10 lg:px-12 flex items-center justify-between">
         
-        {/* REDOX Left Logo Badge Pill */}
+        {/* Sleek Minimal Logo (Matching Screenshot 3) */}
         <Link 
           href="/" 
-          className="flex items-center gap-3 px-5 py-2.5 rounded-full border border-white/15 bg-zinc-950/70 backdrop-blur-md hover:border-[#ff5528]/60 transition-all group shadow-lg shadow-black/40"
+          className="flex items-center gap-3 group py-1"
         >
-          <div className="w-8 h-8 rounded-full bg-[#ff5528] flex items-center justify-center font-black text-black text-sm tracking-tighter shadow-md">
-            O
+          <div className="w-7 h-7 rounded-lg bg-white flex items-center justify-center font-black text-black text-xs tracking-tighter shadow-md group-hover:scale-105 transition-transform">
+            R
           </div>
-          <div className="flex flex-col leading-none">
-            <span className="text-base font-black tracking-wide text-white uppercase group-hover:text-[#ff5528] transition-colors">
-              THE OUTLINE
-            </span>
-            <span className="text-[9px] font-mono tracking-widest text-zinc-400 uppercase pt-0.5">
-              AGENCY
+          <div className="flex items-center gap-2 leading-none">
+            <span className="text-xl sm:text-2xl font-black tracking-tight text-white font-sans group-hover:text-zinc-300 transition-colors">
+              studio<span className="font-editorial italic font-normal text-zinc-400 group-hover:text-white">rs</span>
             </span>
           </div>
         </Link>
 
-        {/* REDOX Center Pill Navigation Bar */}
-        <nav className="hidden md:flex items-center gap-1.5 border border-white/15 bg-zinc-950/80 px-4 py-2.5 rounded-full backdrop-blur-xl shadow-2xl shadow-black/60">
+        {/* Clean Minimalist Center Navigation (Matching Screenshot 3) */}
+        <nav className="hidden md:flex items-center gap-8 lg:gap-10">
           {NAV_LINKS.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
                 key={link.name}
                 href={link.href}
-                className={`flex items-center gap-1 px-4 py-1.5 rounded-full text-xs uppercase tracking-wider font-semibold transition-all duration-200 ${
+                className={`text-xs uppercase tracking-[0.18em] font-mono font-bold transition-all duration-200 relative py-1 ${
                   isActive
-                    ? 'text-white bg-[#ff5528]'
-                    : 'text-zinc-300 hover:text-white hover:bg-white/10'
+                    ? 'text-white'
+                    : 'text-zinc-400 hover:text-white'
                 }`}
               >
                 <span>{link.name}</span>
+                {isActive && (
+                  <motion.span
+                    layoutId="activeNavIndicator"
+                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-white rounded-full"
+                  />
+                )}
               </Link>
             );
           })}
         </nav>
 
-        {/* REDOX Right Action Button Pill (Let's Talk) */}
+        {/* Minimalist Right Action Button (Matching Screenshot 3) */}
         <div className="hidden md:flex items-center gap-4">
           <Link
             href="/contact"
-            className="px-7 py-3 rounded-full bg-white hover:bg-[#ff5528] text-black hover:text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-xl shadow-white/10 hover:shadow-[#ff5528]/30 flex items-center gap-2 group"
+            className="px-6 py-2.5 rounded-full border border-white/25 hover:border-white text-white hover:bg-white hover:text-black font-mono font-bold text-xs uppercase tracking-wider transition-all duration-300 flex items-center gap-2 group shadow-sm"
           >
-            <span>Let&apos;s Talk</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-white group-hover:bg-black transition-colors" />
+            <span>LET&apos;S TALK</span>
             <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
@@ -96,7 +100,7 @@ export const Navbar: React.FC = () => {
         {/* Mobile Hamburger Toggle */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2.5 rounded-full bg-zinc-900 border border-white/15 text-white hover:text-[#ff5528] transition-colors"
+          className="md:hidden p-2.5 rounded-full bg-zinc-900 border border-white/15 text-white hover:text-white transition-colors"
           aria-label="Toggle Navigation Menu"
         >
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

@@ -207,11 +207,30 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* Large Brand Watermark */}
-        <div className="py-6 text-center select-none pointer-events-none overflow-hidden">
-          <span className="text-5xl sm:text-8xl lg:text-9xl font-black uppercase text-transparent bg-clip-text bg-gradient-to-r from-white/30 via-white/50 to-white/30 tracking-wider font-sans whitespace-nowrap drop-shadow-[0_0_30px_rgba(255,255,255,0.15)] [text-stroke:1px_rgba(255,255,255,0.2)] [-webkit-text-stroke:1px_rgba(255,255,255,0.2)]">
-            THE OUTLINE AGENCY
-          </span>
+        {/* Large Brand Watermark - Massive responsive SVG text */}
+        <div className="py-8 w-full select-none pointer-events-none flex items-center justify-center overflow-hidden">
+          <svg className="w-full h-auto max-h-[260px] sm:max-h-[300px] md:max-h-[340px] px-2" viewBox="0 0 920 95" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <linearGradient id="footerBrandGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="rgba(255, 255, 255, 0.35)" />
+                <stop offset="50%" stopColor="rgba(255, 255, 255, 0.7)" />
+                <stop offset="100%" stopColor="rgba(255, 255, 255, 0.35)" />
+              </linearGradient>
+            </defs>
+            <text
+              x="50%"
+              y="50%"
+              dominantBaseline="central"
+              textAnchor="middle"
+              fill="url(#footerBrandGradient)"
+              stroke="rgba(255, 255, 255, 0.3)"
+              strokeWidth="1.8"
+              style={{ fontFamily: 'var(--font-sans), sans-serif', fontWeight: 900, letterSpacing: '-0.01em' }}
+              className="text-[98px] uppercase"
+            >
+              OUTLINE AGENCY
+            </text>
+          </svg>
         </div>
 
         {/* Bottom Bar: Copyright & Scroll to Top */}
