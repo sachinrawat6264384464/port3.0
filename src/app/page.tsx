@@ -29,11 +29,11 @@ export default function Home() {
       {/* INDUSTRIES SERVED */}
       <IndustriesServed />
 
-      {/* 3D CURVED MULTI-AXIS GALLERY STREAM */}
-      <CurvedProjectGallery />
-
       {/* CLIENT TESTIMONIALS & SUCCESS STORIES */}
       <CustomerSuccessStories />
+
+      {/* 3D CURVED MULTI-AXIS GALLERY STREAM */}
+      <CurvedProjectGallery />
 
       {/* INTERACTIVE FALLING CLIENTS BADGES */}
       <FallingClientsSection />
