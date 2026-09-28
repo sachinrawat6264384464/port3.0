@@ -110,7 +110,7 @@ const INDUSTRIES: IndustryItem[] = [
 
 const TypewriterHeading: React.FC = () => {
   const ref = useRef<HTMLHeadingElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, { amount: 0.2 });
   const [part1Text, setPart1Text] = useState('');
   const [part2Text, setPart2Text] = useState('');
   const [isTypingComplete, setIsTypingComplete] = useState(false);
@@ -119,7 +119,12 @@ const TypewriterHeading: React.FC = () => {
   const fullPart2 = 'SERVE';
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView) {
+      setPart1Text('');
+      setPart2Text('');
+      setIsTypingComplete(false);
+      return;
+    }
 
     let charIndex = 0;
     const interval = setInterval(() => {
@@ -165,12 +170,16 @@ const TypewriterHeading: React.FC = () => {
 
 const TypewriterBoxTitle: React.FC<{ name: string; delay?: number }> = ({ name, delay = 0 }) => {
   const ref = useRef<HTMLHeadingElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { amount: 0.15 });
   const [displayedText, setDisplayedText] = useState('');
   const [isComplete, setIsComplete] = useState(false);
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView) {
+      setDisplayedText('');
+      setIsComplete(false);
+      return;
+    }
 
     let charIndex = 0;
     const timeout = setTimeout(() => {
