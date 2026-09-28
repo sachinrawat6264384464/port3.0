@@ -223,7 +223,7 @@ export const FallingClientsSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl sm:text-5xl lg:text-6xl font-sans font-black tracking-tight leading-[1.15] text-white uppercase"
+            className="text-xl sm:text-3xl lg:text-4xl max-w-3xl mx-auto font-sans font-black tracking-tight leading-snug text-white uppercase"
           >
             CLIENTS: HELPING BRANDS TO GROW AND SAY THEIR <span className="font-editorial italic font-normal text-zinc-400 uppercase">SUCCESS STORIES</span> TO THE WORLD.
           </motion.h2>
