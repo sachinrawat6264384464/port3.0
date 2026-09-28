@@ -139,7 +139,7 @@ const TypewriterHeading: React.FC = () => {
         setIsTypingComplete(true);
         clearInterval(interval);
       }
-    }, 45);
+    }, 85);
 
     return () => clearInterval(interval);
   }, [isInView]);
@@ -191,7 +191,7 @@ const TypewriterBoxTitle: React.FC<{ name: string; delay?: number }> = ({ name, 
           setIsComplete(true);
           clearInterval(interval);
         }
-      }, 35);
+      }, 75);
 
       return () => clearInterval(interval);
     }, delay);
@@ -230,14 +230,25 @@ export const IndustriesServed: React.FC = () => {
 
       <div className="max-w-[1700px] w-full mx-auto space-y-12 relative z-10">
         
-        {/* Section Header with Typewriter Effect */}
-        <TypewriterHeading />
+        {/* Section Header with Typewriter Effect & Bottom Blur Reveal */}
+        <motion.div
+          initial={{ opacity: 0, y: 40, filter: 'blur(12px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          viewport={{ amount: 0.2 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <TypewriterHeading />
+        </motion.div>
 
-        {/* 3-COLUMN STATIC BENTO BOXES GRID */}
+        {/* 3-COLUMN STATIC BENTO BOXES GRID WITH BOTTOM BLUR SLIDE-UP */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
           {INDUSTRIES.map((item, idx) => (
-            <div
+            <motion.div
               key={item.id}
+              initial={{ opacity: 0, y: 50, filter: 'blur(12px)' }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              viewport={{ amount: 0.15 }}
+              transition={{ duration: 0.8, delay: (idx % 3) * 0.15, ease: [0.16, 1, 0.3, 1] }}
               className="bg-transparent rounded-2xl p-6 sm:p-7 flex flex-col justify-between space-y-5"
             >
               <div className="space-y-4">
@@ -248,14 +259,14 @@ export const IndustriesServed: React.FC = () => {
                 </div>
 
                 <div className="space-y-1.5 pt-1">
-                  <TypewriterBoxTitle name={item.name} delay={idx * 60} />
+                  <TypewriterBoxTitle name={item.name} delay={idx * 120} />
                 </div>
               </div>
 
               <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-zinc-300">
                 <span className="truncate text-zinc-400">{item.clientHighlight}</span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
