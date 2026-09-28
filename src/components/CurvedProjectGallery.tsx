@@ -8,10 +8,18 @@ import { Project } from '@/types';
 import { ProjectModal } from './ProjectModal';
 import { ArrowUp } from 'lucide-react';
 
-// Data structure for Exterior and Interior image sets
+// Data structure for Exterior and Interior image sets with HD Ultra High-Res assets
 const galleryData: Record<'exterior' | 'interior', Project[]> = {
-  exterior: [PROJECTS[0], PROJECTS[1], PROJECTS[2]],
-  interior: [PROJECTS[3], PROJECTS[4], PROJECTS[5]],
+  exterior: [
+    { ...PROJECTS[0], image: '/assets/projects/hero_showcase_hd.png' },
+    { ...PROJECTS[4], image: '/assets/projects/logo_raas_valley.png' },
+    { ...PROJECTS[5], image: '/assets/projects/billboard_lemount.png' },
+  ],
+  interior: [
+    { ...PROJECTS[3], image: '/assets/projects/annual_report_spreads.png' },
+    { ...PROJECTS[1], image: '/assets/projects/packaging_luwwa.png' },
+    { ...PROJECTS[4], image: '/assets/projects/logos_showcase_grid.png' },
+  ],
 };
 
 export const CurvedProjectGallery: React.FC = () => {
