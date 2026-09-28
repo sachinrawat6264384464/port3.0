@@ -163,6 +163,56 @@ const TypewriterHeading: React.FC = () => {
   );
 };
 
+const TypewriterBoxTitle: React.FC<{ name: string; delay?: number }> = ({ name, delay = 0 }) => {
+  const ref = useRef<HTMLHeadingElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const [displayedText, setDisplayedText] = useState('');
+  const [isComplete, setIsComplete] = useState(false);
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    let charIndex = 0;
+    const timeout = setTimeout(() => {
+      const interval = setInterval(() => {
+        if (charIndex < name.length) {
+          setDisplayedText(name.slice(0, charIndex + 1));
+          charIndex++;
+        } else {
+          setIsComplete(true);
+          clearInterval(interval);
+        }
+      }, 35);
+
+      return () => clearInterval(interval);
+    }, delay);
+
+    return () => clearTimeout(timeout);
+  }, [isInView, name, delay]);
+
+  const hasAmpersand = displayedText.includes('&');
+  const part1 = hasAmpersand ? displayedText.split('&')[0] : displayedText;
+  const part2 = hasAmpersand ? displayedText.split('&')[1] : '';
+
+  return (
+    <h3 ref={ref} className="text-xl sm:text-2xl font-sans font-black text-white uppercase tracking-tight min-h-[1.5em] flex items-center flex-wrap">
+      <span>{part1}</span>
+      {hasAmpersand && (
+        <span className="font-editorial italic font-normal text-zinc-400 lowercase ml-1">
+          &amp; {part2}
+        </span>
+      )}
+      {!isComplete && (
+        <motion.span
+          animate={{ opacity: [1, 0] }}
+          transition={{ repeat: Infinity, duration: 0.5 }}
+          className="inline-block w-[2px] h-[0.7em] bg-white ml-1 align-baseline"
+        />
+      )}
+    </h3>
+  );
+};
+
 export const IndustriesServed: React.FC = () => {
   return (
     <section id="industries" className="pt-12 pb-20 px-4 sm:px-8 lg:px-12 bg-[#0e0e11] border-t border-b border-white/10 relative overflow-hidden select-none">
@@ -182,25 +232,14 @@ export const IndustriesServed: React.FC = () => {
               className="bg-transparent rounded-2xl p-6 sm:p-7 flex flex-col justify-between space-y-5"
             >
               <div className="space-y-4">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-start">
                   <div className="p-3 rounded-xl bg-white/10 text-white">
                     {item.icon}
                   </div>
-                  <span className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-widest">
-                    0{idx + 1}
-                  </span>
                 </div>
 
                 <div className="space-y-1.5 pt-1">
-                  <h3 className="text-xl sm:text-2xl font-sans font-black text-white uppercase tracking-tight">
-                    {item.name.includes('&') ? (
-                      <>
-                        {item.name.split('&')[0]} <span className="font-editorial italic font-normal text-zinc-400 lowercase">&amp; {item.name.split('&')[1]}</span>
-                      </>
-                    ) : (
-                      item.name
-                    )}
-                  </h3>
+                  <TypewriterBoxTitle name={item.name} delay={idx * 60} />
                 </div>
               </div>
 
