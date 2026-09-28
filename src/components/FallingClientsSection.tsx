@@ -209,7 +209,7 @@ export const FallingClientsSection: React.FC = () => {
     <section
       id="clients"
       ref={containerRef}
-      className="py-8 sm:py-12 px-6 sm:px-10 lg:px-16 bg-[#0e0e11] text-white relative overflow-hidden border-t border-b border-white/10"
+      className="py-8 sm:py-12 px-6 sm:px-10 lg:px-16 bg-[#0e0e11] text-white relative overflow-hidden"
     >
       {/* Background Subtle Accent Glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-white/5 rounded-full blur-[180px] pointer-events-none" />

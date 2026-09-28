@@ -137,7 +137,7 @@ export const CustomerSuccessStories: React.FC = () => {
   };
 
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-8 lg:px-12 bg-[#0e0e11] border-t border-b border-white/10 relative overflow-hidden select-none">
+    <section className="py-12 sm:py-16 px-4 sm:px-8 lg:px-12 bg-[#0e0e11] relative overflow-hidden select-none">
       {/* Background Subtle Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-white/5 rounded-full blur-[200px] pointer-events-none" />
 

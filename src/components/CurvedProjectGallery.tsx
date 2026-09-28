@@ -71,7 +71,7 @@ export const CurvedProjectGallery: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="py-10 sm:py-12 bg-[#0e0e11] border-y border-white/10 relative overflow-hidden select-none"
+      className="py-10 sm:py-12 bg-[#0e0e11] relative overflow-hidden select-none"
     >
       {/* SVG ClipPath Definitions for 3D Panoramic Viewport Top & Bottom Concave Arc */}
       <svg className="absolute w-0 h-0 pointer-events-none" aria-hidden="true">
