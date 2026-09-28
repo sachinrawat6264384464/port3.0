@@ -145,8 +145,9 @@ export const CustomerSuccessStories: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center space-y-3 max-w-4xl mx-auto">
-          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-sans font-black text-white uppercase tracking-tight leading-none">
-            VOICES OF <span className="font-editorial italic font-normal text-zinc-400 uppercase">TRUST & GROWTH</span>
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-sans font-black text-white uppercase tracking-tight leading-tight flex items-center justify-center flex-wrap gap-x-3">
+            <span>VOICES OF</span>
+            <span className="font-editorial italic font-normal text-zinc-400 uppercase">TRUST &amp; GROWTH</span>
           </h2>
         </div>
 

@@ -139,7 +139,7 @@ const TypewriterHeading: React.FC = () => {
         setIsTypingComplete(true);
         clearInterval(interval);
       }
-    }, 85);
+    }, 100);
 
     return () => clearInterval(interval);
   }, [isInView]);
@@ -191,7 +191,7 @@ const TypewriterBoxTitle: React.FC<{ name: string; delay?: number }> = ({ name, 
           setIsComplete(true);
           clearInterval(interval);
         }
-      }, 75);
+      }, 90);
 
       return () => clearInterval(interval);
     }, delay);
@@ -232,10 +232,10 @@ export const IndustriesServed: React.FC = () => {
         
         {/* Section Header with Typewriter Effect & Bottom Blur Reveal */}
         <motion.div
-          initial={{ opacity: 0, y: 40, filter: 'blur(12px)' }}
+          initial={{ opacity: 0, y: 50, filter: 'blur(16px)' }}
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={{ amount: 0.2 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
           <TypewriterHeading />
         </motion.div>
@@ -245,10 +245,10 @@ export const IndustriesServed: React.FC = () => {
           {INDUSTRIES.map((item, idx) => (
             <motion.div
               key={item.id}
-              initial={{ opacity: 0, y: 50, filter: 'blur(12px)' }}
+              initial={{ opacity: 0, y: 60, filter: 'blur(16px)' }}
               whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               viewport={{ amount: 0.15 }}
-              transition={{ duration: 0.8, delay: (idx % 3) * 0.15, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 1.2, delay: (idx % 3) * 0.18, ease: [0.16, 1, 0.3, 1] }}
               className="bg-transparent rounded-2xl p-6 sm:p-7 flex flex-col justify-between space-y-5"
             >
               <div className="space-y-4">
