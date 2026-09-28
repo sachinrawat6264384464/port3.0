@@ -127,8 +127,11 @@ export const CurvedProjectGallery: React.FC = () => {
               transform: 'perspective(1600px) rotateY(14deg) translateZ(-25px) scale(0.96)',
               transition: 'transform 0.4s ease-out',
             }}
-            className="relative hidden md:block w-[360px] sm:w-[480px] lg:w-[540px] h-[320px] sm:h-[380px] lg:h-[440px] bg-[#141418] transition-all duration-300 group shadow-2xl shrink-0 overflow-hidden rounded-2xl border border-white/15 brightness-100 opacity-100 select-none pointer-events-none"
+            className="relative hidden md:block w-[360px] sm:w-[480px] lg:w-[540px] h-[320px] sm:h-[380px] lg:h-[440px] bg-[#141418] transition-all duration-300 group shadow-[0_20px_60px_rgba(255,255,255,0.12)] shrink-0 overflow-hidden rounded-2xl border border-white/20 brightness-100 opacity-100 select-none pointer-events-none"
           >
+            {/* Ambient Background Glow Aura */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-white/15 to-transparent blur-xl opacity-60 pointer-events-none" />
+
             <AnimatePresence mode="wait">
               <motion.div
                 key={leftProject.id}
@@ -154,8 +157,11 @@ export const CurvedProjectGallery: React.FC = () => {
               transform: 'perspective(1600px) rotateY(0deg) translateZ(35px) scale(1.02)',
               transition: 'transform 0.4s ease-out',
             }}
-            className="relative w-[360px] sm:w-[500px] lg:w-[580px] h-[320px] sm:h-[380px] lg:h-[440px] bg-[#141418] transition-all duration-300 group shadow-[0_25px_60px_rgba(0,0,0,0.8)] shrink-0 z-30 overflow-hidden rounded-2xl border border-white/25 opacity-100 select-none pointer-events-none"
+            className="relative w-[360px] sm:w-[500px] lg:w-[580px] h-[320px] sm:h-[380px] lg:h-[440px] bg-[#141418] transition-all duration-300 group shadow-[0_0_80px_rgba(255,255,255,0.22),0_25px_60px_rgba(0,0,0,0.9)] shrink-0 z-30 overflow-hidden rounded-2xl border-2 border-white/35 opacity-100 select-none pointer-events-none"
           >
+            {/* Ambient Background Glow Aura */}
+            <div className="absolute -inset-2 bg-gradient-to-r from-white/20 via-zinc-300/10 to-white/20 blur-2xl opacity-75 pointer-events-none" />
+
             <AnimatePresence mode="wait">
               <motion.div
                 key={centerProject.id}
@@ -182,8 +188,11 @@ export const CurvedProjectGallery: React.FC = () => {
               transform: 'perspective(1600px) rotateY(-14deg) translateZ(-25px) scale(0.96)',
               transition: 'transform 0.4s ease-out',
             }}
-            className="relative hidden md:block w-[360px] sm:w-[480px] lg:w-[540px] h-[320px] sm:h-[380px] lg:h-[440px] bg-[#141418] transition-all duration-300 group shadow-2xl shrink-0 overflow-hidden rounded-2xl border border-white/15 brightness-100 opacity-100 select-none pointer-events-none"
+            className="relative hidden md:block w-[360px] sm:w-[480px] lg:w-[540px] h-[320px] sm:h-[380px] lg:h-[440px] bg-[#141418] transition-all duration-300 group shadow-[0_20px_60px_rgba(255,255,255,0.12)] shrink-0 overflow-hidden rounded-2xl border border-white/20 brightness-100 opacity-100 select-none pointer-events-none"
           >
+            {/* Ambient Background Glow Aura */}
+            <div className="absolute -inset-1 bg-gradient-to-l from-white/15 to-transparent blur-xl opacity-60 pointer-events-none" />
+
             <AnimatePresence mode="wait">
               <motion.div
                 key={rightProject.id}
