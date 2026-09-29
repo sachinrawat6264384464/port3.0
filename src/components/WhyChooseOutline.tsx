@@ -181,7 +181,7 @@ export const WhyChooseOutline: React.FC = () => {
           </div>
 
           {/* Left 3 Cards */}
-          <div className="lg:col-span-4 space-y-6 relative z-10">
+          <div className="lg:col-span-4 grid grid-cols-2 lg:grid-cols-1 gap-3 sm:gap-6 relative z-10">
             {LEFT_REASONS.map((item, idx) => {
               const isHovered = hoveredCard === item.id;
               return (
@@ -193,26 +193,26 @@ export const WhyChooseOutline: React.FC = () => {
                   transition={{ duration: 0.6, delay: idx * 0.1 }}
                   onMouseEnter={() => setHoveredCard(item.id)}
                   onMouseLeave={() => setHoveredCard(null)}
-                  className={`group p-6 sm:p-7 rounded-2xl transition-all duration-300 space-y-4 relative cursor-pointer border ${
+                  className={`group p-3.5 sm:p-7 rounded-2xl transition-all duration-300 space-y-2.5 sm:space-y-4 relative cursor-pointer border flex flex-col justify-between ${
                     isHovered
                       ? 'bg-[#15151a] border-zinc-600 shadow-2xl scale-[1.01]'
                       : 'bg-[#111115]/80 border-zinc-800/80 hover:bg-[#15151a] hover:border-zinc-700'
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-full bg-zinc-800/60 border border-zinc-700/50 flex items-center justify-center text-zinc-300 group-hover:bg-white group-hover:text-black transition-colors duration-300">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-zinc-800/60 border border-zinc-700/50 flex items-center justify-center text-zinc-300 group-hover:bg-white group-hover:text-black transition-colors duration-300 shrink-0">
                       {item.icon}
                     </div>
-                    <span className="text-xs font-mono font-bold text-zinc-500 group-hover:text-white transition-colors">
+                    <span className="text-[10px] sm:text-xs font-mono font-bold text-zinc-500 group-hover:text-white transition-colors">
                       {item.number}
                     </span>
                   </div>
                   
-                  <div className="space-y-1.5">
-                    <h3 className="text-lg sm:text-xl font-extrabold uppercase tracking-wide text-white font-sans">
+                  <div className="space-y-1 sm:space-y-1.5 pt-1">
+                    <h3 className="text-xs sm:text-xl font-extrabold uppercase tracking-wide text-white font-sans leading-tight line-clamp-2">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-light">
+                    <p className="text-[10px] sm:text-sm text-zinc-400 leading-snug sm:leading-relaxed font-light line-clamp-3">
                       {item.description}
                     </p>
                   </div>
@@ -255,7 +255,7 @@ export const WhyChooseOutline: React.FC = () => {
           </div>
 
           {/* Right 3 Cards */}
-          <div className="lg:col-span-4 space-y-6 relative z-10">
+          <div className="lg:col-span-4 grid grid-cols-2 lg:grid-cols-1 gap-3 sm:gap-6 relative z-10">
             {RIGHT_REASONS.map((item, idx) => {
               const isHovered = hoveredCard === item.id;
               return (
@@ -267,26 +267,26 @@ export const WhyChooseOutline: React.FC = () => {
                   transition={{ duration: 0.6, delay: idx * 0.1 }}
                   onMouseEnter={() => setHoveredCard(item.id)}
                   onMouseLeave={() => setHoveredCard(null)}
-                  className={`group p-6 sm:p-7 rounded-2xl transition-all duration-300 space-y-4 relative cursor-pointer border ${
+                  className={`group p-3.5 sm:p-7 rounded-2xl transition-all duration-300 space-y-2.5 sm:space-y-4 relative cursor-pointer border flex flex-col justify-between ${
                     isHovered
                       ? 'bg-[#15151a] border-zinc-600 shadow-2xl scale-[1.01]'
                       : 'bg-[#111115]/80 border-zinc-800/80 hover:bg-[#15151a] hover:border-zinc-700'
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-full bg-zinc-800/60 border border-zinc-700/50 flex items-center justify-center text-zinc-300 group-hover:bg-white group-hover:text-black transition-colors duration-300">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-zinc-800/60 border border-zinc-700/50 flex items-center justify-center text-zinc-300 group-hover:bg-white group-hover:text-black transition-colors duration-300 shrink-0">
                       {item.icon}
                     </div>
-                    <span className="text-xs font-mono font-bold text-zinc-500 group-hover:text-white transition-colors">
+                    <span className="text-[10px] sm:text-xs font-mono font-bold text-zinc-500 group-hover:text-white transition-colors">
                       {item.number}
                     </span>
                   </div>
                   
-                  <div className="space-y-1.5">
-                    <h3 className="text-lg sm:text-xl font-extrabold uppercase tracking-wide text-white font-sans">
+                  <div className="space-y-1 sm:space-y-1.5 pt-1">
+                    <h3 className="text-xs sm:text-xl font-extrabold uppercase tracking-wide text-white font-sans leading-tight line-clamp-2">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-light">
+                    <p className="text-[10px] sm:text-sm text-zinc-400 leading-snug sm:leading-relaxed font-light line-clamp-3">
                       {item.description}
                     </p>
                   </div>
