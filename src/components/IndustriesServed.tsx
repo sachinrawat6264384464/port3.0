@@ -204,7 +204,7 @@ const TypewriterBoxTitle: React.FC<{ name: string; delay?: number }> = ({ name, 
   const part2 = hasAmpersand ? displayedText.split('&')[1] : '';
 
   return (
-    <h3 ref={ref} className="text-xl sm:text-2xl font-sans font-black text-white uppercase tracking-tight min-h-[1.5em] flex items-center flex-wrap">
+    <h3 ref={ref} className="text-sm sm:text-2xl font-sans font-black text-white uppercase tracking-tight min-h-[1.5em] flex items-center flex-wrap">
       <span>{part1}</span>
       {hasAmpersand && (
         <span className="font-editorial italic font-normal text-zinc-400 lowercase ml-1">
@@ -224,7 +224,7 @@ const TypewriterBoxTitle: React.FC<{ name: string; delay?: number }> = ({ name, 
 
 export const IndustriesServed: React.FC = () => {
   return (
-    <section id="industries" className="pt-12 pb-20 px-4 sm:px-8 lg:px-12 bg-[#0e0e11] relative overflow-hidden select-none">
+    <section id="industries" className="pt-12 pb-20 px-3 sm:px-8 lg:px-12 bg-[#0e0e11] relative overflow-hidden select-none">
       {/* Background Subtle Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-white/5 rounded-full blur-[200px] pointer-events-none" />
 
@@ -240,8 +240,8 @@ export const IndustriesServed: React.FC = () => {
           <TypewriterHeading />
         </motion.div>
 
-        {/* 3-COLUMN STATIC BENTO BOXES GRID WITH BOTTOM BLUR SLIDE-UP */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+        {/* 2-COLUMN ON MOBILE, 3-COLUMN ON DESKTOP */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 w-full">
           {INDUSTRIES.map((item, idx) => (
             <motion.div
               key={item.id}
@@ -249,21 +249,21 @@ export const IndustriesServed: React.FC = () => {
               whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               viewport={{ amount: 0.15 }}
               transition={{ duration: 1.2, delay: (idx % 3) * 0.18, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-transparent rounded-2xl p-6 sm:p-7 flex flex-col justify-between space-y-5"
+              className="bg-transparent rounded-2xl p-4 sm:p-7 flex flex-col justify-between space-y-3 sm:space-y-5"
             >
-              <div className="space-y-4">
+              <div className="space-y-2 sm:space-y-4">
                 <div className="flex items-center justify-start">
-                  <div className="p-3 rounded-xl bg-white/10 text-white">
+                  <div className="p-2 sm:p-3 rounded-xl bg-white/10 text-white">
                     {item.icon}
                   </div>
                 </div>
 
-                <div className="space-y-1.5 pt-1">
+                <div className="space-y-1 pt-1">
                   <TypewriterBoxTitle name={item.name} delay={idx * 120} />
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-zinc-300">
+              <div className="pt-3 sm:pt-4 border-t border-white/10 flex items-center justify-between text-[10px] sm:text-xs font-mono text-zinc-300">
                 <span className="truncate text-zinc-400">{item.clientHighlight}</span>
               </div>
             </motion.div>

@@ -79,7 +79,7 @@ const CounterNumber: React.FC<{ target: number; suffix: string; parentInView: bo
   }, [parentInView, target]);
 
   return (
-    <span className="font-sans text-4xl sm:text-5xl font-black text-white tracking-tight">
+    <span className="font-sans text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
       {count}{suffix}
     </span>
   );
@@ -96,7 +96,7 @@ const CardNotchedFrame: React.FC<{
   const accentWord = labelWords[labelWords.length - 1];
 
   return (
-    <div className="relative w-full h-[300px] p-8 flex flex-col items-center justify-center text-center group">
+    <div className="relative w-full h-[220px] sm:h-[300px] p-3 sm:p-8 flex flex-col items-center justify-center text-center group">
       {/* SVG Notched Corner Border Frame with Refined Dark Studio Interior */}
       <svg
         className="absolute inset-0 w-full h-full pointer-events-none transition-all duration-300 group-hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]"
@@ -114,14 +114,14 @@ const CardNotchedFrame: React.FC<{
       </svg>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full py-4 px-2 space-y-4">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full py-2 px-1 space-y-2 sm:space-y-4">
         {/* Top Centered Icon */}
         <div className="text-white group-hover:scale-110 transition-all duration-300">
-          <IconComponent className="w-10 h-10 stroke-[1.5]" />
+          <IconComponent className="w-6 h-6 sm:w-10 sm:h-10 stroke-[1.5]" />
         </div>
 
         {/* Title & Counter Only (No Paragraph Description) */}
-        <div className="space-y-2 px-2 text-center">
+        <div className="space-y-1 sm:space-y-2 px-1 text-center">
           <div>
             <CounterNumber
               target={stat.targetNumber}
@@ -130,7 +130,7 @@ const CardNotchedFrame: React.FC<{
             />
           </div>
 
-          <h3 className="text-sm sm:text-base font-sans font-black uppercase tracking-wider text-white leading-tight">
+          <h3 className="text-[11px] sm:text-base font-sans font-black uppercase tracking-wider text-white leading-tight">
             {mainLabel}{' '}
             <span className="font-editorial italic font-normal text-zinc-400 lowercase">{accentWord}</span>
           </h3>
@@ -145,7 +145,7 @@ export const StatsMetricsCounter: React.FC = () => {
   const isInView = useInView(containerRef, { once: false, amount: 0.2 });
 
   return (
-    <section className="pt-8 sm:pt-10 pb-12 px-6 sm:px-10 lg:px-16 bg-[#0e0e11] relative overflow-hidden">
+    <section className="pt-8 sm:pt-10 pb-12 px-4 sm:px-10 lg:px-16 bg-[#0e0e11] relative overflow-hidden">
       {/* Dark Wooden Floor Planks Texture Background */}
       <div
         className="absolute inset-0 pointer-events-none opacity-20"
@@ -162,8 +162,8 @@ export const StatsMetricsCounter: React.FC = () => {
 
       <div ref={containerRef} className="max-w-[1700px] w-full mx-auto relative z-10">
         
-        {/* CARDS GRID WITH SMOOTH SLIDE-IN FOR ALL 4 CARDS */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-start">
+        {/* CARDS GRID WITH 2-PER-ROW ON MOBILE */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8 items-start">
           {STATS_DATA.map((stat, index) => (
             <div key={stat.id} className="relative flex flex-col items-center w-full">
               
@@ -183,7 +183,7 @@ export const StatsMetricsCounter: React.FC = () => {
                 <CardNotchedFrame stat={stat} isInView={isInView} />
 
                 {/* CLEAN FLOOR REFLECTION */}
-                <div className="w-full relative mt-0.5 pointer-events-none select-none overflow-hidden h-[60px]">
+                <div className="w-full relative mt-0.5 pointer-events-none select-none overflow-hidden h-[40px] sm:h-[60px]">
                   {/* Floor seam line */}
                   <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
 
