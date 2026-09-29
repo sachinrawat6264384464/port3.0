@@ -122,16 +122,16 @@ export const Navbar: React.FC = () => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-base font-bold uppercase tracking-wider text-zinc-200 hover:text-[#ff5528] flex items-center justify-between border-b border-white/5 pb-2.5"
+                  className="text-base font-bold uppercase tracking-wider text-zinc-200 hover:text-white flex items-center justify-between border-b border-white/5 pb-2.5 group"
                 >
                   <span>{link.name}</span>
-                  <ArrowUpRight className="w-4 h-4 text-[#ff5528]" />
+                  <ArrowUpRight className="w-4 h-4 text-zinc-400 group-hover:text-white transition-colors" />
                 </Link>
               ))}
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-3.5 text-center rounded-full bg-[#ff5528] text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-[#ff5528]/30 mt-2"
+                className="w-full py-3.5 text-center rounded-full bg-white text-black font-extrabold text-xs uppercase tracking-wider shadow-lg hover:bg-zinc-200 transition-colors mt-2"
               >
                 Let&apos;s Talk
               </Link>

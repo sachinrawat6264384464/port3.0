@@ -36,7 +36,7 @@ export const BrandIntro: React.FC<BrandIntroProps> = ({ showHeader = true, theme
           }`}>
             <div className="flex items-center gap-3">
               <span className={`w-2.5 h-2.5 rounded-full animate-pulse ${
-                isLight ? 'bg-[#00755e]' : 'bg-[#ff5528]'
+                isLight ? 'bg-[#00755e]' : 'bg-white'
               }`} />
               <span className={`text-xs font-mono font-bold uppercase tracking-widest ${
                 isLight ? 'text-[#00755e]' : 'text-zinc-300'
@@ -85,75 +85,75 @@ export const BrandIntro: React.FC<BrandIntroProps> = ({ showHeader = true, theme
             </div>
 
             {/* 3 Pillar Micro Cards */}
-            <div className="space-y-4 pt-2">
+            <div className="grid grid-cols-2 lg:grid-cols-1 gap-2.5 sm:gap-4 pt-2">
               
-              <div className={`p-5 rounded-2xl transition-all duration-300 group flex items-start gap-4 ${
+              <div className={`p-3.5 sm:p-5 rounded-xl sm:rounded-2xl transition-all duration-300 group flex flex-col sm:flex-row items-start gap-2.5 sm:gap-4 ${
                 isLight 
                   ? 'bg-white border border-[#00755e]/20 hover:border-[#00755e] shadow-sm' 
                   : 'bg-white/[0.03] border border-white/10 hover:border-white/30'
               }`}>
-                <div className={`w-10 h-10 rounded-xl border flex items-center justify-center transition-all shrink-0 ${
+                <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl border flex items-center justify-center transition-all shrink-0 ${
                   isLight 
                     ? 'bg-[#00755e]/10 border-[#00755e]/20 text-[#00755e] group-hover:bg-[#00755e] group-hover:text-white'
                     : 'bg-white/10 border-white/20 text-white group-hover:bg-white group-hover:text-black'
                 }`}>
-                  <Compass className="w-5 h-5" />
+                  <Compass className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <h4 className={`text-sm font-bold uppercase tracking-wide transition-colors ${
+                  <h4 className={`text-xs sm:text-sm font-bold uppercase tracking-wide transition-colors ${
                     isLight ? 'text-zinc-900 group-hover:text-[#00755e]' : 'text-white group-hover:text-zinc-300'
                   }`}>
                     Strategic Intent
                   </h4>
-                  <p className={`text-xs mt-1 leading-relaxed ${isLight ? 'text-zinc-600' : 'text-zinc-400'}`}>
+                  <p className={`text-[11px] sm:text-xs mt-0.5 sm:mt-1 leading-tight sm:leading-relaxed ${isLight ? 'text-zinc-600' : 'text-zinc-400'}`}>
                     Rooted in research, engineered to position your enterprise at the forefront of your industry.
                   </p>
                 </div>
               </div>
 
-              <div className={`p-5 rounded-2xl transition-all duration-300 group flex items-start gap-4 ${
+              <div className={`p-3.5 sm:p-5 rounded-xl sm:rounded-2xl transition-all duration-300 group flex flex-col sm:flex-row items-start gap-2.5 sm:gap-4 ${
                 isLight 
                   ? 'bg-white border border-[#00755e]/20 hover:border-[#00755e] shadow-sm' 
                   : 'bg-white/[0.03] border border-white/10 hover:border-white/30'
               }`}>
-                <div className={`w-10 h-10 rounded-xl border flex items-center justify-center transition-all shrink-0 ${
+                <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl border flex items-center justify-center transition-all shrink-0 ${
                   isLight 
                     ? 'bg-[#00755e]/10 border-[#00755e]/20 text-[#00755e] group-hover:bg-[#00755e] group-hover:text-white'
                     : 'bg-white/10 border-white/20 text-white group-hover:bg-white group-hover:text-black'
                 }`}>
-                  <Zap className="w-5 h-5" />
+                  <Zap className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <h4 className={`text-sm font-bold uppercase tracking-wide transition-colors ${
+                  <h4 className={`text-xs sm:text-sm font-bold uppercase tracking-wide transition-colors ${
                     isLight ? 'text-zinc-900 group-hover:text-[#00755e]' : 'text-white group-hover:text-zinc-300'
                   }`}>
                     Aesthetic Precision
                   </h4>
-                  <p className={`text-xs mt-1 leading-relaxed ${isLight ? 'text-zinc-600' : 'text-zinc-400'}`}>
+                  <p className={`text-[11px] sm:text-xs mt-0.5 sm:mt-1 leading-tight sm:leading-relaxed ${isLight ? 'text-zinc-600' : 'text-zinc-400'}`}>
                     Crafting digital identities with obsessive attention to typography, motion, and visual clarity.
                   </p>
                 </div>
               </div>
 
-              <div className={`p-5 rounded-2xl transition-all duration-300 group flex items-start gap-4 ${
+              <div className={`p-3.5 sm:p-5 rounded-xl sm:rounded-2xl transition-all duration-300 group flex flex-col sm:flex-row items-start gap-2.5 sm:gap-4 ${
                 isLight 
                   ? 'bg-white border border-[#00755e]/20 hover:border-[#00755e] shadow-sm' 
                   : 'bg-white/[0.03] border border-white/10 hover:border-white/30'
               }`}>
-                <div className={`w-10 h-10 rounded-xl border flex items-center justify-center transition-all shrink-0 ${
+                <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl border flex items-center justify-center transition-all shrink-0 ${
                   isLight 
                     ? 'bg-[#00755e]/10 border-[#00755e]/20 text-[#00755e] group-hover:bg-[#00755e] group-hover:text-white'
                     : 'bg-white/10 border-white/20 text-white group-hover:bg-white group-hover:text-black'
                 }`}>
-                  <ShieldCheck className="w-5 h-5" />
+                  <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <h4 className={`text-sm font-bold uppercase tracking-wide transition-colors ${
+                  <h4 className={`text-xs sm:text-sm font-bold uppercase tracking-wide transition-colors ${
                     isLight ? 'text-zinc-900 group-hover:text-[#00755e]' : 'text-white group-hover:text-zinc-300'
                   }`}>
                     Unforgettable Impact
                   </h4>
-                  <p className={`text-xs mt-1 leading-relaxed ${isLight ? 'text-zinc-600' : 'text-zinc-400'}`}>
+                  <p className={`text-[11px] sm:text-xs mt-0.5 sm:mt-1 leading-tight sm:leading-relaxed ${isLight ? 'text-zinc-600' : 'text-zinc-400'}`}>
                     Turning raw ideas into structured visual experiences that leave an indelible mark on audiences.
                   </p>
                 </div>
@@ -228,7 +228,7 @@ export const BrandIntro: React.FC<BrandIntroProps> = ({ showHeader = true, theme
                   <a
                     href="#services"
                     className={`inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider transition-colors ${
-                      isLight ? 'text-zinc-900 hover:text-[#00755e]' : 'text-white hover:text-[#ff5528]'
+                      isLight ? 'text-zinc-900 hover:text-[#00755e]' : 'text-white hover:text-zinc-300'
                     }`}
                   >
                     <span>Our Approach</span>

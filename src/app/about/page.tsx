@@ -128,81 +128,81 @@ export default function AboutPage() {
           </div>
 
           {/* 4 Pillars Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
             
-            <div className="p-8 rounded-3xl bg-zinc-950/80 border border-white/10 hover:border-white/30 transition-all duration-500 space-y-6 group relative overflow-hidden flex flex-col justify-between shadow-xl">
-              <div className="space-y-4">
-                <span className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-widest">PILLAR // 01</span>
-                <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
-                  <Compass className="w-6 h-6" />
+            <div className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-zinc-950/80 border border-white/10 hover:border-white/30 transition-all duration-500 space-y-3 sm:space-y-6 group relative overflow-hidden flex flex-col justify-between shadow-xl">
+              <div className="space-y-2.5 sm:space-y-4">
+                <span className="text-[10px] sm:text-xs font-mono font-bold text-zinc-400 uppercase tracking-widest">PILLAR // 01</span>
+                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
+                  <Compass className="w-4.5 h-4.5 sm:w-6 sm:h-6" />
                 </div>
-                <h3 className="text-xl font-bold uppercase text-white tracking-wide group-hover:text-zinc-300 transition-colors">
+                <h3 className="text-xs sm:text-xl font-bold uppercase text-white tracking-wide group-hover:text-zinc-300 transition-colors leading-tight">
                   Strategic Positioning
                 </h3>
-                <p className="text-sm text-zinc-400 leading-relaxed font-light">
+                <p className="text-[11px] sm:text-sm text-zinc-400 leading-snug sm:leading-relaxed font-light">
                   We diagnose market white space before drawing a single line, ensuring your visual identity anchors you as an industry leader.
                 </p>
               </div>
-              <div className="pt-4 border-t border-white/10 text-xs font-mono text-zinc-500 uppercase flex items-center justify-between">
+              <div className="pt-3 sm:pt-4 border-t border-white/10 text-[9px] sm:text-xs font-mono text-zinc-500 uppercase flex items-center justify-between">
                 <span>01 / POSITION</span>
-                <CheckCircle2 className="w-4 h-4 text-zinc-400" />
+                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-zinc-400" />
               </div>
             </div>
 
-            <div className="p-8 rounded-3xl bg-zinc-950/80 border border-white/10 hover:border-white/30 transition-all duration-500 space-y-6 group relative overflow-hidden flex flex-col justify-between shadow-xl">
-              <div className="space-y-4">
-                <span className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-widest">PILLAR // 02</span>
-                <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
-                  <Zap className="w-6 h-6" />
+            <div className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-zinc-950/80 border border-white/10 hover:border-white/30 transition-all duration-500 space-y-3 sm:space-y-6 group relative overflow-hidden flex flex-col justify-between shadow-xl">
+              <div className="space-y-2.5 sm:space-y-4">
+                <span className="text-[10px] sm:text-xs font-mono font-bold text-zinc-400 uppercase tracking-widest">PILLAR // 02</span>
+                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
+                  <Zap className="w-4.5 h-4.5 sm:w-6 sm:h-6" />
                 </div>
-                <h3 className="text-xl font-bold uppercase text-white tracking-wide group-hover:text-zinc-300 transition-colors">
+                <h3 className="text-xs sm:text-xl font-bold uppercase text-white tracking-wide group-hover:text-zinc-300 transition-colors leading-tight">
                   Aesthetic Precision
                 </h3>
-                <p className="text-sm text-zinc-400 leading-relaxed font-light">
+                <p className="text-[11px] sm:text-sm text-zinc-400 leading-snug sm:leading-relaxed font-light">
                   Bespoke typography, grid discipline, and harmonious color theory executed with extreme technical mastery.
                 </p>
               </div>
-              <div className="pt-4 border-t border-white/10 text-xs font-mono text-zinc-500 uppercase flex items-center justify-between">
+              <div className="pt-3 sm:pt-4 border-t border-white/10 text-[9px] sm:text-xs font-mono text-zinc-500 uppercase flex items-center justify-between">
                 <span>02 / CRAFT</span>
-                <CheckCircle2 className="w-4 h-4 text-zinc-400" />
+                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-zinc-400" />
               </div>
             </div>
 
-            <div className="p-8 rounded-3xl bg-zinc-950/80 border border-white/10 hover:border-white/30 transition-all duration-500 space-y-6 group relative overflow-hidden flex flex-col justify-between shadow-xl">
-              <div className="space-y-4">
-                <span className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-widest">PILLAR // 03</span>
-                <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
-                  <Layers className="w-6 h-6" />
+            <div className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-zinc-950/80 border border-white/10 hover:border-white/30 transition-all duration-500 space-y-3 sm:space-y-6 group relative overflow-hidden flex flex-col justify-between shadow-xl">
+              <div className="space-y-2.5 sm:space-y-4">
+                <span className="text-[10px] sm:text-xs font-mono font-bold text-zinc-400 uppercase tracking-widest">PILLAR // 03</span>
+                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
+                  <Layers className="w-4.5 h-4.5 sm:w-6 sm:h-6" />
                 </div>
-                <h3 className="text-xl font-bold uppercase text-white tracking-wide group-hover:text-zinc-300 transition-colors">
+                <h3 className="text-xs sm:text-xl font-bold uppercase text-white tracking-wide group-hover:text-zinc-300 transition-colors leading-tight">
                   Scalable Architecture
                 </h3>
-                <p className="text-sm text-zinc-400 leading-relaxed font-light">
+                <p className="text-[11px] sm:text-sm text-zinc-400 leading-snug sm:leading-relaxed font-light">
                   Design guidelines built for digital apps, print collaterals, and high-growth environments without fragmentation.
                 </p>
               </div>
-              <div className="pt-4 border-t border-white/10 text-xs font-mono text-zinc-500 uppercase flex items-center justify-between">
+              <div className="pt-3 sm:pt-4 border-t border-white/10 text-[9px] sm:text-xs font-mono text-zinc-500 uppercase flex items-center justify-between">
                 <span>03 / SYSTEM</span>
-                <CheckCircle2 className="w-4 h-4 text-zinc-400" />
+                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-zinc-400" />
               </div>
             </div>
 
-            <div className="p-8 rounded-3xl bg-zinc-950/80 border border-white/10 hover:border-white/30 transition-all duration-500 space-y-6 group relative overflow-hidden flex flex-col justify-between shadow-xl">
-              <div className="space-y-4">
-                <span className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-widest">PILLAR // 04</span>
-                <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
-                  <ShieldCheck className="w-6 h-6" />
+            <div className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-zinc-950/80 border border-white/10 hover:border-white/30 transition-all duration-500 space-y-3 sm:space-y-6 group relative overflow-hidden flex flex-col justify-between shadow-xl">
+              <div className="space-y-2.5 sm:space-y-4">
+                <span className="text-[10px] sm:text-xs font-mono font-bold text-zinc-400 uppercase tracking-widest">PILLAR // 04</span>
+                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
+                  <ShieldCheck className="w-4.5 h-4.5 sm:w-6 sm:h-6" />
                 </div>
-                <h3 className="text-xl font-bold uppercase text-white tracking-wide group-hover:text-zinc-300 transition-colors">
+                <h3 className="text-xs sm:text-xl font-bold uppercase text-white tracking-wide group-hover:text-zinc-300 transition-colors leading-tight">
                   Enduring Impression
                 </h3>
-                <p className="text-sm text-zinc-400 leading-relaxed font-light">
+                <p className="text-[11px] sm:text-sm text-zinc-400 leading-snug sm:leading-relaxed font-light">
                   Creating visual languages that transcend short-lived design trends to establish long-term brand authority.
                 </p>
               </div>
-              <div className="pt-4 border-t border-white/10 text-xs font-mono text-zinc-500 uppercase flex items-center justify-between">
+              <div className="pt-3 sm:pt-4 border-t border-white/10 text-[9px] sm:text-xs font-mono text-zinc-500 uppercase flex items-center justify-between">
                 <span>04 / LONGEVITY</span>
-                <CheckCircle2 className="w-4 h-4 text-zinc-400" />
+                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-zinc-400" />
               </div>
             </div>
 
@@ -220,7 +220,7 @@ export default function AboutPage() {
           <div className="p-10 sm:p-16 lg:p-20 rounded-3xl bg-gradient-to-br from-[#16161c] via-[#121218] to-[#09090d] border border-white/10 relative overflow-hidden group shadow-2xl text-white">
             
             {/* Glowing Accent Spot */}
-            <div className="absolute top-1/2 right-10 -translate-y-1/2 w-[500px] h-[500px] bg-[#ff5528]/15 rounded-full blur-[160px] pointer-events-none group-hover:bg-[#ff5528]/25 transition-all duration-700" />
+            <div className="absolute top-1/2 right-10 -translate-y-1/2 w-[500px] h-[500px] bg-white/5 rounded-full blur-[160px] pointer-events-none group-hover:bg-white/10 transition-all duration-700" />
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
               <div className="lg:col-span-8 space-y-6">
