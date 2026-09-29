@@ -38,10 +38,10 @@ export const ExperiencePillars: React.FC = () => {
         </div>
 
         {/* Pillars Grid & Accordion */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
           
           {/* Pillar Selector List (Left) */}
-          <div className="lg:col-span-5 space-y-3">
+          <div className="lg:col-span-5 grid grid-cols-2 sm:grid-cols-1 gap-2.5 sm:gap-3">
             {PILLARS.map((pillar, idx) => {
               const isSelected = activePillar === idx;
               return (
@@ -49,24 +49,24 @@ export const ExperiencePillars: React.FC = () => {
                   key={pillar.number}
                   onClick={() => setActivePillar(idx)}
                   whileHover={{ x: 5 }}
-                  className={`cursor-pointer p-6 sm:p-7 rounded-2xl transition-all duration-300 border-0 flex items-center justify-between ${
+                  className={`cursor-pointer p-3.5 sm:p-6 rounded-xl sm:rounded-2xl transition-all duration-300 border-0 flex items-center justify-between gap-2 ${
                     isSelected
                       ? 'bg-white/10 text-white shadow-xl scale-[1.01]'
-                      : 'bg-transparent text-zinc-400 hover:bg-white/[0.03] hover:text-white'
+                      : 'bg-white/[0.02] sm:bg-transparent text-zinc-400 hover:bg-white/[0.03] hover:text-white'
                   }`}
                 >
-                  <div className="flex items-center gap-4">
-                    <span className="text-sm font-mono font-bold text-zinc-400 group-hover:text-white">
+                  <div className="flex items-center gap-2 sm:gap-4 min-w-0">
+                    <span className="text-[10px] sm:text-sm font-mono font-bold text-zinc-400 group-hover:text-white shrink-0">
                       {pillar.number}
                     </span>
-                    <h3 className={`text-base sm:text-lg font-bold uppercase transition-colors ${
+                    <h3 className={`text-xs sm:text-base font-bold uppercase transition-colors leading-tight line-clamp-2 ${
                       isSelected ? 'text-white' : 'text-zinc-400'
                     }`}>
                       {pillar.title}
                     </h3>
                   </div>
-                  <ArrowRight className={`w-5 h-5 transition-transform ${
-                    isSelected ? 'text-white translate-x-1' : 'text-zinc-600'
+                  <ArrowRight className={`w-3.5 h-3.5 sm:w-5 sm:h-5 transition-transform shrink-0 ${
+                    isSelected ? 'text-white translate-x-0.5' : 'text-zinc-600'
                   }`} />
                 </motion.div>
               );
@@ -80,38 +80,38 @@ export const ExperiencePillars: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="h-full p-8 sm:p-12 lg:p-16 rounded-3xl bg-transparent border-0 flex flex-col justify-between relative overflow-hidden group shadow-2xl min-h-[420px]"
+              className="h-full p-5 sm:p-12 lg:p-16 rounded-2xl sm:rounded-3xl bg-zinc-950/80 sm:bg-transparent border border-white/10 sm:border-0 flex flex-col justify-between relative overflow-hidden group shadow-2xl min-h-[280px] sm:min-h-[420px]"
             >
               {/* Background Accent Glow */}
               <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full blur-[100px] pointer-events-none" />
 
-              <div className="space-y-8 relative z-10">
+              <div className="space-y-4 sm:space-y-8 relative z-10">
                 <div className="flex items-center justify-between">
-                  <div className="w-16 h-16 rounded-2xl bg-white/5 border-0 flex items-center justify-center text-white">
+                  <div className="w-10 h-10 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-white/5 border-0 flex items-center justify-center text-white">
                     {ICON_MAP[PILLARS[activePillar].iconName]}
                   </div>
-                  <span className="text-5xl font-black text-white/10 font-mono">
+                  <span className="text-3xl sm:text-5xl font-black text-white/10 font-mono">
                     {PILLARS[activePillar].number}
                   </span>
                 </div>
 
-                <div className="space-y-4">
-                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight font-sans">
+                <div className="space-y-2 sm:space-y-4">
+                  <h3 className="text-xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight font-sans leading-tight">
                     {PILLARS[activePillar].title}
                   </h3>
-                  <p className="text-lg sm:text-xl text-zinc-300 font-light leading-relaxed">
+                  <p className="text-xs sm:text-xl text-zinc-300 font-light leading-snug sm:leading-relaxed">
                     {PILLARS[activePillar].description}
                   </p>
                 </div>
               </div>
 
-              <div className="pt-8 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-zinc-400 uppercase tracking-widest relative z-10 font-bold">
+              <div className="pt-4 sm:pt-8 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-[10px] sm:text-xs font-mono text-zinc-400 uppercase tracking-widest relative z-10 font-bold mt-4">
                 <Link
                   href={`/pillars/${PILLARS[activePillar].number}`}
-                  className="px-6 py-3 rounded-full bg-white hover:bg-zinc-200 text-black font-extrabold text-xs uppercase tracking-widest transition-all duration-300 shadow-xl inline-flex items-center gap-2"
+                  className="px-4 py-2.5 sm:px-6 sm:py-3 rounded-full bg-white hover:bg-zinc-200 text-black font-extrabold text-[10px] sm:text-xs uppercase tracking-widest transition-all duration-300 shadow-xl inline-flex items-center gap-2"
                 >
                   <span>Explore Pillar Page</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </Link>
                 <span>PILLAR 0{activePillar + 1} / 05</span>
               </div>

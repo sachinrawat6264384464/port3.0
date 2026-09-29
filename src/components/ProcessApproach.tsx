@@ -33,7 +33,7 @@ export const ProcessApproach: React.FC = () => {
         </div>
 
         {/* Process Timeline Steps */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 relative">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-6 relative">
           {PROCESS_STEPS.map((item, idx) => (
             <motion.div
               key={item.step}
@@ -41,36 +41,36 @@ export const ProcessApproach: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="p-8 rounded-3xl bg-transparent border border-white/10 hover:border-white/30 hover:bg-white/[0.02] transition-all duration-300 relative group flex flex-col justify-between"
+              className="p-3.5 sm:p-8 rounded-2xl sm:rounded-3xl bg-transparent border border-white/10 hover:border-white/30 hover:bg-white/[0.02] transition-all duration-300 relative group flex flex-col justify-between"
             >
               {/* Connector line for desktop */}
               {idx < PROCESS_STEPS.length - 1 && (
                 <div className="hidden lg:block absolute top-12 -right-3 w-6 h-[1px] bg-white/10 z-20" />
               )}
 
-              <div className="space-y-6">
+              <div className="space-y-3 sm:space-y-6">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-mono font-bold text-zinc-400 group-hover:text-white">
+                  <span className="text-[10px] sm:text-sm font-mono font-bold text-zinc-400 group-hover:text-white">
                     {item.step}
                   </span>
-                  <div className="p-3 rounded-2xl bg-white/5 border border-white/10 group-hover:bg-white group-hover:text-black transition-colors">
+                  <div className="p-2 sm:p-3 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 group-hover:bg-white group-hover:text-black transition-colors">
                     {STEP_ICONS[idx]}
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold text-white uppercase tracking-wide group-hover:text-zinc-200 transition-colors font-sans">
+                <div className="space-y-1 sm:space-y-2">
+                  <h3 className="text-xs sm:text-2xl font-bold text-white uppercase tracking-wide group-hover:text-zinc-200 transition-colors font-sans leading-tight line-clamp-2">
                     {item.name}
                   </h3>
-                  <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-light">
+                  <p className="text-[10px] sm:text-sm text-zinc-400 leading-snug sm:leading-relaxed font-light line-clamp-3">
                     {item.description}
                   </p>
                 </div>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-white/10 flex items-center justify-between text-xs font-mono text-zinc-400 group-hover:text-white transition-colors">
+              <div className="pt-3 mt-3 sm:pt-6 sm:mt-6 border-t border-white/10 flex items-center justify-between text-[9px] sm:text-xs font-mono text-zinc-400 group-hover:text-white transition-colors">
                 <span>STAGE {item.step}</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 shrink-0" />
               </div>
             </motion.div>
           ))}
