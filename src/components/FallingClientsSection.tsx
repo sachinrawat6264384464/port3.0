@@ -15,45 +15,36 @@ interface LogoPill {
 }
 
 const PILL_CLIENTS: LogoPill[] = [
-  // Color 1: Crisp White (#ffffff)
   { id: 'voiceflow1', name: 'Voiceflow', bgColor: '#ffffff', textColor: '#000000', width: 150, height: 56 },
-  { id: 'clickup', name: 'ClickUp', bgColor: '#ffffff', textColor: '#000000', width: 140, height: 56 },
-  { id: 'zendesk2', name: 'zendesk', bgColor: '#ffffff', textColor: '#000000', width: 145, height: 56 },
-  { id: 'canva1', name: 'Canva', bgColor: '#ffffff', textColor: '#000000', width: 130, height: 56 },
-  { id: 'zoom', name: 'zoom', bgColor: '#ffffff', textColor: '#000000', width: 140, height: 56 },
-  { id: 'trello', name: 'Trello', bgColor: '#ffffff', textColor: '#000000', width: 140, height: 56 },
-  { id: 'pendo', name: 'pendo', bgColor: '#ffffff', textColor: '#000000', width: 135, height: 56 },
-  { id: 'saveria', name: 'SAVERIA', bgColor: '#ffffff', textColor: '#000000', width: 145, height: 56 },
-  { id: 'notion', name: 'Notion', bgColor: '#ffffff', textColor: '#000000', width: 135, height: 56 },
-  { id: 'slack', name: 'Slack', bgColor: '#ffffff', textColor: '#000000', width: 130, height: 56 },
-  { id: 'miro', name: 'Miro', bgColor: '#ffffff', textColor: '#000000', width: 125, height: 56 },
-
-  // Color 2: Crisp White & Studio Dark Slate
-  { id: 'ameerji', name: 'AMEERJI', bgColor: '#ffffff', textColor: '#000000', width: 145, height: 56 },
-  { id: 'reyug', name: 'REYUG', bgColor: '#ffffff', textColor: '#000000', width: 135, height: 56 },
-  { id: 'malpani', name: 'MALPANI', bgColor: '#ffffff', textColor: '#000000', width: 145, height: 56 },
   { id: 'terex', name: 'TEREX', bgColor: '#252532', textColor: '#ffffff', width: 135, height: 56 },
-  { id: 'lemount', name: 'LEMOUNT', bgColor: '#ffffff', textColor: '#000000', width: 145, height: 56 },
-  { id: 'raasvalley', name: 'RAAS VALLEY', bgColor: '#ffffff', textColor: '#000000', width: 160, height: 56 },
-  { id: 'bhaskar', name: 'BHASKAR', bgColor: '#ffffff', textColor: '#000000', width: 145, height: 56 },
-  { id: 'abushan', name: 'ABUSHAN', bgColor: '#252532', textColor: '#ffffff', width: 145, height: 56 },
-  { id: 'valencia', name: 'VALENCIA', bgColor: '#ffffff', textColor: '#000000', width: 145, height: 56 },
-  { id: 'anvith', name: 'ANVITH', bgColor: '#ffffff', textColor: '#000000', width: 135, height: 56 },
-  { id: 'ekienergy', name: 'EKI ENERGY', bgColor: '#252532', textColor: '#ffffff', width: 155, height: 56 },
-
-  // Color 3: Sleek Pure Black (#000000)
   { id: 'hubspot', name: 'HubSpot', bgColor: '#000000', textColor: '#ffffff', width: 145, height: 56 },
-  { id: 'figma', name: 'Figma', bgColor: '#000000', textColor: '#ffffff', width: 130, height: 56 },
-  { id: 'stripe', name: 'Stripe', bgColor: '#000000', textColor: '#ffffff', width: 135, height: 56 },
-  { id: 'bubble', name: '.bubble', bgColor: '#000000', textColor: '#ffffff', width: 130, height: 56 },
-  { id: 'zendesk1', name: 'zendesk', bgColor: '#000000', textColor: '#ffffff', width: 145, height: 56 },
-
-  // Color 4: Metallic Dark Zinc (#353545)
+  { id: 'clickup', name: 'ClickUp', bgColor: '#ffffff', textColor: '#000000', width: 140, height: 56 },
+  { id: 'abushan', name: 'ABUSHAN', bgColor: '#252532', textColor: '#ffffff', width: 145, height: 56 },
   { id: 'jotform', name: 'Jotform', bgColor: '#353545', textColor: '#ffffff', width: 140, height: 56 },
-  { id: 'canva2', name: 'Canva', bgColor: '#353545', textColor: '#ffffff', width: 130, height: 56 },
-  { id: 'iloveimg', name: 'i❤IMG', bgColor: '#353545', textColor: '#ffffff', width: 135, height: 56 },
-  { id: 'voiceflow2', name: 'Voiceflow', bgColor: '#353545', textColor: '#ffffff', width: 150, height: 56 },
+  { id: 'canva1', name: 'Canva', bgColor: '#ffffff', textColor: '#000000', width: 130, height: 56 },
+  { id: 'figma', name: 'Figma', bgColor: '#000000', textColor: '#ffffff', width: 130, height: 56 },
+  { id: 'ekienergy', name: 'EKI ENERGY', bgColor: '#252532', textColor: '#ffffff', width: 155, height: 56 },
+  { id: 'zoom', name: 'zoom', bgColor: '#ffffff', textColor: '#000000', width: 140, height: 56 },
+  { id: 'stripe', name: 'Stripe', bgColor: '#000000', textColor: '#ffffff', width: 135, height: 56 },
   { id: 'trinaas', name: 'TRINAAS', bgColor: '#353545', textColor: '#ffffff', width: 140, height: 56 },
+  { id: 'trello', name: 'Trello', bgColor: '#ffffff', textColor: '#000000', width: 140, height: 56 },
+  { id: 'saveria', name: 'SAVERIA', bgColor: '#252532', textColor: '#ffffff', width: 145, height: 56 },
+  { id: 'bubble', name: '.bubble', bgColor: '#000000', textColor: '#ffffff', width: 130, height: 56 },
+  { id: 'notion', name: 'Notion', bgColor: '#ffffff', textColor: '#000000', width: 135, height: 56 },
+  { id: 'iloveimg', name: 'i❤IMG', bgColor: '#353545', textColor: '#ffffff', width: 135, height: 56 },
+  { id: 'slack', name: 'Slack', bgColor: '#ffffff', textColor: '#000000', width: 130, height: 56 },
+  { id: 'reyug', name: 'REYUG', bgColor: '#252532', textColor: '#ffffff', width: 135, height: 56 },
+  { id: 'zendesk1', name: 'zendesk', bgColor: '#000000', textColor: '#ffffff', width: 145, height: 56 },
+  { id: 'miro', name: 'Miro', bgColor: '#ffffff', textColor: '#000000', width: 125, height: 56 },
+  { id: 'voiceflow2', name: 'Voiceflow', bgColor: '#353545', textColor: '#ffffff', width: 150, height: 56 },
+  { id: 'ameerji', name: 'AMEERJI', bgColor: '#ffffff', textColor: '#000000', width: 145, height: 56 },
+  { id: 'malpani', name: 'MALPANI', bgColor: '#252532', textColor: '#ffffff', width: 145, height: 56 },
+  { id: 'canva2', name: 'Canva', bgColor: '#353545', textColor: '#ffffff', width: 130, height: 56 },
+  { id: 'lemount', name: 'LEMOUNT', bgColor: '#ffffff', textColor: '#000000', width: 145, height: 56 },
+  { id: 'raasvalley', name: 'RAAS VALLEY', bgColor: '#252532', textColor: '#ffffff', width: 160, height: 56 },
+  { id: 'bhaskar', name: 'BHASKAR', bgColor: '#ffffff', textColor: '#000000', width: 145, height: 56 },
+  { id: 'valencia', name: 'VALENCIA', bgColor: '#000000', textColor: '#ffffff', width: 145, height: 56 },
+  { id: 'anvith', name: 'ANVITH', bgColor: '#ffffff', textColor: '#000000', width: 135, height: 56 },
 ];
 
 export const FallingClientsSection: React.FC = () => {
@@ -63,6 +54,7 @@ export const FallingClientsSection: React.FC = () => {
   const isInView = useInView(containerRef, { once: true, amount: 0.2 });
 
   const [hasStarted, setHasStarted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const engineRef = useRef<Matter.Engine | null>(null);
   const runnerRef = useRef<Matter.Runner | null>(null);
@@ -81,10 +73,13 @@ export const FallingClientsSection: React.FC = () => {
 
     const width = sceneRef.current.clientWidth || 1200;
     const height = sceneRef.current.clientHeight || 400;
+    const isMob = width < 640;
+    const pScale = isMob ? 0.55 : 1.0;
+    const pHeight = isMob ? 32 : 56;
 
     // Create Matter Engine with high precision & sleeping enabled
     const engine = Matter.Engine.create({
-      gravity: { x: 0, y: 1.2, scale: 0.001 },
+      gravity: { x: 0, y: isMob ? 0.8 : 1.2, scale: 0.001 },
       enableSleeping: true,
       positionIterations: 10,
       velocityIterations: 10,
@@ -110,16 +105,18 @@ export const FallingClientsSection: React.FC = () => {
 
     Matter.Composite.add(engine.world, [floor, leftWall, rightWall]);
 
-    // Create Pill Rigid Bodies
+    // Create Pill Rigid Bodies (12 items on mobile, 30 items on desktop)
     const bodies: { id: string; body: Matter.Body; width: number; height: number }[] = [];
+    const activePills = isMob ? PILL_CLIENTS.slice(0, 12) : PILL_CLIENTS;
 
-    PILL_CLIENTS.forEach((pill, idx) => {
-      const spawnX = Math.random() * (width - 240) + 120;
-      const spawnY = -80 - idx * 60 - Math.random() * 30;
+    activePills.forEach((pill, idx) => {
+      const pWidth = Math.round(pill.width * pScale);
+      const spawnX = Math.random() * (width - pWidth) + pWidth / 2;
+      const spawnY = -60 - idx * (isMob ? 35 : 60) - Math.random() * 30;
       const initialAngle = (Math.random() - 0.5) * 0.6;
 
-      const body = Matter.Bodies.rectangle(spawnX, spawnY, pill.width, pill.height, {
-        chamfer: { radius: pill.height / 2 },
+      const body = Matter.Bodies.rectangle(spawnX, spawnY, pWidth, pHeight, {
+        chamfer: { radius: pHeight / 2 },
         restitution: 0.2,
         friction: 0.8,
         frictionStatic: 1.0,
@@ -131,7 +128,7 @@ export const FallingClientsSection: React.FC = () => {
 
       Matter.Body.setAngularVelocity(body, (Math.random() - 0.5) * 0.05);
 
-      bodies.push({ id: pill.id, body, width: pill.width, height: pill.height });
+      bodies.push({ id: pill.id, body, width: pWidth, height: pHeight });
       Matter.Composite.add(engine.world, body);
     });
 
@@ -192,9 +189,19 @@ export const FallingClientsSection: React.FC = () => {
   };
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
     if (isInView && !hasStarted) {
       startPhysics();
     }
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, [isInView, hasStarted]);
 
   const handleReset = () => {
@@ -247,31 +254,36 @@ export const FallingClientsSection: React.FC = () => {
           {/* Stage Grid pattern with enhanced dot visibility */}
           <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.18)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
-          {/* Render Logo Pills with Direct Ref DOM sync */}
-          {PILL_CLIENTS.map((pill, idx) => (
-            <div
-              key={pill.id}
-              ref={(el) => {
-                pillRefs.current[idx] = el;
-              }}
-              style={{
-                position: 'absolute',
-                left: 0,
-                top: 0,
-                width: `${pill.width}px`,
-                height: `${pill.height}px`,
-                backgroundColor: pill.bgColor,
-                color: pill.textColor,
-                willChange: 'transform',
-                transform: 'translate3d(0px, -200px, 0px)',
-              }}
-              className="rounded-full flex items-center justify-center font-bold text-sm sm:text-base tracking-wide shadow-2xl border border-white/30 cursor-grab active:cursor-grabbing pointer-events-auto transition-shadow hover:brightness-110 select-none"
-            >
-              <span className="px-4 truncate font-sans font-black italic uppercase pointer-events-none">
-                {pill.name}
-              </span>
-            </div>
-          ))}
+          {/* Render Logo Pills with Direct Ref DOM sync (12 items on mobile, 30 on desktop) */}
+          {(isMobile ? PILL_CLIENTS.slice(0, 12) : PILL_CLIENTS).map((pill, idx) => {
+            const pWidth = isMobile ? Math.round(pill.width * 0.55) : pill.width;
+            const pHeight = isMobile ? 32 : 56;
+
+            return (
+              <div
+                key={pill.id}
+                ref={(el) => {
+                  pillRefs.current[idx] = el;
+                }}
+                style={{
+                  position: 'absolute',
+                  left: 0,
+                  top: 0,
+                  width: `${pWidth}px`,
+                  height: `${pHeight}px`,
+                  backgroundColor: pill.bgColor,
+                  color: pill.textColor,
+                  willChange: 'transform',
+                  transform: 'translate3d(-9999px, -9999px, 0px)',
+                }}
+                className="rounded-full flex items-center justify-center font-bold text-[10px] sm:text-base tracking-wide shadow-2xl border border-white/30 cursor-grab active:cursor-grabbing pointer-events-auto transition-shadow hover:brightness-110 select-none"
+              >
+                <span className="px-2 sm:px-4 truncate font-sans font-black italic uppercase pointer-events-none">
+                  {pill.name}
+                </span>
+              </div>
+            );
+          })}
 
           {/* Multi-Line Parallel Floor Marker */}
           <div className="absolute bottom-0 left-0 right-0 h-10 pointer-events-none flex flex-col justify-end space-y-1 pb-2 px-6">

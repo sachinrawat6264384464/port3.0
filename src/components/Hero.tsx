@@ -93,12 +93,13 @@ export const Hero: React.FC = () => {
 
     Matter.Composite.add(engine.world, [floor, leftWall, rightWall]);
 
-    // Create Pill Rigid Bodies dropping strictly from far ABOVE top screen edge
+    // Create Pill Rigid Bodies dropping strictly from far ABOVE top screen edge (10 on mobile, 20 on desktop)
     const bodies: { id: string; body: Matter.Body; width: number; height: number }[] = [];
     const pScale = isMob ? 0.55 : 1.0;
     const pHeight = isMob ? 30 : 48;
+    const activeHeroPills = isMob ? HERO_PILLS.slice(0, 10) : HERO_PILLS;
 
-    HERO_PILLS.forEach((pill, idx) => {
+    activeHeroPills.forEach((pill, idx) => {
       const pWidth = Math.round(pill.width * pScale);
       const spawnX = Math.random() * (width * 0.85) + width * 0.05;
       const spawnY = -150 - idx * (isMob ? 45 : 75) - Math.random() * 40;
@@ -192,7 +193,7 @@ export const Hero: React.FC = () => {
         ref={sceneRef}
         className="absolute inset-0 w-full h-full pointer-events-none z-20 select-none"
       >
-        {HERO_PILLS.map((pill, idx) => {
+        {(isMobile ? HERO_PILLS.slice(0, 10) : HERO_PILLS).map((pill, idx) => {
           const pWidth = isMobile ? Math.round(pill.width * 0.55) : pill.width;
           const pHeight = isMobile ? 30 : 48;
 
