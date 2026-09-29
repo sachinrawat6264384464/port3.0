@@ -147,7 +147,7 @@ export const ReyugCaseStudy: React.FC = () => {
         </div>
 
         {/* Item Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
           <AnimatePresence>
             {filteredItems.map((item, idx) => {
               return (
@@ -159,18 +159,18 @@ export const ReyugCaseStudy: React.FC = () => {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.4, delay: (idx % 4) * 0.08 }}
                   onClick={() => setSelectedImg(item.image)}
-                  className="group cursor-pointer rounded-3xl bg-transparent border-0 hover:bg-white/[0.02] p-5 space-y-4 transition-all duration-500 overflow-hidden relative flex flex-col justify-between"
+                  className="group cursor-pointer rounded-2xl sm:rounded-3xl bg-transparent border-0 hover:bg-white/[0.02] p-3 sm:p-5 space-y-3 sm:space-y-4 transition-all duration-500 overflow-hidden relative flex flex-col justify-between"
                 >
-                  <div className="space-y-4">
+                  <div className="space-y-2.5 sm:space-y-4">
                     {/* Image Container - HD Edge-to-Edge */}
-                    <div className="relative w-full h-[260px] sm:h-[300px] rounded-2xl overflow-hidden bg-zinc-950 border border-white/10 group-hover:border-white/25 transition-all duration-500 shadow-xl">
+                    <div className="relative w-full h-[140px] sm:h-[300px] rounded-xl sm:rounded-2xl overflow-hidden bg-zinc-950 border border-white/10 group-hover:border-white/25 transition-all duration-500 shadow-xl">
                       <Image
                         src={item.image}
                         alt={item.title}
                         fill
                         className="object-cover object-center group-hover:scale-105 transition-transform duration-700 filter brightness-[1.05] contrast-[1.03]"
                       />
-                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center hidden sm:flex">
                         <span className="px-4 py-2 rounded-full bg-white text-black font-extrabold text-xs uppercase tracking-wider flex items-center gap-2 shadow-2xl">
                           <Eye className="w-4 h-4" />
                           <span>Inspect Item</span>
@@ -179,16 +179,16 @@ export const ReyugCaseStudy: React.FC = () => {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="text-base font-bold text-white uppercase group-hover:text-zinc-200 transition-colors font-sans">
+                      <h3 className="text-xs sm:text-base font-bold text-white uppercase group-hover:text-zinc-200 transition-colors font-sans leading-tight line-clamp-2">
                         {item.title}
                       </h3>
-                      <p className="text-xs text-zinc-400 font-mono">
+                      <p className="text-[10px] sm:text-xs text-zinc-400 font-mono line-clamp-1">
                         {item.subtitle}
                       </p>
                     </div>
                   </div>
 
-                  <div className="pt-2 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-zinc-500 uppercase">
+                  <div className="pt-2 border-t border-white/5 flex items-center justify-between text-[9px] sm:text-[11px] font-mono text-zinc-500 uppercase">
                     <span>TOUCHPOINT // 0{idx + 1}</span>
                     <span className="text-zinc-400 group-hover:text-white transition-colors">INSPECT →</span>
                   </div>
