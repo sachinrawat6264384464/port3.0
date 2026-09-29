@@ -126,27 +126,27 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <div className="p-8 rounded-3xl bg-zinc-950 border border-white/10 space-y-4">
-            <span className="text-2xl font-black text-orange-500 font-mono">01</span>
-            <h3 className="text-lg font-bold text-white uppercase">Discovery & Strategy</h3>
-            <p className="text-xs text-zinc-400 leading-relaxed">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-6">
+          <div className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-zinc-950 border border-white/10 space-y-2.5 sm:space-y-4">
+            <span className="text-lg sm:text-2xl font-black text-orange-500 font-mono">01</span>
+            <h3 className="text-xs sm:text-lg font-bold text-white uppercase leading-tight">Discovery & Strategy</h3>
+            <p className="text-[11px] sm:text-xs text-zinc-400 leading-snug sm:leading-relaxed">
               We analyze founder intent, competitive positioning, and target perception before creating any visual concept.
             </p>
           </div>
 
-          <div className="p-8 rounded-3xl bg-zinc-950 border border-white/10 space-y-4">
-            <span className="text-2xl font-black text-orange-500 font-mono">02</span>
-            <h3 className="text-lg font-bold text-white uppercase">Concept & Precision</h3>
-            <p className="text-xs text-zinc-400 leading-relaxed">
+          <div className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-zinc-950 border border-white/10 space-y-2.5 sm:space-y-4">
+            <span className="text-lg sm:text-2xl font-black text-orange-500 font-mono">02</span>
+            <h3 className="text-xs sm:text-lg font-bold text-white uppercase leading-tight">Concept & Precision</h3>
+            <p className="text-[11px] sm:text-xs text-zinc-400 leading-snug sm:leading-relaxed">
               We craft high-precision visual systems, dielines, layouts, and typography grids engineered for impact.
             </p>
           </div>
 
-          <div className="p-8 rounded-3xl bg-zinc-950 border border-white/10 space-y-4">
-            <span className="text-2xl font-black text-orange-500 font-mono">03</span>
-            <h3 className="text-lg font-bold text-white uppercase">Production & Delivery</h3>
-            <p className="text-xs text-zinc-400 leading-relaxed">
+          <div className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-zinc-950 border border-white/10 space-y-2.5 sm:space-y-4">
+            <span className="text-lg sm:text-2xl font-black text-orange-500 font-mono">03</span>
+            <h3 className="text-xs sm:text-lg font-bold text-white uppercase leading-tight">Production & Delivery</h3>
+            <p className="text-[11px] sm:text-xs text-zinc-400 leading-snug sm:leading-relaxed">
               Flawless print specs, digital master assets, and production oversight to guarantee premium final execution.
             </p>
           </div>

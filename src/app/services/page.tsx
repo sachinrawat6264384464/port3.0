@@ -99,28 +99,28 @@ export default function ServicesPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {WORKFLOW_STEPS.map((step, idx) => {
             const Icon = step.icon;
             return (
               <div
                 key={step.step}
-                className="p-8 rounded-3xl bg-zinc-950/80 border border-white/10 hover:border-white/30 transition-all duration-300 space-y-5 group relative overflow-hidden shadow-xl"
+                className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-zinc-950/80 border border-white/10 hover:border-white/30 transition-all duration-300 space-y-3 sm:space-y-5 group relative overflow-hidden shadow-xl flex flex-col justify-between"
               >
                 <div className="flex items-center justify-between">
-                  <div className="p-3 rounded-2xl bg-white/10 border border-white/20 text-white group-hover:bg-white group-hover:text-black transition-colors">
-                    <Icon className="w-5 h-5" />
+                  <div className="p-2 sm:p-3 rounded-xl sm:rounded-2xl bg-white/10 border border-white/20 text-white group-hover:bg-white group-hover:text-black transition-colors">
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
-                  <span className="text-xs font-mono font-bold text-zinc-400">
+                  <span className="text-[10px] sm:text-xs font-mono font-bold text-zinc-400">
                     PHASE {step.step}
                   </span>
                 </div>
 
-                <div className="space-y-2 pt-2">
-                  <h3 className="text-xl font-bold text-white uppercase tracking-wide group-hover:text-zinc-300 transition-colors font-sans">
+                <div className="space-y-1.5 sm:space-y-2 pt-1 sm:pt-2">
+                  <h3 className="text-xs sm:text-xl font-bold text-white uppercase tracking-wide group-hover:text-zinc-300 transition-colors font-sans leading-tight">
                     {step.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-light">
+                  <p className="text-[11px] sm:text-xs text-zinc-400 leading-snug sm:leading-relaxed font-light">
                     {step.description}
                   </p>
                 </div>

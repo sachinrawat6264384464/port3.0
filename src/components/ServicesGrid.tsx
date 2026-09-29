@@ -119,7 +119,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ showHeader = true })
         )}
 
         {/* 2-Column Responsive Bento Cards Grid with Borderless Transparent Aesthetic */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-8">
           {SERVICES_DATA.map((item, idx) => {
             const IconComponent = item.icon;
             return (
@@ -130,22 +130,22 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ showHeader = true })
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: (idx % 3) * 0.12 }}
                 whileHover={{ y: -6 }}
-                className="p-8 sm:p-10 rounded-3xl bg-transparent border-0 hover:bg-white/[0.03] transition-all duration-500 space-y-6 flex flex-col justify-between group relative overflow-hidden"
+                className="p-3.5 sm:p-10 rounded-2xl sm:rounded-3xl bg-transparent border-0 hover:bg-white/[0.03] transition-all duration-500 space-y-3 sm:space-y-6 flex flex-col justify-between group relative overflow-hidden"
               >
-                <div className="space-y-6 relative z-10">
+                <div className="space-y-3 sm:space-y-6 relative z-10">
                   
                   {/* Card Header: Icon & Monogram Index */}
                   <div className="flex items-center justify-between">
-                    <div className="p-3 rounded-2xl bg-white/5 border-0 text-white group-hover:bg-white group-hover:text-black transition-all">
-                      <IconComponent className="w-6 h-6" />
+                    <div className="p-2 sm:p-3 rounded-xl sm:rounded-2xl bg-white/5 border-0 text-white group-hover:bg-white group-hover:text-black transition-all">
+                      <IconComponent className="w-4 h-4 sm:w-6 sm:h-6" />
                     </div>
-                    <span className="text-xs font-mono font-bold text-zinc-400 group-hover:text-white transition-colors">
+                    <span className="text-[10px] sm:text-xs font-mono font-bold text-zinc-400 group-hover:text-white transition-colors">
                       ({item.number}) // DISCIPLINE
                     </span>
                   </div>
 
                   {/* Image Preview Box - Widescreen HD Edge-to-Edge */}
-                  <div className="relative w-full h-[260px] sm:h-[280px] rounded-2xl overflow-hidden bg-zinc-950 border border-white/10 group-hover:border-white/25 transition-all duration-500 shadow-2xl">
+                  <div className="relative w-full h-[140px] sm:h-[280px] rounded-xl sm:rounded-2xl overflow-hidden bg-zinc-950 border border-white/10 group-hover:border-white/25 transition-all duration-500 shadow-2xl">
                     <Image
                       src={item.image}
                       alt={item.title}
@@ -153,27 +153,27 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ showHeader = true })
                       className="object-cover object-center group-hover:scale-105 transition-transform duration-700 filter brightness-[1.05] contrast-[1.03]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-70 group-hover:opacity-40 transition-opacity duration-500" />
-                    <div className="absolute bottom-3.5 left-3.5 px-3.5 py-1.5 rounded-full bg-black/75 border border-white/15 text-[11px] font-mono text-zinc-200 uppercase font-bold tracking-wider backdrop-blur-md shadow-lg">
+                    <div className="absolute bottom-2 left-2 sm:bottom-3.5 sm:left-3.5 px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-black/75 border border-white/15 text-[8px] sm:text-[11px] font-mono text-zinc-200 uppercase font-bold tracking-wider backdrop-blur-md shadow-lg truncate max-w-[90%]">
                       {item.subtitle}
                     </div>
                   </div>
 
                   {/* Title & Description */}
-                  <div className="space-y-3 pt-2">
-                    <h3 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight font-sans group-hover:text-zinc-200 transition-colors leading-tight">
+                  <div className="space-y-1.5 sm:space-y-3 pt-1 sm:pt-2">
+                    <h3 className="text-xs sm:text-3xl font-black text-white uppercase tracking-tight font-sans group-hover:text-zinc-200 transition-colors leading-tight line-clamp-2">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-normal">
+                    <p className="text-[10px] sm:text-sm text-zinc-400 leading-snug sm:leading-relaxed font-normal line-clamp-3">
                       {item.description}
                     </p>
                   </div>
 
                   {/* Skill Tag Badges */}
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {item.tags.map((tag, tIdx) => (
+                  <div className="flex flex-wrap gap-1 sm:gap-2 pt-1 sm:pt-2">
+                    {item.tags.slice(0, 3).map((tag, tIdx) => (
                       <span
                         key={tIdx}
-                        className="px-3 py-1 rounded-full bg-white/5 border-0 text-[11px] font-mono text-zinc-300 transition-colors"
+                        className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-white/5 border-0 text-[9px] sm:text-[11px] font-mono text-zinc-300 transition-colors truncate max-w-full"
                       >
                         {tag}
                       </span>
@@ -183,13 +183,13 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ showHeader = true })
                 </div>
 
                 {/* Card Action Link */}
-                <div className="pt-6 border-t border-white/10 flex items-center justify-between text-xs font-mono font-bold uppercase tracking-wider relative z-10 transition-colors">
+                <div className="pt-3 sm:pt-6 border-t border-white/10 flex items-center justify-between text-[9px] sm:text-xs font-mono font-bold uppercase tracking-wider relative z-10 transition-colors">
                   <Link
                     href={`/services/${item.slug}`}
-                    className="flex items-center gap-2 text-white group-hover:text-zinc-300 transition-colors"
+                    className="flex items-center gap-1 sm:gap-2 text-white group-hover:text-zinc-300 transition-colors"
                   >
-                    <span>View Service Case Studies</span>
-                    <ArrowUpRight className="w-4 h-4 text-zinc-400 transition-transform group-hover:translate-x-1 group-hover:-translate-y-0.5 group-hover:text-white" />
+                    <span>View Case Studies</span>
+                    <ArrowUpRight className="w-3 h-3 sm:w-4 sm:h-4 text-zinc-400 transition-transform group-hover:translate-x-1 group-hover:-translate-y-0.5 group-hover:text-white" />
                   </Link>
                   <span className="text-zinc-400 font-extrabold group-hover:text-white">{item.number}</span>
                 </div>
