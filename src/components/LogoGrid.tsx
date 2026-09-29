@@ -189,7 +189,7 @@ export const LogoGrid: React.FC = () => {
         </motion.div>
 
         {/* 9 Vector Brand Marks Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-8">
           {FEATURED_LOGOS.map((logo, idx) => (
             <motion.div
               key={logo.id}
@@ -201,40 +201,40 @@ export const LogoGrid: React.FC = () => {
             >
               <Link
                 href={`/logos/${logo.id}`}
-                className="group p-8 rounded-3xl bg-transparent border-0 hover:bg-white/[0.02] transition-all duration-500 flex flex-col justify-between space-y-6 h-full block relative overflow-hidden"
+                className="group p-3.5 sm:p-8 rounded-2xl sm:rounded-3xl bg-transparent border-0 hover:bg-white/[0.02] transition-all duration-500 flex flex-col justify-between space-y-3 sm:space-y-6 h-full block relative overflow-hidden"
               >
                 {/* Top Emblem Box */}
-                <div className="relative w-full h-40 rounded-2xl bg-zinc-950 border-0 flex items-center justify-center p-6 shadow-xl transition-all">
+                <div className="relative w-full h-28 sm:h-40 rounded-xl sm:rounded-2xl bg-zinc-950 border-0 flex items-center justify-center p-3 sm:p-6 shadow-xl transition-all">
                   {/* Vector Monogram Emblem Badge */}
-                  <div className="w-20 h-20 rounded-2xl bg-white/10 border-0 flex items-center justify-center text-white font-mono font-black text-2xl group-hover:scale-110 group-hover:bg-white group-hover:text-black transition-all duration-500 shadow-md">
+                  <div className="w-12 h-12 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl bg-white/10 border-0 flex items-center justify-center text-white font-mono font-black text-base sm:text-2xl group-hover:scale-110 group-hover:bg-white group-hover:text-black transition-all duration-500 shadow-md">
                     {logo.symbolText}
                   </div>
 
-                  <span className="absolute top-3 right-3 text-[10px] font-mono text-zinc-300 px-2.5 py-0.5 rounded-full bg-white/10 border-0">
+                  <span className="absolute top-2 right-2 text-[8px] sm:text-[10px] font-mono text-zinc-300 px-2 py-0.5 rounded-full bg-white/10 border-0 truncate max-w-[80%]">
                     {logo.tag}
                   </span>
                 </div>
 
                 {/* Bottom Details */}
-                <div className="space-y-3 pt-2">
-                  <div className="flex items-center justify-between">
-                    <h4 className="text-2xl font-black text-white uppercase tracking-tight group-hover:text-zinc-200 transition-colors font-sans">
+                <div className="space-y-2 sm:space-y-3 pt-1 sm:pt-2">
+                  <div className="flex items-center justify-between gap-1">
+                    <h4 className="text-xs sm:text-2xl font-black text-white uppercase tracking-tight group-hover:text-zinc-200 transition-colors font-sans truncate">
                       {logo.name}
                     </h4>
-                    <ShieldCheck className="w-4 h-4 text-zinc-500 group-hover:text-white transition-colors" />
+                    <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-zinc-500 group-hover:text-white transition-colors shrink-0" />
                   </div>
 
-                  <p className="text-xs font-mono text-zinc-400 font-bold uppercase tracking-wider">
-                    {logo.category} — {logo.subtitle}
+                  <p className="text-[9px] sm:text-xs font-mono text-zinc-400 font-bold uppercase tracking-wider truncate">
+                    {logo.category}
                   </p>
 
-                  <p className="text-xs text-zinc-400 leading-relaxed font-light">
+                  <p className="text-[10px] sm:text-xs text-zinc-400 leading-snug sm:leading-relaxed font-light line-clamp-2">
                     {logo.description}
                   </p>
 
-                  <div className="pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-zinc-400 group-hover:text-white transition-colors">
-                    <span>VIEW BRAND SPECIFICATIONS</span>
-                    <ArrowRight className="w-4 h-4 text-zinc-400 group-hover:text-white transition-transform group-hover:translate-x-1" />
+                  <div className="pt-2 sm:pt-4 border-t border-white/5 flex items-center justify-between text-[8px] sm:text-xs font-mono text-zinc-400 group-hover:text-white transition-colors">
+                    <span>VIEW SPECS</span>
+                    <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 text-zinc-400 group-hover:text-white transition-transform group-hover:translate-x-1 shrink-0" />
                   </div>
                 </div>
               </Link>

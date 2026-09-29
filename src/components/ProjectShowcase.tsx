@@ -103,7 +103,7 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ showHeader = t
         </div>
 
         {/* Projects Grid with Borderless Edge-to-Edge HD Formatting & Smooth Motion Transitions */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+        <div className="grid grid-cols-2 gap-3 sm:gap-8 lg:gap-10">
           <AnimatePresence>
             {filteredProjects.map((project, idx) => {
               return (
@@ -116,10 +116,10 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ showHeader = t
                   whileHover={{ y: -6, scale: 1.01 }}
                   transition={{ duration: 0.5, delay: (idx % 2) * 0.08, ease: 'easeOut' }}
                   onClick={() => setSelectedProject(project)}
-                  className="group cursor-pointer rounded-3xl bg-transparent border-0 hover:bg-white/[0.02] p-6 sm:p-8 space-y-6 transition-all duration-500 overflow-hidden relative"
+                  className="group cursor-pointer rounded-2xl sm:rounded-3xl bg-transparent border-0 hover:bg-white/[0.02] p-3 sm:p-8 space-y-3 sm:space-y-6 transition-all duration-500 overflow-hidden relative flex flex-col justify-between"
                 >
                   {/* Project Image Container - Edge to Edge HD Borderless */}
-                  <div className="relative w-full h-[320px] sm:h-[400px] rounded-2xl overflow-hidden bg-zinc-950 border-0 transition-all duration-500 shadow-2xl">
+                  <div className="relative w-full h-[150px] sm:h-[400px] rounded-xl sm:rounded-2xl overflow-hidden bg-zinc-950 border-0 transition-all duration-500 shadow-2xl">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -129,12 +129,12 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ showHeader = t
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
 
                     {/* Category Overlay Tag */}
-                    <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-black/75 backdrop-blur-md border-0 text-[11px] font-mono text-zinc-200 uppercase tracking-wider font-bold">
+                    <div className="absolute top-2 left-2 sm:top-4 sm:left-4 px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-black/75 backdrop-blur-md border-0 text-[8px] sm:text-[11px] font-mono text-zinc-200 uppercase tracking-wider font-bold truncate max-w-[85%]">
                       {project.category}
                     </div>
 
                     {/* Quick Preview Hover Pill */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none hidden sm:flex">
                       <span className="px-5 py-2.5 rounded-full bg-white text-black font-extrabold text-xs uppercase tracking-wider flex items-center gap-2 shadow-2xl group-hover:scale-105 transition-transform">
                         <Eye className="w-4 h-4" />
                         <span>Inspect Project</span>
@@ -143,13 +143,13 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ showHeader = t
                   </div>
 
                   {/* Card Content Info */}
-                  <div className="space-y-4 pt-2">
-                    <div className="flex items-start justify-between gap-4">
-                      <div>
-                        <h3 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-wide group-hover:text-zinc-200 transition-colors font-sans">
+                  <div className="space-y-2 sm:space-y-4 pt-1 sm:pt-2 flex-1 flex flex-col justify-between">
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="min-w-0 flex-1">
+                        <h3 className="text-xs sm:text-3xl font-black text-white uppercase tracking-wide group-hover:text-zinc-200 transition-colors font-sans line-clamp-2 leading-tight">
                           {project.title}
                         </h3>
-                        <p className="text-xs sm:text-sm text-zinc-400 font-mono font-semibold italic mt-1">
+                        <p className="text-[10px] sm:text-sm text-zinc-400 font-mono font-semibold italic mt-0.5 sm:mt-1 truncate">
                           &ldquo;{project.subtitle}&rdquo;
                         </p>
                       </div>
@@ -157,24 +157,24 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ showHeader = t
                       <Link
                         href={`/projects/${project.id}`}
                         onClick={(e) => e.stopPropagation()}
-                        className="p-3.5 rounded-2xl bg-white/5 border-0 hover:bg-white hover:text-black text-white transition-all shrink-0 flex items-center justify-center group/btn"
+                        className="p-2 sm:p-3.5 rounded-xl sm:rounded-2xl bg-white/5 border-0 hover:bg-white hover:text-black text-white transition-all shrink-0 flex items-center justify-center group/btn"
                         title="View Full Case Study Page"
                       >
-                        <ArrowUpRight className="w-5 h-5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                        <ArrowUpRight className="w-3.5 h-3.5 sm:w-5 sm:h-5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                       </Link>
                     </div>
 
-                    <p className="text-xs sm:text-sm text-zinc-300 line-clamp-2 leading-relaxed">
+                    <p className="text-[10px] sm:text-sm text-zinc-300 line-clamp-2 leading-snug sm:leading-relaxed">
                       {project.description}
                     </p>
 
                     {/* Tags List */}
                     {project.tags && project.tags.length > 0 && (
-                      <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-white/5">
-                        {project.tags.map((tag, tIdx) => (
+                      <div className="flex flex-wrap items-center gap-1 sm:gap-2 pt-1 sm:pt-2 border-t border-white/5">
+                        {project.tags.slice(0, 2).map((tag, tIdx) => (
                           <span
                             key={tIdx}
-                            className="px-3 py-1 rounded-full bg-white/5 border-0 text-[11px] font-mono text-zinc-400 uppercase"
+                            className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-white/5 border-0 text-[8px] sm:text-[11px] font-mono text-zinc-400 uppercase truncate max-w-full"
                           >
                             {tag}
                           </span>
