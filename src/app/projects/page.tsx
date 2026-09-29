@@ -23,22 +23,22 @@ export default function ProjectsPage() {
       {/* Hero Header Banner */}
       <section className="pt-36 sm:pt-44 pb-20 px-6 sm:px-10 lg:px-16 max-w-[1700px] w-full mx-auto relative z-10 border-b border-white/10">
         
-        {/* Background Subtle Orange Ambient Light */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[#ff5528]/10 rounded-full blur-[180px] pointer-events-none" />
+        {/* Background Subtle Ambient Light */}
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-white/5 rounded-full blur-[180px] pointer-events-none" />
 
         <div className="space-y-12 relative z-10">
           
           {/* Top Tag Pill */}
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#ff5528] animate-pulse" />
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-300">
-                (03) // PORTFOLIO ARCHIVE & SELECTED WORK
+              <span className="w-2.5 h-2.5 rounded-full bg-white animate-pulse" />
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400">
+                (03) // PORTFOLIO ARCHIVE &amp; SELECTED WORK
               </span>
             </div>
 
-            <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-zinc-400 uppercase tracking-widest">
-              <Award className="w-3.5 h-3.5 text-[#ff5528]" />
+            <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-zinc-300 uppercase tracking-widest">
+              <Award className="w-3.5 h-3.5 text-white" />
               <span>300+ CREATIVE ASSETS DELIVERED</span>
             </div>
           </div>
@@ -47,7 +47,7 @@ export default function ProjectsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
             <div className="lg:col-span-8 space-y-4">
               <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-white uppercase tracking-tight leading-[1.05] font-sans">
-                PROJECT <span className="text-[#ff5528]">SHOWCASE</span>
+                PROJECT <span className="font-editorial italic font-normal text-zinc-400 lowercase">showcase</span>
               </h1>
             </div>
 
@@ -59,7 +59,7 @@ export default function ProjectsPage() {
               <div className="flex items-center gap-4 pt-2">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-[#ff5528] text-black font-extrabold text-xs uppercase tracking-wider hover:bg-white transition-all duration-300 group shadow-lg shadow-[#ff5528]/20"
+                  className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-white text-black font-extrabold text-xs uppercase tracking-wider hover:bg-zinc-200 transition-all duration-300 group shadow-xl"
                 >
                   <span>Start New Project</span>
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -77,22 +77,22 @@ export default function ProjectsPage() {
 
           {/* Key Portfolio Metric Highlight Cards */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-8">
-            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-[#ff5528]/40 transition-all duration-300">
-              <div className="text-3xl sm:text-4xl font-black text-[#ff5528] font-mono">300+</div>
+            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-white/30 transition-all duration-300">
+              <div className="text-3xl sm:text-4xl font-black text-white font-mono">300+</div>
               <div className="text-xs font-mono uppercase text-zinc-400 mt-2 tracking-wider">Deliverables Produced</div>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-[#ff5528]/40 transition-all duration-300">
+            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-white/30 transition-all duration-300">
               <div className="text-3xl sm:text-4xl font-black text-white font-mono">8+</div>
               <div className="text-xs font-mono uppercase text-zinc-400 mt-2 tracking-wider">Design Disciplines</div>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-[#ff5528]/40 transition-all duration-300">
-              <div className="text-3xl sm:text-4xl font-black text-[#ff5528] font-mono">100%</div>
+            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-white/30 transition-all duration-300">
+              <div className="text-3xl sm:text-4xl font-black text-white font-mono">100%</div>
               <div className="text-xs font-mono uppercase text-zinc-400 mt-2 tracking-wider">Bespoke Visual Craft</div>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-[#ff5528]/40 transition-all duration-300">
+            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-white/30 transition-all duration-300">
               <div className="text-3xl sm:text-4xl font-black text-white font-mono">40+</div>
               <div className="text-xs font-mono uppercase text-zinc-400 mt-2 tracking-wider">Enterprise Brand Clients</div>
             </div>
@@ -116,19 +116,19 @@ export default function ProjectsPage() {
       {/* Executive Consultation CTA Card */}
       <section className="py-24 px-6 sm:px-10 lg:px-16 bg-[#0e0e11] relative">
         <div className="max-w-[1700px] w-full mx-auto">
-          <div className="p-10 sm:p-16 lg:p-20 rounded-3xl bg-gradient-to-br from-[#16161c] via-[#121218] to-[#09090d] border border-white/10 relative overflow-hidden group shadow-2xl">
+          <div className="p-10 sm:p-16 lg:p-20 rounded-3xl bg-gradient-to-br from-zinc-950 via-[#0d0d12] to-black border border-white/15 relative overflow-hidden group shadow-2xl">
             
-            {/* Glowing Orange Spot */}
-            <div className="absolute top-1/2 right-10 -translate-y-1/2 w-[500px] h-[500px] bg-[#ff5528]/15 rounded-full blur-[160px] pointer-events-none group-hover:bg-[#ff5528]/25 transition-all duration-700" />
+            {/* Ambient Lighting Spot */}
+            <div className="absolute top-1/2 right-10 -translate-y-1/2 w-[500px] h-[500px] bg-white/5 rounded-full blur-[160px] pointer-events-none" />
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
               <div className="lg:col-span-8 space-y-6">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ff5528]/10 border border-[#ff5528]/30 text-[#ff5528] text-xs font-mono uppercase tracking-widest">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-zinc-300 text-xs font-mono uppercase tracking-widest">
                   <span>START A NEW COLLABORATION</span>
                 </div>
                 <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase text-white tracking-tight leading-tight font-sans">
                   Have a Creative Project <br className="hidden sm:block" />
-                  in Mind for <span className="text-[#ff5528]">Your Brand</span>?
+                  in Mind for <span className="font-editorial italic font-normal text-zinc-400 lowercase">your brand</span>?
                 </h2>
                 <p className="text-base sm:text-lg text-zinc-300 max-w-2xl leading-relaxed">
                   Let us turn your raw business goals into structured, high-conversion visual design assets.
@@ -138,7 +138,7 @@ export default function ProjectsPage() {
               <div className="lg:col-span-4 flex lg:justify-end">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-4 px-8 py-5 rounded-full bg-[#ff5528] text-black font-extrabold text-sm uppercase tracking-wider hover:bg-white transition-all duration-300 shadow-xl shadow-[#ff5528]/25 group/btn"
+                  className="inline-flex items-center gap-4 px-8 py-5 rounded-full bg-white text-black font-extrabold text-sm uppercase tracking-wider hover:bg-zinc-200 transition-all duration-300 shadow-xl group/btn"
                 >
                   <span>Initiate Project Brief</span>
                   <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />

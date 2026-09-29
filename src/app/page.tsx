@@ -10,7 +10,6 @@ import { CurvedProjectGallery } from '@/components/CurvedProjectGallery';
 import { IndustriesServed } from '@/components/IndustriesServed';
 import { FallingClientsSection } from '@/components/FallingClientsSection';
 import { Footer } from '@/components/Footer';
-import { SnakeMarqueeLine } from '@/components/SnakeMarqueeLine';
 
 export default function Home() {
   return (
@@ -27,22 +26,14 @@ export default function Home() {
       {/* STATS & METRICS COUNTER */}
       <StatsMetricsCounter />
 
-      <SnakeMarqueeLine />
-
       {/* INDUSTRIES SERVED */}
       <IndustriesServed />
-
-      <SnakeMarqueeLine reverse speed={22} />
 
       {/* CLIENT TESTIMONIALS & SUCCESS STORIES */}
       <CustomerSuccessStories />
 
-      <SnakeMarqueeLine speed={28} />
-
       {/* 3D CURVED MULTI-AXIS GALLERY STREAM */}
       <CurvedProjectGallery />
-
-      <SnakeMarqueeLine reverse speed={20} />
 
       {/* INTERACTIVE FALLING CLIENTS BADGES */}
       <FallingClientsSection />

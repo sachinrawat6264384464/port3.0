@@ -32,7 +32,7 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ showHeader = t
     <section id="work" className="py-20 sm:py-28 px-6 sm:px-10 lg:px-16 bg-[#0e0e11] relative overflow-hidden">
       
       {/* Background Subtle Ambient Light */}
-      <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-[#ff5528]/5 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-white/5 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-[1700px] w-full mx-auto space-y-12 relative z-10">
         
@@ -47,13 +47,13 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ showHeader = t
               className="space-y-4"
             >
               <div className="flex items-center gap-3">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#ff5528] animate-pulse" />
-                <span className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-300">
-                  (03) // PORTFOLIO ARCHIVE & SELECTED WORK
+                <span className="w-2.5 h-2.5 rounded-full bg-white animate-pulse" />
+                <span className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400">
+                  (03) // PORTFOLIO ARCHIVE &amp; SELECTED WORK
                 </span>
               </div>
               <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tight font-sans">
-                PROJECT <span className="text-[#ff5528]">SHOWCASE</span>
+                PROJECT <span className="font-editorial italic font-normal text-zinc-400 lowercase">showcase</span>
               </h2>
             </motion.div>
             <motion.p
@@ -68,10 +68,10 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ showHeader = t
           </div>
         )}
 
-        {/* Filter Categories Bar */}
-        <div className="flex flex-wrap items-center gap-3 p-2 rounded-3xl bg-white/[0.02] border border-white/10 backdrop-blur-md">
-          <div className="flex items-center gap-2 px-4 text-xs font-mono text-zinc-400 uppercase tracking-widest border-r border-white/10 shrink-0 py-2">
-            <Filter className="w-3.5 h-3.5 text-[#ff5528]" />
+        {/* Filter Categories Bar - Borderless Glassmorphic */}
+        <div className="flex flex-wrap items-center gap-3 p-2 rounded-3xl bg-white/[0.02] border-0 backdrop-blur-md">
+          <div className="flex items-center gap-2 px-4 text-xs font-mono text-zinc-400 uppercase tracking-widest shrink-0 py-2">
+            <Filter className="w-3.5 h-3.5 text-white" />
             <span>CATEGORIES:</span>
           </div>
 
@@ -84,10 +84,10 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ showHeader = t
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-5 py-2.5 rounded-2xl text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2 ${
+                  className={`px-5 py-2.5 rounded-2xl text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2 border-0 ${
                     isActive
-                      ? 'bg-[#ff5528] text-black shadow-lg shadow-[#ff5528]/25 font-black'
-                      : 'bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10 border border-white/5'
+                      ? 'bg-white text-black font-black shadow-xl shadow-white/10 scale-105'
+                      : 'bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10'
                   }`}
                 >
                   <span>{cat}</span>
@@ -102,11 +102,10 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ showHeader = t
           </div>
         </div>
 
-        {/* Projects Grid */}
+        {/* Projects Grid with Borderless Edge-to-Edge HD Formatting & Smooth Motion Transitions */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           <AnimatePresence>
             {filteredProjects.map((project, idx) => {
-              const isEven = idx % 2 === 0;
               return (
                 <motion.div
                   key={project.id}
@@ -114,37 +113,29 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ showHeader = t
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.5, delay: (idx % 2) * 0.1 }}
+                  whileHover={{ y: -6, scale: 1.01 }}
+                  transition={{ duration: 0.5, delay: (idx % 2) * 0.08, ease: 'easeOut' }}
                   onClick={() => setSelectedProject(project)}
-                  className="group cursor-pointer rounded-3xl bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/10 hover:border-[#ff5528]/60 p-6 sm:p-8 space-y-6 transition-all duration-500 hover:shadow-2xl hover:shadow-[#ff5528]/10 overflow-hidden relative"
+                  className="group cursor-pointer rounded-3xl bg-transparent border-0 hover:bg-white/[0.02] p-6 sm:p-8 space-y-6 transition-all duration-500 overflow-hidden relative"
                 >
-                  {/* Framing Corner Indicators */}
-                  <div className="absolute top-4 left-4 text-zinc-700 font-mono text-xs pointer-events-none select-none">┌</div>
-                  <div className="absolute top-4 right-4 text-zinc-700 font-mono text-xs pointer-events-none select-none">┐</div>
-                  <div className="absolute bottom-4 left-4 text-zinc-700 font-mono text-xs pointer-events-none select-none">└</div>
-                  <div className="absolute bottom-4 right-4 text-zinc-700 font-mono text-xs pointer-events-none select-none">┘</div>
-
-                  {/* Glowing Top Bar on Hover */}
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#ff5528] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  {/* Project Image Container */}
-                  <div className="relative w-full h-[320px] sm:h-[400px] rounded-2xl overflow-hidden bg-black/60 border border-white/10 group-hover:border-white/20 transition-colors">
+                  {/* Project Image Container - Edge to Edge HD Borderless */}
+                  <div className="relative w-full h-[320px] sm:h-[400px] rounded-2xl overflow-hidden bg-zinc-950 border-0 transition-all duration-500 shadow-2xl">
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
-                      className="object-contain group-hover:scale-105 transition-transform duration-700 p-4"
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-700 filter brightness-[1.05] contrast-[1.03]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
 
                     {/* Category Overlay Tag */}
-                    <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[11px] font-mono text-[#ff5528] uppercase tracking-wider font-bold">
+                    <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-black/75 backdrop-blur-md border-0 text-[11px] font-mono text-zinc-200 uppercase tracking-wider font-bold">
                       {project.category}
                     </div>
 
                     {/* Quick Preview Hover Pill */}
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                      <span className="px-5 py-2.5 rounded-full bg-[#ff5528] text-black font-extrabold text-xs uppercase tracking-wider flex items-center gap-2 shadow-xl shadow-[#ff5528]/30">
+                      <span className="px-5 py-2.5 rounded-full bg-white text-black font-extrabold text-xs uppercase tracking-wider flex items-center gap-2 shadow-2xl group-hover:scale-105 transition-transform">
                         <Eye className="w-4 h-4" />
                         <span>Inspect Project</span>
                       </span>
@@ -155,10 +146,10 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ showHeader = t
                   <div className="space-y-4 pt-2">
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <h3 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-wide group-hover:text-[#ff5528] transition-colors font-sans">
+                        <h3 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-wide group-hover:text-zinc-200 transition-colors font-sans">
                           {project.title}
                         </h3>
-                        <p className="text-xs sm:text-sm text-[#ff5528] font-mono font-semibold italic mt-1">
+                        <p className="text-xs sm:text-sm text-zinc-400 font-mono font-semibold italic mt-1">
                           &ldquo;{project.subtitle}&rdquo;
                         </p>
                       </div>
@@ -166,7 +157,7 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ showHeader = t
                       <Link
                         href={`/projects/${project.id}`}
                         onClick={(e) => e.stopPropagation()}
-                        className="p-3.5 rounded-2xl bg-white/5 border border-white/10 hover:bg-[#ff5528] hover:text-black text-white transition-all shrink-0 flex items-center justify-center group/btn"
+                        className="p-3.5 rounded-2xl bg-white/5 border-0 hover:bg-white hover:text-black text-white transition-all shrink-0 flex items-center justify-center group/btn"
                         title="View Full Case Study Page"
                       >
                         <ArrowUpRight className="w-5 h-5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
@@ -179,11 +170,11 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ showHeader = t
 
                     {/* Tags List */}
                     {project.tags && project.tags.length > 0 && (
-                      <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-white/10">
+                      <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-white/5">
                         {project.tags.map((tag, tIdx) => (
                           <span
                             key={tIdx}
-                            className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-zinc-400 uppercase"
+                            className="px-3 py-1 rounded-full bg-white/5 border-0 text-[11px] font-mono text-zinc-400 uppercase"
                           >
                             {tag}
                           </span>

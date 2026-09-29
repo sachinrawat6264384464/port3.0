@@ -24,14 +24,14 @@ export default function WhyUsPage() {
       <section className="pt-36 sm:pt-44 pb-12 px-6 sm:px-10 lg:px-16 max-w-[1700px] w-full mx-auto relative z-10 border-b border-white/10">
         <div className="space-y-6">
           <div className="flex items-center gap-3">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#ff5528] animate-pulse" />
-            <span className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-300">
-              (04) // COMPETITIVE ADVANTAGE & METHODOLOGY
+            <span className="w-2.5 h-2.5 rounded-full bg-white animate-pulse" />
+            <span className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400">
+              (04) // COMPETITIVE ADVANTAGE &amp; METHODOLOGY
             </span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tight leading-none font-sans">
-            Why Choose <span className="text-[#ff5528]">The Outline</span>
+            Why Choose <span className="font-editorial italic font-normal text-zinc-400 lowercase">the outline</span>
           </h1>
 
           <p className="text-base sm:text-lg text-zinc-300 max-w-4xl font-normal leading-relaxed">

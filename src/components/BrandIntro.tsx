@@ -24,41 +24,8 @@ export const BrandIntro: React.FC<BrandIntroProps> = ({ showHeader = true, theme
     >
       {/* Background Subtle Ambient Glow */}
       <div className={`absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full blur-[180px] pointer-events-none -translate-y-1/2 ${
-        isLight ? 'bg-[#00755e]/10' : 'bg-[#ff5528]/5'
+        isLight ? 'bg-[#00755e]/10' : 'bg-white/5'
       }`} />
-
-      {/* Giant Repeating Dark Studio Watermark (Matching Screenshot 1) */}
-      {!isLight && (
-        <div className="absolute top-6 left-0 right-0 overflow-hidden pointer-events-none select-none opacity-20 z-0">
-          <motion.div
-            animate={{ x: ['0%', '-50%'] }}
-            transition={{ repeat: Infinity, ease: 'linear', duration: 35 }}
-            className="flex items-center gap-12 whitespace-nowrap w-max"
-          >
-            {[...Array(8)].map((_, i) => (
-              <span key={i} className="text-7xl sm:text-9xl font-black tracking-tight text-zinc-600 font-sans">
-                studio<span className="font-editorial italic font-normal text-zinc-400">rs</span> &nbsp;&nbsp;&nbsp;&nbsp;
-                studio<span className="font-editorial italic font-normal text-zinc-400">rs</span> &nbsp;&nbsp;&nbsp;&nbsp;
-                studio<span className="font-editorial italic font-normal text-zinc-400">rs</span>
-              </span>
-            ))}
-          </motion.div>
-        </div>
-      )}
-
-      {/* Blueprint Coordinate Marks for Light Theme */}
-      {isLight && (
-        <div className="absolute inset-0 pointer-events-none select-none font-mono text-[10px] text-[#00755e]/30 px-6 py-6 flex flex-col justify-between">
-          <div className="flex justify-between">
-            <span>Nf3 // (02)</span>
-            <span>Bc4 // GRID_ANNOTATION</span>
-          </div>
-          <div className="flex justify-between">
-            <span>O-O // PHILOSOPHY</span>
-            <span>Nf6 // OUTLINE</span>
-          </div>
-        </div>
-      )}
 
       <div className="max-w-[1700px] w-full mx-auto relative z-10">
         
@@ -106,8 +73,8 @@ export const BrandIntro: React.FC<BrandIntroProps> = ({ showHeader = true, theme
                 isLight ? 'text-zinc-900' : 'text-white'
               }`}>
                 THE OUTLINE <br />
-                <span className={isLight ? 'font-editorial italic text-[#00755e]' : 'text-[#ff5528]'}>
-                  MANIFESTO
+                <span className={isLight ? 'font-editorial italic text-[#00755e]' : 'font-editorial italic font-normal text-zinc-400 lowercase'}>
+                  manifesto
                 </span>
               </h3>
               <p className={`text-sm sm:text-base font-normal leading-relaxed max-w-md ${
@@ -123,18 +90,18 @@ export const BrandIntro: React.FC<BrandIntroProps> = ({ showHeader = true, theme
               <div className={`p-5 rounded-2xl transition-all duration-300 group flex items-start gap-4 ${
                 isLight 
                   ? 'bg-white border border-[#00755e]/20 hover:border-[#00755e] shadow-sm' 
-                  : 'bg-white/[0.03] border border-white/10 hover:border-[#ff5528]/50'
+                  : 'bg-white/[0.03] border border-white/10 hover:border-white/30'
               }`}>
                 <div className={`w-10 h-10 rounded-xl border flex items-center justify-center transition-all shrink-0 ${
                   isLight 
                     ? 'bg-[#00755e]/10 border-[#00755e]/20 text-[#00755e] group-hover:bg-[#00755e] group-hover:text-white'
-                    : 'bg-[#ff5528]/10 border-[#ff5528]/20 text-[#ff5528] group-hover:bg-[#ff5528] group-hover:text-black'
+                    : 'bg-white/10 border-white/20 text-white group-hover:bg-white group-hover:text-black'
                 }`}>
                   <Compass className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className={`text-sm font-bold uppercase tracking-wide transition-colors ${
-                    isLight ? 'text-zinc-900 group-hover:text-[#00755e]' : 'text-white group-hover:text-[#ff5528]'
+                    isLight ? 'text-zinc-900 group-hover:text-[#00755e]' : 'text-white group-hover:text-zinc-300'
                   }`}>
                     Strategic Intent
                   </h4>
@@ -147,18 +114,18 @@ export const BrandIntro: React.FC<BrandIntroProps> = ({ showHeader = true, theme
               <div className={`p-5 rounded-2xl transition-all duration-300 group flex items-start gap-4 ${
                 isLight 
                   ? 'bg-white border border-[#00755e]/20 hover:border-[#00755e] shadow-sm' 
-                  : 'bg-white/[0.03] border border-white/10 hover:border-[#ff5528]/50'
+                  : 'bg-white/[0.03] border border-white/10 hover:border-white/30'
               }`}>
                 <div className={`w-10 h-10 rounded-xl border flex items-center justify-center transition-all shrink-0 ${
                   isLight 
                     ? 'bg-[#00755e]/10 border-[#00755e]/20 text-[#00755e] group-hover:bg-[#00755e] group-hover:text-white'
-                    : 'bg-[#ff5528]/10 border-[#ff5528]/20 text-[#ff5528] group-hover:bg-[#ff5528] group-hover:text-black'
+                    : 'bg-white/10 border-white/20 text-white group-hover:bg-white group-hover:text-black'
                 }`}>
                   <Zap className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className={`text-sm font-bold uppercase tracking-wide transition-colors ${
-                    isLight ? 'text-zinc-900 group-hover:text-[#00755e]' : 'text-white group-hover:text-[#ff5528]'
+                    isLight ? 'text-zinc-900 group-hover:text-[#00755e]' : 'text-white group-hover:text-zinc-300'
                   }`}>
                     Aesthetic Precision
                   </h4>
@@ -171,18 +138,18 @@ export const BrandIntro: React.FC<BrandIntroProps> = ({ showHeader = true, theme
               <div className={`p-5 rounded-2xl transition-all duration-300 group flex items-start gap-4 ${
                 isLight 
                   ? 'bg-white border border-[#00755e]/20 hover:border-[#00755e] shadow-sm' 
-                  : 'bg-white/[0.03] border border-white/10 hover:border-[#ff5528]/50'
+                  : 'bg-white/[0.03] border border-white/10 hover:border-white/30'
               }`}>
                 <div className={`w-10 h-10 rounded-xl border flex items-center justify-center transition-all shrink-0 ${
                   isLight 
                     ? 'bg-[#00755e]/10 border-[#00755e]/20 text-[#00755e] group-hover:bg-[#00755e] group-hover:text-white'
-                    : 'bg-[#ff5528]/10 border-[#ff5528]/20 text-[#ff5528] group-hover:bg-[#ff5528] group-hover:text-black'
+                    : 'bg-white/10 border-white/20 text-white group-hover:bg-white group-hover:text-black'
                 }`}>
                   <ShieldCheck className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className={`text-sm font-bold uppercase tracking-wide transition-colors ${
-                    isLight ? 'text-zinc-900 group-hover:text-[#00755e]' : 'text-white group-hover:text-[#ff5528]'
+                    isLight ? 'text-zinc-900 group-hover:text-[#00755e]' : 'text-white group-hover:text-zinc-300'
                   }`}>
                     Unforgettable Impact
                   </h4>
@@ -206,7 +173,7 @@ export const BrandIntro: React.FC<BrandIntroProps> = ({ showHeader = true, theme
             {/* Main Big Quote Statement */}
             <div className="relative">
               <Quote className={`w-16 h-16 absolute -top-6 -left-6 pointer-events-none ${
-                isLight ? 'text-[#00755e]/15' : 'text-[#ff5528]/20'
+                isLight ? 'text-[#00755e]/15' : 'text-white/10'
               }`} />
               <h2 className={`text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.12] tracking-tight relative z-10 font-sans ${
                 isLight ? 'text-zinc-900' : 'text-white'
@@ -226,7 +193,7 @@ export const BrandIntro: React.FC<BrandIntroProps> = ({ showHeader = true, theme
             <div className={`p-8 sm:p-12 rounded-3xl relative overflow-hidden group transition-all duration-500 shadow-xl ${
               isLight 
                 ? 'bg-white border border-[#00755e]/25 hover:border-[#00755e]'
-                : 'bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-white/10 backdrop-blur-2xl hover:border-[#ff5528]/40'
+                : 'bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-white/10 backdrop-blur-2xl hover:border-white/30'
             }`}>
               {/* Corner framing indicators */}
               <div className={`absolute top-4 left-4 font-mono text-xs pointer-events-none select-none ${isLight ? 'text-[#00755e]/40' : 'text-zinc-700'}`}>┌</div>
@@ -236,18 +203,18 @@ export const BrandIntro: React.FC<BrandIntroProps> = ({ showHeader = true, theme
 
               {/* Accent Glow Circle */}
               <div className={`absolute -bottom-10 -right-10 w-40 h-40 rounded-full blur-3xl pointer-events-none transition-all duration-500 ${
-                isLight ? 'bg-[#00755e]/10 group-hover:bg-[#00755e]/20' : 'bg-[#ff5528]/15 group-hover:bg-[#ff5528]/30'
+                isLight ? 'bg-[#00755e]/10 group-hover:bg-[#00755e]/20' : 'bg-white/5 group-hover:bg-white/10'
               }`} />
 
               <div className="relative z-10 space-y-6">
                 <div className={`flex items-center gap-2 text-xs font-mono font-bold tracking-widest uppercase ${
-                  isLight ? 'text-[#00755e]' : 'text-[#ff5528]'
+                  isLight ? 'text-[#00755e]' : 'text-zinc-400'
                 }`}>
                   <span>CORE BRANDING PRINCIPLE</span>
                 </div>
 
                 <p className={`text-2xl sm:text-4xl font-extrabold tracking-wide leading-snug ${
-                  isLight ? 'text-[#00755e] font-editorial italic' : 'text-white italic'
+                  isLight ? 'text-[#00755e] font-editorial italic' : 'text-white font-editorial italic font-normal'
                 }`}>
                   &ldquo;{BRAND.coreQuote}&rdquo;
                 </p>

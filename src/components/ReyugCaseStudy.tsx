@@ -82,19 +82,19 @@ export const ReyugCaseStudy: React.FC = () => {
 
   return (
     <section className="py-28 px-6 sm:px-10 lg:px-16 bg-[#09090c] border-t border-b border-white/10 relative overflow-hidden">
-      {/* Background Subtle Orange Flare */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[700px] h-[500px] bg-[#ff5528]/10 rounded-full blur-[180px] pointer-events-none" />
+      {/* Background Subtle Ambient Light */}
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[700px] h-[500px] bg-white/5 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-[1700px] w-full mx-auto space-y-16 relative z-10">
         
         {/* Section Header Banner */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-8 border-b border-white/10">
           <div className="space-y-4 max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ff5528]/10 border border-[#ff5528]/30 text-[#ff5528] text-xs font-mono uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-zinc-300 text-xs font-mono uppercase tracking-widest">
               <span>FEATURED 360° BRAND CASE STUDY</span>
             </div>
             <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tight font-sans">
-              REYUG <span className="text-[#ff5528]">Incense & Pooja Range</span>
+              REYUG <span className="font-editorial italic font-normal text-zinc-400 lowercase">incense &amp; pooja range</span>
             </h2>
             <p className="text-base sm:text-xl text-zinc-300 font-normal leading-relaxed">
               Full-circle thinking, Brand impact everywhere. Single individual touchpoints designed for maximum market recall and retail presence.
@@ -103,15 +103,15 @@ export const ReyugCaseStudy: React.FC = () => {
             {/* Quick Metrics */}
             <div className="flex flex-wrap items-center gap-6 pt-4 text-xs font-mono text-zinc-400">
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#ff5528]" />
+                <span className="w-2 h-2 rounded-full bg-white" />
                 <span>15+ SKU Range Packaged</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#ff5528]" />
+                <span className="w-2 h-2 rounded-full bg-white" />
                 <span>360° Omnichannel Execution</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#ff5528]" />
+                <span className="w-2 h-2 rounded-full bg-white" />
                 <span>Nationwide Retail Placement</span>
               </div>
             </div>
@@ -119,7 +119,7 @@ export const ReyugCaseStudy: React.FC = () => {
 
           <Link
             href="/projects/reyug-brand-impact"
-            className="px-8 py-4 rounded-full bg-[#ff5528] text-black hover:bg-white font-extrabold text-xs uppercase tracking-wider transition-all duration-300 shadow-xl shadow-[#ff5528]/20 flex items-center gap-3 shrink-0 self-start lg:self-end group"
+            className="px-8 py-4 rounded-full bg-white text-black hover:bg-zinc-200 font-extrabold text-xs uppercase tracking-wider transition-all duration-300 shadow-xl flex items-center gap-3 shrink-0 self-start lg:self-end group"
           >
             <span>Explore Dedicated Case Study</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -136,7 +136,7 @@ export const ReyugCaseStudy: React.FC = () => {
                 onClick={() => setActiveCat(cat.id)}
                 className={`px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
                   isActive
-                    ? 'bg-[#ff5528] text-black font-black shadow-lg shadow-[#ff5528]/25'
+                    ? 'bg-white text-black font-black shadow-xl shadow-white/10'
                     : 'bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10 border border-white/5'
                 }`}
               >
@@ -159,19 +159,19 @@ export const ReyugCaseStudy: React.FC = () => {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.4, delay: (idx % 4) * 0.08 }}
                   onClick={() => setSelectedImg(item.image)}
-                  className="group cursor-pointer rounded-3xl bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/10 hover:border-[#ff5528]/50 p-5 space-y-4 transition-all duration-500 hover:shadow-2xl hover:shadow-[#ff5528]/10 relative overflow-hidden flex flex-col justify-between"
+                  className="group cursor-pointer rounded-3xl bg-transparent border-0 hover:bg-white/[0.02] p-5 space-y-4 transition-all duration-500 overflow-hidden relative flex flex-col justify-between"
                 >
                   <div className="space-y-4">
-                    {/* Image Container */}
-                    <div className="relative w-full h-[260px] sm:h-[300px] rounded-2xl overflow-hidden bg-black/70 border border-white/10 group-hover:border-white/20 transition-colors">
+                    {/* Image Container - HD Edge-to-Edge */}
+                    <div className="relative w-full h-[260px] sm:h-[300px] rounded-2xl overflow-hidden bg-zinc-950 border border-white/10 group-hover:border-white/25 transition-all duration-500 shadow-xl">
                       <Image
                         src={item.image}
                         alt={item.title}
                         fill
-                        className="object-contain group-hover:scale-105 transition-transform duration-700 p-3"
+                        className="object-cover object-center group-hover:scale-105 transition-transform duration-700 filter brightness-[1.05] contrast-[1.03]"
                       />
                       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <span className="px-4 py-2 rounded-full bg-[#ff5528] text-black font-extrabold text-xs uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-[#ff5528]/30">
+                        <span className="px-4 py-2 rounded-full bg-white text-black font-extrabold text-xs uppercase tracking-wider flex items-center gap-2 shadow-2xl">
                           <Eye className="w-4 h-4" />
                           <span>Inspect Item</span>
                         </span>
@@ -179,7 +179,7 @@ export const ReyugCaseStudy: React.FC = () => {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="text-base font-bold text-white uppercase group-hover:text-[#ff5528] transition-colors font-sans">
+                      <h3 className="text-base font-bold text-white uppercase group-hover:text-zinc-200 transition-colors font-sans">
                         {item.title}
                       </h3>
                       <p className="text-xs text-zinc-400 font-mono">
@@ -190,7 +190,7 @@ export const ReyugCaseStudy: React.FC = () => {
 
                   <div className="pt-2 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-zinc-500 uppercase">
                     <span>TOUCHPOINT // 0{idx + 1}</span>
-                    <span className="text-[#ff5528]">INSPECT →</span>
+                    <span className="text-zinc-400 group-hover:text-white transition-colors">INSPECT →</span>
                   </div>
                 </motion.div>
               );
@@ -206,7 +206,7 @@ export const ReyugCaseStudy: React.FC = () => {
           onClick={() => setSelectedImg(null)}
           className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/90 backdrop-blur-xl"
         >
-          <div className="relative w-full max-w-4xl h-[80vh] rounded-3xl bg-[#0e0e11] border border-[#ff5528]/40 p-6 flex items-center justify-center shadow-2xl">
+          <div className="relative w-full max-w-4xl h-[80vh] rounded-3xl bg-[#0e0e11] border border-white/20 p-6 flex items-center justify-center shadow-2xl">
             <Image
               src={selectedImg}
               alt="Reyug Individual Product Inspection"
@@ -215,7 +215,7 @@ export const ReyugCaseStudy: React.FC = () => {
             />
             <button
               onClick={() => setSelectedImg(null)}
-              className="absolute top-4 right-4 px-5 py-2.5 rounded-full bg-[#ff5528] text-black font-extrabold text-xs uppercase tracking-wider"
+              className="absolute top-4 right-4 px-5 py-2.5 rounded-full bg-white text-black font-extrabold text-xs uppercase tracking-wider hover:bg-zinc-200 transition-colors"
             >
               Close Preview
             </button>

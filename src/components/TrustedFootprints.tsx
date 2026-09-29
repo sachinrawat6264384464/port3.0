@@ -17,33 +17,33 @@ interface TrustedFootprintsProps {
   theme?: 'dark' | 'light';
 }
 
-export const TrustedFootprints: React.FC<TrustedFootprintsProps> = ({ theme = 'light' }) => {
+export const TrustedFootprints: React.FC<TrustedFootprintsProps> = ({ theme = 'dark' }) => {
   const isLight = theme === 'light';
 
   return (
     <section className={`py-24 px-6 sm:px-10 lg:px-16 border-t relative overflow-hidden transition-colors ${
-      isLight ? 'bg-blueprint-grid text-zinc-900 border-[#00755e]/15' : 'bg-[#040406] text-white border-white/10'
+      isLight ? 'bg-blueprint-grid text-zinc-900 border-[#00755e]/15' : 'bg-[#0e0e11] text-white border-white/10'
     }`}>
       {/* Background Ambient Glowing Lights */}
       <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[450px] rounded-full blur-[180px] pointer-events-none ${
-        isLight ? 'bg-[#00755e]/10' : 'bg-orange-600/10'
+        isLight ? 'bg-[#00755e]/10' : 'bg-white/5'
       }`} />
 
       <div className="max-w-[1700px] w-full mx-auto space-y-16 relative z-10">
         {/* Section Header */}
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-widest shadow-md ${
-            isLight ? 'bg-[#00755e]/10 border border-[#00755e]/30 text-[#00755e]' : 'bg-orange-500/10 border border-orange-500/30 text-orange-400'
+            isLight ? 'bg-[#00755e]/10 border border-[#00755e]/30 text-[#00755e]' : 'bg-white/5 border border-white/10 text-zinc-300'
           }`}>
             <span>NATIONAL BRAND FOOTPRINT</span>
           </div>
           <h2 className={`text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight font-sans ${
             isLight ? 'text-zinc-900' : 'text-white'
           }`}>
-            TRUSTED <span className={isLight ? 'font-editorial italic text-[#00755e]' : 'text-orange-500 italic'}>FOOTPRINTS</span>
+            TRUSTED <span className={isLight ? 'font-editorial italic text-[#00755e]' : 'font-editorial italic font-normal text-zinc-400 lowercase'}>footprints</span>
           </h2>
-          <p className={`text-sm sm:text-base font-medium leading-relaxed ${
-            isLight ? 'text-zinc-700' : 'text-zinc-400'
+          <p className={`text-sm sm:text-base font-normal leading-relaxed ${
+            isLight ? 'text-zinc-700' : 'text-zinc-300'
           }`}>
             Partnered with leading enterprises, growth brands, regional icons, and visionaries across India.
           </p>
@@ -62,21 +62,21 @@ export const TrustedFootprints: React.FC<TrustedFootprintsProps> = ({ theme = 'l
               className={`p-5 rounded-2xl border transition-all duration-300 space-y-2 group shadow-md ${
                 isLight 
                   ? 'bg-white border-[#00755e]/20 hover:border-[#00755e]'
-                  : 'bg-zinc-950/80 border-white/10 hover:border-orange-500/50'
+                  : 'bg-zinc-950/80 border-white/10 hover:border-white/30'
               }`}
             >
               <div className="flex items-center justify-between">
-                <MapPin className={`w-4 h-4 ${isLight ? 'text-[#00755e]' : 'text-orange-400'}`} />
-                <span className={`text-[10px] font-mono font-bold ${isLight ? 'text-[#00755e]' : 'text-orange-400'}`}>
+                <MapPin className={`w-4 h-4 ${isLight ? 'text-[#00755e]' : 'text-zinc-400'}`} />
+                <span className={`text-[10px] font-mono font-bold ${isLight ? 'text-[#00755e]' : 'text-zinc-400'}`}>
                   {item.count}
                 </span>
               </div>
               <h3 className={`text-sm font-bold uppercase transition-colors ${
-                isLight ? 'text-zinc-900 group-hover:text-[#00755e]' : 'text-white group-hover:text-orange-400'
+                isLight ? 'text-zinc-900 group-hover:text-[#00755e]' : 'text-white group-hover:text-zinc-300'
               }`}>
                 {item.region}
               </h3>
-              <p className={`text-[11px] font-mono truncate ${isLight ? 'text-zinc-500' : 'text-zinc-500'}`}>{item.hub}</p>
+              <p className={`text-[11px] font-mono truncate ${isLight ? 'text-zinc-500' : 'text-zinc-400'}`}>{item.hub}</p>
             </motion.div>
           ))}
         </div>

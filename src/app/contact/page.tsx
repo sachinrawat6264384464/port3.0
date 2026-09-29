@@ -23,9 +23,9 @@ export default function ContactPage() {
           {/* Top Tag Pill */}
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#ff5528] animate-pulse" />
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-300">
-                (05) // DIRECT LEADERSHIP & CONSULTATION
+              <span className="w-2.5 h-2.5 rounded-full bg-white animate-pulse" />
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400">
+                (05) // DIRECT LEADERSHIP &amp; CONSULTATION
               </span>
             </div>
 
@@ -39,7 +39,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
             <div className="lg:col-span-8 space-y-4">
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tight leading-[1.08] font-sans">
-                LET&apos;S OUTLINE YOUR <span className="text-[#ff5528]">BRAND STORY</span>
+                LET&apos;S OUTLINE YOUR <span className="font-editorial italic font-normal text-zinc-400 lowercase">brand story</span>
               </h1>
             </div>
 

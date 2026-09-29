@@ -52,14 +52,14 @@ export default function ServicesPage() {
           {/* Top Tag Pill */}
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#ff5528] animate-pulse" />
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-300">
-                (01) // CORE AGENCY CAPABILITIES & PROFICIENCY
+              <span className="w-2.5 h-2.5 rounded-full bg-white animate-pulse" />
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400">
+                (01) // CORE AGENCY CAPABILITIES &amp; PROFICIENCY
               </span>
             </div>
 
-            <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-zinc-400 uppercase">
-              <Layers className="w-3.5 h-3.5 text-[#ff5528]" />
+            <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-zinc-300 uppercase">
+              <Layers className="w-3.5 h-3.5 text-white" />
               <span>6+ SPECIALIZED DISCIPLINES</span>
             </div>
           </div>
@@ -68,7 +68,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
             <div className="lg:col-span-8 space-y-4">
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tight leading-[1.08] font-sans">
-                STRATEGIC DESIGN & <span className="text-[#ff5528]">BRAND ARCHITECTURE</span>
+                STRATEGIC DESIGN &amp; <span className="font-editorial italic font-normal text-zinc-400 lowercase drop-shadow-sm">brand architecture</span>
               </h1>
             </div>
 
@@ -88,13 +88,13 @@ export default function ServicesPage() {
       {/* 4-Step Execution Process Section */}
       <section className="py-24 px-6 sm:px-10 lg:px-16 max-w-[1750px] w-full mx-auto border-t border-white/10 space-y-16">
         <div className="text-center space-y-4 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ff5528]/10 border border-[#ff5528]/30 text-[#ff5528] text-xs font-mono uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-zinc-300 text-xs font-mono font-bold uppercase tracking-widest">
             <span>HOW WE EXECUTE SERVICES</span>
           </div>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight leading-tight font-sans">
-            OUR SERVICE <span className="text-[#ff5528]">METHODOLOGY</span>
+            OUR SERVICE <span className="font-editorial italic font-normal text-zinc-400 lowercase">methodology</span>
           </h2>
-          <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
+          <p className="text-sm sm:text-base text-zinc-400 font-normal leading-relaxed">
             A battle-tested 4-phase framework ensuring strategy, precision, and flawless production for every touchpoint.
           </p>
         </div>
@@ -105,19 +105,19 @@ export default function ServicesPage() {
             return (
               <div
                 key={step.step}
-                className="p-8 rounded-3xl bg-zinc-950/80 border border-white/10 hover:border-[#ff5528]/50 transition-all duration-300 space-y-5 group relative overflow-hidden"
+                className="p-8 rounded-3xl bg-zinc-950/80 border border-white/10 hover:border-white/30 transition-all duration-300 space-y-5 group relative overflow-hidden shadow-xl"
               >
                 <div className="flex items-center justify-between">
-                  <div className="p-3 rounded-2xl bg-[#ff5528]/10 border border-[#ff5528]/30 text-[#ff5528] group-hover:bg-[#ff5528] group-hover:text-black transition-colors">
+                  <div className="p-3 rounded-2xl bg-white/10 border border-white/20 text-white group-hover:bg-white group-hover:text-black transition-colors">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <span className="text-xs font-mono font-bold text-[#ff5528]">
+                  <span className="text-xs font-mono font-bold text-zinc-400">
                     PHASE {step.step}
                   </span>
                 </div>
 
                 <div className="space-y-2 pt-2">
-                  <h3 className="text-xl font-bold text-white uppercase tracking-wide group-hover:text-[#ff5528] transition-colors">
+                  <h3 className="text-xl font-bold text-white uppercase tracking-wide group-hover:text-zinc-300 transition-colors font-sans">
                     {step.title}
                   </h3>
                   <p className="text-xs text-zinc-400 leading-relaxed font-light">
@@ -132,12 +132,10 @@ export default function ServicesPage() {
 
       {/* Executive CTA Box */}
       <section className="py-24 px-6 sm:px-10 lg:px-16 max-w-[1700px] w-full mx-auto border-t border-white/10">
-        <div className="p-10 sm:p-16 rounded-3xl bg-gradient-to-r from-zinc-950 via-[#0d0d12] to-black border border-white/15 hover:border-[#ff5528]/50 transition-all duration-500 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden group">
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#ff5528] via-amber-500 to-transparent" />
-          
+        <div className="p-10 sm:p-16 rounded-3xl bg-gradient-to-r from-zinc-950 via-[#0d0d12] to-black border border-white/15 hover:border-white/30 transition-all duration-500 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden group">
           <div className="space-y-3 relative z-10">
-            <div className="flex items-center gap-2 text-xs font-mono text-[#ff5528] uppercase font-bold tracking-widest">
-              <ShieldCheck className="w-4 h-4" />
+            <div className="flex items-center gap-2 text-xs font-mono text-zinc-300 uppercase font-bold tracking-widest">
+              <ShieldCheck className="w-4 h-4 text-white" />
               <span>BESPOKE BRANDING STRATEGY</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight font-sans">
@@ -150,7 +148,7 @@ export default function ServicesPage() {
 
           <Link
             href="/contact"
-            className="px-8 py-4 rounded-full bg-[#ff5528] hover:bg-white text-black font-bold text-xs uppercase tracking-widest transition-all duration-300 flex items-center gap-2 shrink-0 shadow-xl shadow-[#ff5528]/20 group/btn relative z-10"
+            className="px-8 py-4 rounded-full bg-white hover:bg-zinc-200 text-black font-extrabold text-xs uppercase tracking-widest transition-all duration-300 flex items-center gap-2 shrink-0 shadow-xl group/btn relative z-10"
           >
             <span>Start a Project</span>
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
