@@ -29,8 +29,8 @@ export default function ContactPage() {
               </span>
             </div>
 
-            <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono uppercase">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+            <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-zinc-300 text-xs font-mono uppercase">
+              <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
               <span>AVAILABLE FOR CONSULTATIONS</span>
             </div>
           </div>
