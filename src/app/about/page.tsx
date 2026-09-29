@@ -57,10 +57,10 @@ export default function AboutPage() {
                 We exist to bring clarity to brands in a noisy world by turning raw ideas into structured, powerful visual identities. Our job is to outline it, sharpen it, and make it unforgettable.
               </p>
 
-              <div className="flex items-center gap-4 pt-2">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2 w-full sm:w-auto">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-white text-black font-extrabold text-xs uppercase tracking-wider hover:bg-zinc-200 transition-all duration-300 group shadow-lg"
+                  className="inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-full bg-white text-black font-extrabold text-xs uppercase tracking-wider hover:bg-zinc-200 transition-all duration-300 group shadow-lg text-center"
                 >
                   <span>Start a Conversation</span>
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -68,7 +68,7 @@ export default function AboutPage() {
 
                 <a
                   href="#manifesto"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/5 border border-white/15 hover:border-white/40 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-sm"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white/5 border border-white/15 hover:border-white/40 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-sm text-center"
                 >
                   <span>Our Manifesto</span>
                 </a>

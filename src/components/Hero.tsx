@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useRef, useCallback, useState } from 'react';
 import { motion } from 'framer-motion';
 import Matter from 'matter-js';
 import { RotateCcw } from 'lucide-react';
@@ -45,6 +45,7 @@ export const Hero: React.FC = () => {
   const engineRef = useRef<Matter.Engine | null>(null);
   const runnerRef = useRef<Matter.Runner | null>(null);
   const animFrameRef = useRef<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   const startPhysics = useCallback(() => {
     if (!sceneRef.current) return;
@@ -62,10 +63,11 @@ export const Hero: React.FC = () => {
 
     const width = sceneRef.current.clientWidth || window.innerWidth || 1200;
     const height = sceneRef.current.clientHeight || 750;
+    const isMob = width < 640;
 
     // Create Matter Engine with gentle slow gravity
     const engine = Matter.Engine.create({
-      gravity: { x: 0, y: 0.5, scale: 0.0008 },
+      gravity: { x: 0, y: isMob ? 0.45 : 0.5, scale: 0.0008 },
       enableSleeping: true,
       positionIterations: 10,
       velocityIterations: 10,
@@ -73,7 +75,7 @@ export const Hero: React.FC = () => {
     engineRef.current = engine;
 
     // Floor & Walls
-    const floor = Matter.Bodies.rectangle(width / 2, height - 12, width * 2, 30, {
+    const floor = Matter.Bodies.rectangle(width / 2, height - 10, width * 2, 30, {
       isStatic: true,
       friction: 0.9,
       restitution: 0.15,
@@ -93,27 +95,28 @@ export const Hero: React.FC = () => {
 
     // Create Pill Rigid Bodies dropping strictly from far ABOVE top screen edge
     const bodies: { id: string; body: Matter.Body; width: number; height: number }[] = [];
+    const pScale = isMob ? 0.55 : 1.0;
+    const pHeight = isMob ? 30 : 48;
 
     HERO_PILLS.forEach((pill, idx) => {
-      // Spread across full screen width (5% to 95%)
-      const spawnX = Math.random() * (width * 0.9) + width * 0.05;
-      // Staggered drop starting from far above the top navbar (-200px to -1700px)
-      const spawnY = -200 - idx * 75 - Math.random() * 50;
-      const initialAngle = (Math.random() - 0.5) * 0.5;
+      const pWidth = Math.round(pill.width * pScale);
+      const spawnX = Math.random() * (width * 0.85) + width * 0.05;
+      const spawnY = -150 - idx * (isMob ? 45 : 75) - Math.random() * 40;
+      const initialAngle = (Math.random() - 0.5) * 0.4;
 
-      const body = Matter.Bodies.rectangle(spawnX, spawnY, pill.width, pill.height, {
-        chamfer: { radius: pill.height / 2 },
-        restitution: 0.2,
+      const body = Matter.Bodies.rectangle(spawnX, spawnY, pWidth, pHeight, {
+        chamfer: { radius: pHeight / 2 },
+        restitution: 0.15,
         friction: 0.8,
         frictionStatic: 1.0,
-        frictionAir: 0.028, // Slow floaty air resistance
+        frictionAir: isMob ? 0.035 : 0.028,
         density: 0.002,
         angle: initialAngle,
       });
 
-      Matter.Body.setAngularVelocity(body, (Math.random() - 0.5) * 0.04);
+      Matter.Body.setAngularVelocity(body, (Math.random() - 0.5) * 0.03);
 
-      bodies.push({ id: pill.id, body, width: pill.width, height: pill.height });
+      bodies.push({ id: pill.id, body, width: pWidth, height: pHeight });
       Matter.Composite.add(engine.world, body);
     });
 
@@ -163,8 +166,15 @@ export const Hero: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
     startPhysics();
     return () => {
+      window.removeEventListener('resize', handleResize);
       if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
       if (engineRef.current) Matter.Engine.clear(engineRef.current);
       if (runnerRef.current) Matter.Runner.stop(runnerRef.current);
@@ -182,30 +192,35 @@ export const Hero: React.FC = () => {
         ref={sceneRef}
         className="absolute inset-0 w-full h-full pointer-events-none z-20 select-none"
       >
-        {HERO_PILLS.map((pill, idx) => (
-          <div
-            key={pill.id}
-            ref={(el) => {
-              pillRefs.current[idx] = el;
-            }}
-            style={{
-              position: 'absolute',
-              left: 0,
-              top: 0,
-              width: `${pill.width}px`,
-              height: `${pill.height}px`,
-              backgroundColor: pill.bgColor,
-              color: pill.textColor,
-              willChange: 'transform',
-              transform: 'translate3d(-9999px, -9999px, 0px)', // Offscreen initial state to prevent any middle screen flicker
-            }}
-            className="rounded-full flex items-center justify-center font-bold text-xs sm:text-sm tracking-wide shadow-2xl border border-white/30 cursor-grab active:cursor-grabbing pointer-events-auto transition-shadow hover:brightness-110 select-none"
-          >
-            <span className="px-3 truncate font-sans font-black uppercase italic pointer-events-none">
-              {pill.name}
-            </span>
-          </div>
-        ))}
+        {HERO_PILLS.map((pill, idx) => {
+          const pWidth = isMobile ? Math.round(pill.width * 0.55) : pill.width;
+          const pHeight = isMobile ? 30 : 48;
+
+          return (
+            <div
+              key={pill.id}
+              ref={(el) => {
+                pillRefs.current[idx] = el;
+              }}
+              style={{
+                position: 'absolute',
+                left: 0,
+                top: 0,
+                width: `${pWidth}px`,
+                height: `${pHeight}px`,
+                backgroundColor: pill.bgColor,
+                color: pill.textColor,
+                willChange: 'transform',
+                transform: 'translate3d(-9999px, -9999px, 0px)', // Offscreen initial state to prevent any middle screen flicker
+              }}
+              className="rounded-full flex items-center justify-center font-bold text-[10px] sm:text-sm tracking-wide shadow-2xl border border-white/30 cursor-grab active:cursor-grabbing pointer-events-auto transition-shadow hover:brightness-110 select-none"
+            >
+              <span className="px-2 sm:px-3 truncate font-sans font-black uppercase italic pointer-events-none">
+                {pill.name}
+              </span>
+            </div>
+          );
+        })}
       </div>
 
       <div className="max-w-[1750px] w-full mx-auto relative z-10 flex flex-col justify-between h-full flex-1 pointer-events-none">
