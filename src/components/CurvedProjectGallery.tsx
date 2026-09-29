@@ -71,7 +71,7 @@ export const CurvedProjectGallery: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="py-10 sm:py-12 bg-[#0e0e11] relative overflow-hidden select-none"
+      className="pt-16 sm:pt-20 pb-10 bg-[#0e0e11] relative overflow-hidden select-none"
     >
       {/* SVG ClipPath Definitions for 3D Panoramic Viewport Top & Bottom Concave Arc */}
       <svg className="absolute w-0 h-0 pointer-events-none" aria-hidden="true">
@@ -83,20 +83,20 @@ export const CurvedProjectGallery: React.FC = () => {
       </svg>
 
       {/* SECTION HEADING WITH STUDIO RS TYPOGRAPHY */}
-      <div className="max-w-[1700px] w-full mx-auto px-6 sm:px-10 lg:px-16 mb-8 text-center relative z-20">
-        <h2 className="text-4xl sm:text-6xl lg:text-7xl font-sans font-black text-white uppercase tracking-tight leading-none">
+      <div className="max-w-[1700px] w-full mx-auto px-4 sm:px-10 lg:px-16 mb-8 text-center relative z-20">
+        <h2 className="text-2xl sm:text-6xl lg:text-7xl font-sans font-black text-white uppercase tracking-tight leading-tight">
           AN IMMERSIVE WORLD OF <span className="font-editorial italic font-normal text-zinc-400 uppercase">CREATIVE CRAFT</span>
         </h2>
       </div>
 
       {/* 5. TOP CONTROLS: TABS (Exterior / Interior) */}
-      <div className="flex items-center justify-center gap-4 mb-8 relative z-30">
+      <div className="flex items-center justify-center gap-3 sm:gap-4 mb-8 relative z-30">
         <button
           onClick={() => {
             setActiveTab('exterior');
             setCurrentIndex(1);
           }}
-          className={`px-7 py-2.5 rounded-full text-xs font-mono uppercase font-bold tracking-widest transition-all duration-300 ${
+          className={`px-5 sm:px-7 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-mono uppercase font-bold tracking-widest transition-all duration-300 ${
             activeTab === 'exterior'
               ? 'bg-white/20 border border-white/40 text-white shadow-lg shadow-white/5 scale-105 backdrop-blur-md'
               : 'bg-white/5 backdrop-blur-md text-zinc-400 border border-white/10 hover:bg-white/10 hover:text-white'
@@ -109,7 +109,7 @@ export const CurvedProjectGallery: React.FC = () => {
             setActiveTab('interior');
             setCurrentIndex(1);
           }}
-          className={`px-7 py-2.5 rounded-full text-xs font-mono uppercase font-bold tracking-widest transition-all duration-300 ${
+          className={`px-5 sm:px-7 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-mono uppercase font-bold tracking-widest transition-all duration-300 ${
             activeTab === 'interior'
               ? 'bg-white/20 border border-white/40 text-white shadow-lg shadow-white/5 scale-105 backdrop-blur-md'
               : 'bg-white/5 backdrop-blur-md text-zinc-400 border border-white/10 hover:bg-white/10 hover:text-white'
@@ -121,13 +121,12 @@ export const CurvedProjectGallery: React.FC = () => {
 
       {/* 1. CONTINUOUS 3D CURVED PANORAMIC SCREEN VIEWPORT */}
       <div
-        className="relative max-w-[1850px] w-full mx-auto overflow-hidden py-8 min-h-[500px] flex items-center justify-center bg-[#0e0e11] [perspective:1600px]"
-        style={{ clipPath: 'url(#panoramic-viewport-arc)' }}
+        className="relative max-w-[1850px] w-full mx-auto overflow-hidden py-4 sm:py-8 min-h-[260px] sm:min-h-[500px] flex items-center justify-center bg-[#0e0e11] [perspective:1600px]"
       >
         {/* ROW CONTAINER - 3D SURFACE */}
         <motion.div
           style={{ x: xScroll }}
-          className="w-full max-w-[1800px] px-6 flex items-center justify-center gap-4 sm:gap-6 lg:gap-8 [transform-style:preserve-3d]"
+          className="w-full max-w-[1800px] px-4 sm:px-6 flex items-center justify-center gap-4 sm:gap-6 lg:gap-8 [transform-style:preserve-3d]"
         >
           {/* CARD 1: LEFT PANEL (Angles Inward, HD Sharp 3D Side Wall) */}
           <div
@@ -162,10 +161,10 @@ export const CurvedProjectGallery: React.FC = () => {
           {/* CARD 2: CENTER PANEL (Front-Facing Hero Focal Point - Unzoomed & Non-Clickable) */}
           <div
             style={{
-              transform: 'perspective(1600px) rotateY(0deg) translateZ(35px) scale(1.02)',
+              transform: 'perspective(1600px) rotateY(0deg) translateZ(10px) scale(1)',
               transition: 'transform 0.4s ease-out',
             }}
-            className="relative w-[360px] sm:w-[500px] lg:w-[580px] h-[320px] sm:h-[380px] lg:h-[440px] bg-[#141418] transition-all duration-300 group shadow-[0_0_80px_rgba(255,255,255,0.22),0_25px_60px_rgba(0,0,0,0.9)] shrink-0 z-30 overflow-hidden rounded-2xl border-2 border-white/35 opacity-100 select-none pointer-events-none"
+            className="relative w-[290px] sm:w-[500px] lg:w-[580px] h-[220px] sm:h-[380px] lg:h-[440px] bg-[#141418] transition-all duration-300 group shadow-[0_0_80px_rgba(255,255,255,0.22),0_25px_60px_rgba(0,0,0,0.9)] shrink-0 z-30 overflow-hidden rounded-2xl border-2 border-white/35 opacity-100 select-none pointer-events-none"
           >
             {/* Ambient Background Glow Aura */}
             <div className="absolute -inset-2 bg-gradient-to-r from-white/20 via-zinc-300/10 to-white/20 blur-2xl opacity-75 pointer-events-none" />
